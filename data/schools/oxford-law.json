@@ -1,0 +1,152 @@
+{
+  "id": "oxford-law",
+  "name": "University of Oxford Faculty of Law",
+  "country": "GB",
+  "jurisdiction": null,
+  "url": "https://www.law.ox.ac.uk",
+  "last_researched": null,
+  "last_verified": null,
+  "accreditation": [
+    {
+      "body": "SRA",
+      "jurisdiction": "England and Wales",
+      "status": "accredited"
+    },
+    {
+      "body": "Bar Standards Board",
+      "jurisdiction": "England and Wales",
+      "status": "accredited"
+    },
+    {
+      "body": "QAA",
+      "jurisdiction": "UK",
+      "status": "accredited"
+    }
+  ],
+  "courses": [
+    {
+      "id": "oxf-law-technology-innovation",
+      "title": "Law and Technology",
+      "credits": null,
+      "type": "elective",
+      "topics": ["legal_technology", "artificial_intelligence", "regulatory_technology"],
+      "source_url": "https://www.law.ox.ac.uk/admissions/graduate-admissions/bcl",
+      "year_verified": null,
+      "notes": "BCL/MSt option. Verify current title and availability as part of BCL (Bachelor of Civil Law) or graduate programmes."
+    },
+    {
+      "id": "oxf-data-privacy",
+      "title": "Data Privacy Law",
+      "credits": null,
+      "type": "elective",
+      "topics": ["data_privacy", "regulatory_technology"],
+      "source_url": "https://www.law.ox.ac.uk/courses-and-degrees",
+      "year_verified": null,
+      "notes": "Verify current course offering. GDPR and UK GDPR focus likely."
+    },
+    {
+      "id": "oxf-internet-law",
+      "title": "Internet Law and Policy",
+      "credits": null,
+      "type": "elective",
+      "topics": ["cybersecurity", "data_privacy", "legal_technology"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Verify existence in current curriculum."
+    },
+    {
+      "id": "oxf-ip-digital",
+      "title": "Intellectual Property in the Digital Economy",
+      "credits": null,
+      "type": "elective",
+      "topics": ["intellectual_property_tech", "legal_technology"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Verify current BCL/MSt offering."
+    }
+  ],
+  "programs": [
+    {
+      "id": "oxf-oit",
+      "name": "Oxford Internet Institute (OII)",
+      "type": "center",
+      "description": "Multidisciplinary research and teaching institute on the social science of the internet. Affiliated with the law faculty for technology law research.",
+      "tech_focus": true,
+      "source_url": "https://www.oii.ox.ac.uk",
+      "year_verified": null,
+      "status": "active",
+      "notes": "The OII is a graduate-level department in its own right. Collaboration with law faculty is strong but indirect. Joint supervision arrangements exist."
+    },
+    {
+      "id": "oxf-oblat",
+      "name": "Oxford Blockchain Research Centre",
+      "type": "center",
+      "description": "Research centre focused on blockchain, distributed ledger, and smart contract law.",
+      "tech_focus": true,
+      "source_url": "https://www.law.ox.ac.uk/content/oxford-blockchain-research-centre",
+      "year_verified": null,
+      "status": "unknown",
+      "notes": "Verify current activity level and whether centre is actively producing output and hosting events."
+    },
+    {
+      "id": "oxf-internet-regulation-forum",
+      "name": "Programme in Comparative Media Law and Policy",
+      "type": "center",
+      "description": "Research programme on internet regulation, content moderation, and digital governance.",
+      "tech_focus": true,
+      "source_url": "https://www.law.ox.ac.uk",
+      "year_verified": null,
+      "status": "unknown",
+      "notes": "Verify current status and activity."
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Viktor Mayer-Schönberger",
+      "title": "Professor of Internet Governance and Regulation",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["big_data", "data_governance", "artificial_intelligence"],
+      "research_areas": ["big data regulation", "AI policy", "information governance"],
+      "profile_url": "https://www.oii.ox.ac.uk/people/profiles/viktor-mayer-schonberger/"
+    },
+    {
+      "name": "Sandra Fredman",
+      "title": "Rhodes Professor of the Laws of the British Commonwealth and the United States",
+      "appointment_type": "tenure_track",
+      "tech_expertise": [],
+      "research_areas": ["equality law", "human rights"],
+      "profile_url": null
+    },
+    {
+      "name": "Chris Reed",
+      "title": "Visiting Professor",
+      "appointment_type": "visiting",
+      "tech_expertise": ["internet_law", "e_commerce_law", "digital_contracts"],
+      "research_areas": ["internet law", "e-commerce", "digital economy"],
+      "profile_url": null
+    }
+  ],
+  "partnerships": [
+    {
+      "org": "Various UK government bodies and Ofcom",
+      "type": "government",
+      "description": "Research collaboration on online safety, internet regulation, and AI governance.",
+      "year_start": null,
+      "source_url": null,
+      "active": null
+    }
+  ],
+  "student_orgs": [
+    {
+      "name": "Oxford Technology and Regulation Society",
+      "focus": "Technology regulation, internet law, data governance",
+      "url": null,
+      "active": null,
+      "year_verified": null
+    }
+  ],
+  "press_release_gap": [],
+  "scores": null,
+  "ranking_tier": null,
+  "notes": "Oxford Law has deep expertise in internet law and data governance through the OII collaboration, but the primary JD-equivalent (BA in Jurisprudence) has a traditional curriculum that integrates less technology than US peer schools. The BCL and MSt graduate programmes are more flexible. US-trained scorers should note the different curriculum structure — Oxford does not use credit-hour elective systems in the same way. Full verification needed."
+}

@@ -1,0 +1,157 @@
+{
+  "id": "college-of-law-australia",
+  "name": "The College of Law Australia",
+  "country": "AU",
+  "jurisdiction": null,
+  "url": "https://www.collaw.edu.au",
+  "last_researched": null,
+  "last_verified": null,
+  "accreditation": [
+    {
+      "body": "Law Society of New South Wales",
+      "jurisdiction": "New South Wales",
+      "status": "accredited"
+    },
+    {
+      "body": "Law Institute of Victoria",
+      "jurisdiction": "Victoria",
+      "status": "accredited"
+    },
+    {
+      "body": "Queensland Law Society",
+      "jurisdiction": "Queensland",
+      "status": "accredited"
+    },
+    {
+      "body": "Law Society of South Australia",
+      "jurisdiction": "South Australia",
+      "status": "accredited"
+    },
+    {
+      "body": "Law Society of Western Australia",
+      "jurisdiction": "Western Australia",
+      "status": "accredited"
+    }
+  ],
+  "courses": [
+    {
+      "id": "col-legaltech-practice",
+      "title": "Legal Technology in Practice",
+      "credits": null,
+      "type": "required",
+      "topics": ["legal_technology", "document_automation", "legal_operations"],
+      "source_url": "https://www.collaw.edu.au/subjects/legal-technology",
+      "year_verified": null,
+      "notes": "Reported as a required component in the Graduate Diploma of Legal Practice (GDLP) and LLM programmes. Verify current status in GDLP — if required, scores 2 pts; verify credit structure."
+    },
+    {
+      "id": "col-ai-future-law",
+      "title": "AI and the Future of Legal Practice",
+      "credits": null,
+      "type": "elective",
+      "topics": ["artificial_intelligence", "legal_technology", "legal_ethics_tech"],
+      "source_url": "https://www.collaw.edu.au/subjects/",
+      "year_verified": null,
+      "notes": "Verify current offering in LLM programme."
+    },
+    {
+      "id": "col-legaltech-innovation",
+      "title": "LegalTech and Innovation",
+      "credits": null,
+      "type": "elective",
+      "topics": ["legal_technology", "legal_operations", "document_automation"],
+      "source_url": "https://www.collaw.edu.au/study/llm/elective-subjects",
+      "year_verified": null,
+      "notes": "Part of the LLM programme. Verify current catalog listing."
+    },
+    {
+      "id": "col-data-privacy-au",
+      "title": "Data Privacy and Cybersecurity Law",
+      "credits": null,
+      "type": "elective",
+      "topics": ["data_privacy", "cybersecurity"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Verify if offered in current LLM program."
+    }
+  ],
+  "programs": [
+    {
+      "id": "col-legaltech-llm",
+      "name": "LLM in Legal Technology",
+      "type": "certificate",
+      "description": "Specialist LLM stream focused on legal technology, innovation, and the future of legal practice. Designed for working practitioners.",
+      "tech_focus": true,
+      "source_url": "https://www.collaw.edu.au/study/llm/",
+      "year_verified": null,
+      "status": "active",
+      "notes": "The College of Law offers one of Australia's most practitioner-focused LegalTech LLM programmes. Verify current elective structure and required tech components."
+    },
+    {
+      "id": "col-centre-legaltech",
+      "name": "Centre for Legal Innovation",
+      "type": "center",
+      "description": "Research and practice centre for legal innovation, legaltech adoption in law firms, and access to justice technology.",
+      "tech_focus": true,
+      "source_url": "https://www.collaw.edu.au/cli",
+      "year_verified": null,
+      "status": "active",
+      "notes": "The CLI produces practitioner-oriented research and runs events. Verify current director, events calendar, and output volume."
+    },
+    {
+      "id": "col-gdlp",
+      "name": "Graduate Diploma of Legal Practice (GDLP) with Tech Integration",
+      "type": "certificate",
+      "description": "The GDLP is Australia's practical legal training qualification. The College's version incorporates legal technology as a thread throughout.",
+      "tech_focus": true,
+      "source_url": "https://www.collaw.edu.au/study/graduate-diploma-legal-practice",
+      "year_verified": null,
+      "status": "active",
+      "notes": "The GDLP is a requirement for admission to practise in most Australian jurisdictions. If the College's GDLP genuinely requires a tech component, this is a major differentiator vs. other providers."
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Genevieve Grant",
+      "title": "Adjunct Professor / Director of Research",
+      "appointment_type": "adjunct",
+      "tech_expertise": ["legal_technology", "legal_innovation", "access_to_justice_tech"],
+      "research_areas": ["legal service delivery", "regulatory reform", "technology and access to justice"],
+      "profile_url": "https://www.collaw.edu.au/about/our-people/"
+    }
+  ],
+  "partnerships": [
+    {
+      "org": "LexisNexis Australia",
+      "type": "legaltech_vendor",
+      "description": "Curriculum and research integration with LexisNexis legal research tools, including AI-assisted research training.",
+      "year_start": null,
+      "source_url": null,
+      "active": null
+    },
+    {
+      "org": "Law firms and legal publishers",
+      "type": "industry",
+      "description": "Multiple partnerships supporting the GDLP and LLM programmes with practical placements and content.",
+      "year_start": null,
+      "source_url": null,
+      "active": null
+    }
+  ],
+  "student_orgs": [],
+  "press_release_gap": [
+    {
+      "claimed": "In 2022, the College of Law announced a dedicated 'LegalTech Hub' with co-working space, startup incubation, and industry mentoring as a key feature of its new campus.",
+      "reality": "As of mid-2026, no active LegalTech Hub with co-working or incubation features has been independently verified on the College's website or in current marketing materials. The CLI exists but does not appear to offer incubation services.",
+      "evidence_url": null,
+      "current_url": "https://www.collaw.edu.au/cli",
+      "year_claimed": 2022,
+      "year_verified": null,
+      "severity": null,
+      "penalty_points": null
+    }
+  ],
+  "scores": null,
+  "ranking_tier": null,
+  "notes": "The College of Law Australia is an interesting case: a vocationally-focused institution (not a university law school) that has invested heavily in practical legaltech education. Its LLM in Legal Technology and Centre for Legal Innovation are genuine differentiators. However, it has fewer research faculty and a smaller profile for academic legaltech output than university law schools. A press release gap has been flagged for the 'LegalTech Hub' claim and requires verification before applying a penalty. Score likely to fall in B or A range depending on verification."
+}

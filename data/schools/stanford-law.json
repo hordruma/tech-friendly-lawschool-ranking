@@ -1,0 +1,196 @@
+{
+  "id": "stanford-law",
+  "name": "Stanford Law School",
+  "country": "US",
+  "jurisdiction": "California",
+  "url": "https://law.stanford.edu",
+  "last_researched": null,
+  "last_verified": null,
+  "accreditation": [
+    {
+      "body": "ABA",
+      "jurisdiction": "US",
+      "status": "accredited"
+    },
+    {
+      "body": "AALS",
+      "jurisdiction": "US",
+      "status": "accredited"
+    }
+  ],
+  "courses": [
+    {
+      "id": "sls-law-technology",
+      "title": "Law, Technology, and Policy",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["legal_technology", "regulatory_technology", "artificial_intelligence"],
+      "source_url": "https://law.stanford.edu/codex/",
+      "year_verified": null,
+      "notes": "CodeX-affiliated course. Verify current offering."
+    },
+    {
+      "id": "sls-ai-ethics-law",
+      "title": "Artificial Intelligence, Ethics, and Law",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["artificial_intelligence", "legal_ethics_tech", "machine_learning"],
+      "source_url": "https://law.stanford.edu/courses/",
+      "year_verified": null,
+      "notes": "Check for current offering in SLS course catalog."
+    },
+    {
+      "id": "sls-computational-law",
+      "title": "Computational Law",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["computational_law", "legal_analytics", "artificial_intelligence"],
+      "source_url": "https://complaw.stanford.edu",
+      "year_verified": null,
+      "notes": "Offered through CodeX. Verify active offering."
+    },
+    {
+      "id": "sls-cyberlaw",
+      "title": "Cyberlaw",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["cybersecurity", "data_privacy", "legal_technology"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Verify current title and catalog listing."
+    },
+    {
+      "id": "sls-ediscovery",
+      "title": "Technology and Litigation: E-Discovery and Digital Evidence",
+      "credits": 2,
+      "type": "elective",
+      "topics": ["e_discovery", "legal_technology"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Needs confirmation in current catalog."
+    },
+    {
+      "id": "sls-privacy-tech",
+      "title": "Privacy and Technology",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["data_privacy", "cybersecurity", "regulatory_technology"],
+      "source_url": "https://cyberlaw.stanford.edu/courses",
+      "year_verified": null,
+      "notes": "Verify current offering — may be run through CLIP (Center for Law, Information & Technology)."
+    }
+  ],
+  "programs": [
+    {
+      "id": "sls-codex",
+      "name": "Stanford Center for Legal Informatics (CodeX)",
+      "type": "center",
+      "description": "Research center focused on computational law, legal informatics, and the intersection of law and computer science. Home of the Computable Contracts project and LegalTech startups.",
+      "tech_focus": true,
+      "source_url": "https://codex.stanford.edu",
+      "year_verified": null,
+      "status": "active",
+      "notes": "Among the most prominent legaltech research centers globally. Houses the Computable Contracts Initiative and has substantial external partnerships."
+    },
+    {
+      "id": "sls-clip",
+      "name": "Center for Law, Information and Technology (CLIP)",
+      "type": "center",
+      "description": "Research center on law, privacy, and technology policy.",
+      "tech_focus": true,
+      "source_url": "https://law.stanford.edu/codex/",
+      "year_verified": null,
+      "status": "unknown",
+      "notes": "Verify whether CLIP remains active or has been merged into CodeX or other programs."
+    },
+    {
+      "id": "sls-jd-cs",
+      "name": "JD/MS Computer Science Joint Degree",
+      "type": "joint_degree",
+      "description": "Joint JD and MS in Computer Science with Stanford School of Engineering.",
+      "tech_focus": true,
+      "source_url": "https://law.stanford.edu/academics/jd-program/joint-and-concurrent-degrees/",
+      "year_verified": null,
+      "status": "active",
+      "notes": "One of the flagship joint degrees at SLS. Verify current requirements and enrollment."
+    },
+    {
+      "id": "sls-legaldesign-lab",
+      "name": "Legal Design Lab",
+      "type": "center",
+      "description": "Research and innovation lab focused on legal design thinking, access to justice, and technology-enabled legal services. Stanford Law + d.school.",
+      "tech_focus": true,
+      "source_url": "https://law.stanford.edu/organizations/pages/legal-design-lab/",
+      "year_verified": null,
+      "status": "active",
+      "notes": "Cross-listed with the d.school (Hasso Plattner Institute of Design). Verify current programming."
+    },
+    {
+      "id": "sls-future-law",
+      "name": "Future Law",
+      "type": "other",
+      "description": "Stanford initiative on the future of law, legal services, and the legal profession, with legaltech as a core thread.",
+      "tech_focus": true,
+      "source_url": "https://futurelaw.stanford.edu",
+      "year_verified": null,
+      "status": "unknown",
+      "notes": "Needs status verification."
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Mark Lemley",
+      "title": "William H. Neukom Professor of Law",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["intellectual_property_tech", "artificial_intelligence", "internet_law"],
+      "research_areas": ["AI and IP", "patent law", "internet commerce"],
+      "profile_url": "https://law.stanford.edu/directory/mark-a-lemley/"
+    },
+    {
+      "name": "Ryan Calo",
+      "title": "Visiting Professor (also UW Law)",
+      "appointment_type": "visiting",
+      "tech_expertise": ["robotics_law", "artificial_intelligence", "consumer_protection"],
+      "research_areas": ["AI regulation", "robotics law", "consumer tech"],
+      "profile_url": null
+    },
+    {
+      "name": "Norman Spaulding",
+      "title": "Nelson Bowman Sweitzer and Marie B. Sweitzer Professor of Law",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["legal_analytics", "computational_law"],
+      "research_areas": ["legal profession", "legal history", "empirical legal studies"],
+      "profile_url": "https://law.stanford.edu/directory/norman-w-spaulding/"
+    }
+  ],
+  "partnerships": [
+    {
+      "org": "Various Silicon Valley law firms and tech companies",
+      "type": "industry",
+      "description": "CodeX has numerous partnerships with technology companies and law firms for research collaboration and data sharing.",
+      "year_start": null,
+      "source_url": "https://codex.stanford.edu/partners",
+      "active": null
+    }
+  ],
+  "student_orgs": [
+    {
+      "name": "Stanford Legal Technology Society",
+      "focus": "Legaltech, innovation in legal services, startup law",
+      "url": null,
+      "active": null,
+      "year_verified": null
+    },
+    {
+      "name": "Stanford Journal of Law, Science and Technology",
+      "focus": "Academic journal on technology law and policy",
+      "url": "https://sjlst.stanford.edu",
+      "active": true,
+      "year_verified": null
+    }
+  ],
+  "press_release_gap": [],
+  "scores": null,
+  "ranking_tier": null,
+  "notes": "Stanford Law is widely considered a global leader in legaltech education, driven primarily by CodeX, the Legal Design Lab, and the JD/CS joint degree. Proximity to Silicon Valley creates substantial industry partnership opportunities. Full verification needed for all source URLs and program statuses."
+}

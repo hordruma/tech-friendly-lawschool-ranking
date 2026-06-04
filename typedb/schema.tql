@@ -1,0 +1,276 @@
+##
+## Tech-Friendly Law School Ranking — TypeDB Schema
+## Language: TypeQL (TypeDB 2.x / 3.x compatible)
+##
+## Entity types represent nodes in the knowledge graph.
+## Relation types represent connections between entities.
+## Attribute types represent data attached to entities and relations.
+##
+
+define
+
+## ─────────────────────────────────────────────
+## ATTRIBUTE TYPES
+## ─────────────────────────────────────────────
+
+# Identifiers and labels
+slug             sub attribute, value string;
+full-name        sub attribute, value string;
+short-name       sub attribute, value string;
+description      sub attribute, value string;
+notes            sub attribute, value string;
+
+# Location
+country-code     sub attribute, value string;   # ISO 3166-1 alpha-2
+jurisdiction     sub attribute, value string;   # state/province/sub-national
+
+# Web references
+website-url      sub attribute, value string;
+source-url       sub attribute, value string;
+evidence-url     sub attribute, value string;
+profile-url      sub attribute, value string;
+
+# Dates (stored as strings, ISO 8601)
+last-researched  sub attribute, value string;
+last-verified    sub attribute, value string;
+year-verified    sub attribute, value long;
+year-start       sub attribute, value long;
+year-claimed     sub attribute, value long;
+
+# Course-specific
+course-id        sub attribute, value string;
+course-title     sub attribute, value string;
+credit-hours     sub attribute, value double;
+course-type      sub attribute, value string;   # required | elective | certificate
+
+# Program-specific
+program-id       sub attribute, value string;
+program-name     sub attribute, value string;
+program-type     sub attribute, value string;   # clinic | joint_degree | certificate | center | incubator | competition | other
+tech-focus       sub attribute, value boolean;
+program-status   sub attribute, value string;   # active | inactive | unknown
+
+# Faculty-specific
+faculty-title    sub attribute, value string;
+appointment-type sub attribute, value string;   # tenure_track | clinical | visiting | adjunct | emeritus
+
+# Accreditation-specific
+accred-body      sub attribute, value string;
+accred-status    sub attribute, value string;   # accredited | provisionally_accredited | pending | lapsed | not_applicable
+
+# Topic (controlled vocabulary)
+topic-name       sub attribute, value string;
+
+# Partnership-specific
+org-name         sub attribute, value string;
+partnership-type sub attribute, value string;   # industry | government | ngo | academic | legaltech_vendor
+is-active        sub attribute, value boolean;
+
+# Student org
+org-url          sub attribute, value string;
+
+# Press release gap
+claimed-text     sub attribute, value string;
+reality-text     sub attribute, value string;
+gap-severity     sub attribute, value string;   # minor | moderate | major | egregious
+penalty-points   sub attribute, value double;   # negative value, -5 to -20
+
+# Scores
+score-curriculum-courses    sub attribute, value double;
+score-curriculum-practical  sub attribute, value double;
+score-curriculum-clinics    sub attribute, value double;
+score-infra-center          sub attribute, value double;
+score-infra-joint-degrees   sub attribute, value double;
+score-infra-partnerships    sub attribute, value double;
+score-faculty-expertise     sub attribute, value double;
+score-faculty-research      sub attribute, value double;
+score-community-orgs        sub attribute, value double;
+score-community-careers     sub attribute, value double;
+score-prg-penalty           sub attribute, value double;
+score-total                 sub attribute, value double;
+ranking-tier                sub attribute, value string;   # S | A | B | C | D | unranked
+
+
+## ─────────────────────────────────────────────
+## ENTITY TYPES
+## ─────────────────────────────────────────────
+
+LawSchool sub entity,
+    owns slug @key,
+    owns full-name,
+    owns country-code,
+    owns jurisdiction,
+    owns website-url,
+    owns last-researched,
+    owns last-verified,
+    owns notes,
+    owns score-curriculum-courses,
+    owns score-curriculum-practical,
+    owns score-curriculum-clinics,
+    owns score-infra-center,
+    owns score-infra-joint-degrees,
+    owns score-infra-partnerships,
+    owns score-faculty-expertise,
+    owns score-faculty-research,
+    owns score-community-orgs,
+    owns score-community-careers,
+    owns score-prg-penalty,
+    owns score-total,
+    owns ranking-tier;
+
+Course sub entity,
+    owns course-id @key,
+    owns course-title,
+    owns credit-hours,
+    owns course-type,
+    owns source-url,
+    owns year-verified,
+    owns notes;
+
+Topic sub entity,
+    owns topic-name @key;
+
+Program sub entity,
+    owns program-id @key,
+    owns program-name,
+    owns program-type,
+    owns description,
+    owns tech-focus,
+    owns source-url,
+    owns year-verified,
+    owns program-status,
+    owns notes;
+
+Faculty sub entity,
+    owns full-name,
+    owns faculty-title,
+    owns appointment-type,
+    owns profile-url,
+    owns notes;
+
+Accreditation sub entity,
+    owns accred-body,
+    owns jurisdiction,
+    owns accred-status;
+
+Partnership sub entity,
+    owns org-name @key,
+    owns partnership-type,
+    owns description,
+    owns year-start,
+    owns source-url,
+    owns is-active;
+
+StudentOrg sub entity,
+    owns full-name,
+    owns description,
+    owns org-url,
+    owns is-active,
+    owns year-verified;
+
+PressReleaseGap sub entity,
+    owns claimed-text,
+    owns reality-text,
+    owns evidence-url,
+    owns source-url,       # current_url
+    owns year-claimed,
+    owns year-verified,
+    owns gap-severity,
+    owns penalty-points,
+    owns notes;
+
+
+## ─────────────────────────────────────────────
+## RELATION TYPES
+## ─────────────────────────────────────────────
+
+## Course offering: links a law school to a course in a given year
+course-offering sub relation,
+    relates school,
+    relates course,
+    owns year-verified,
+    owns notes;
+
+LawSchool plays course-offering:school;
+Course plays course-offering:course;
+
+
+## Course-topic link: maps courses to controlled-vocabulary topics
+course-topic sub relation,
+    relates course,
+    relates topic;
+
+Course plays course-topic:course;
+Topic plays course-topic:topic;
+
+
+## Program affiliation: a school hosts/runs a program
+program-affiliation sub relation,
+    relates school,
+    relates program,
+    owns notes;
+
+LawSchool plays program-affiliation:school;
+Program plays program-affiliation:program;
+
+
+## Faculty appointment: faculty member holds a role at a school
+faculty-appointment sub relation,
+    relates faculty-member,
+    relates school,
+    owns faculty-title,
+    owns appointment-type,
+    owns year-start,
+    owns notes;
+
+Faculty plays faculty-appointment:faculty-member;
+LawSchool plays faculty-appointment:school;
+
+
+## Faculty expertise: maps faculty to topic areas
+faculty-expertise sub relation,
+    relates faculty-member,
+    relates topic;
+
+Faculty plays faculty-expertise:faculty-member;
+Topic plays faculty-expertise:topic;
+
+
+## Institutional partnership: a school has a formal partnership with an org
+institutional-partnership sub relation,
+    relates school,
+    relates partner,
+    owns year-start,
+    owns description,
+    owns is-active,
+    owns notes;
+
+LawSchool plays institutional-partnership:school;
+Partnership plays institutional-partnership:partner;
+
+
+## Student org membership: a student org is associated with a school
+student-org-affiliation sub relation,
+    relates school,
+    relates org;
+
+LawSchool plays student-org-affiliation:school;
+StudentOrg plays student-org-affiliation:org;
+
+
+## Accreditation holding: a school holds an accreditation
+accreditation-holding sub relation,
+    relates school,
+    relates accreditation;
+
+LawSchool plays accreditation-holding:school;
+Accreditation plays accreditation-holding:accreditation;
+
+
+## Press release gap: a documented gap attributed to a school
+school-press-release-gap sub relation,
+    relates school,
+    relates gap;
+
+LawSchool plays school-press-release-gap:school;
+PressReleaseGap plays school-press-release-gap:gap;

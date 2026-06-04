@@ -190,6 +190,36 @@
     }
   ],
   "press_release_gap": [],
+  "external_rankings": {
+    "qs_law": {
+      "rank": 3,
+      "year": 2024,
+      "url": "https://www.topuniversities.com/university-rankings/university-subject-rankings/law"
+    },
+    "the_law": {
+      "rank": 3,
+      "year": 2024,
+      "url": "https://www.timeshighereducation.com/world-university-rankings/by-subject"
+    },
+    "arwu_law": {
+      "rank": 2,
+      "year": 2024,
+      "url": "https://www.shanghairanking.com/rankings/gras/2024/RS0106"
+    },
+    "usnews_law": {
+      "rank": 1,
+      "year": 2024,
+      "url": "https://www.usnews.com/best-graduate-schools/top-law-schools/law-rankings"
+    },
+    "usnews_global_law": {
+      "rank": 3,
+      "year": 2024,
+      "url": "https://www.usnews.com/education/best-global-universities/law"
+    },
+    "vault_law": null
+  },
+  "meta_score": null,
+  "meta_rank": null,
   "scores": null,
   "ranking_tier": null,
   "notes": "Stanford Law is widely considered a global leader in legaltech education, driven primarily by CodeX, the Legal Design Lab, and the JD/CS joint degree. Proximity to Silicon Valley creates substantial industry partnership opportunities. Full verification needed for all source URLs and program statuses."

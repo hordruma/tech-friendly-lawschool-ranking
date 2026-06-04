@@ -13,7 +13,7 @@ interface RankingTableProps {
   countries: string[];
 }
 
-type SortKey = "rank" | "name" | "country" | "score" | "tier";
+type SortKey = "meta_rank" | "rank" | "name" | "country" | "score" | "tier" | "prestige";
 type SortDir = "asc" | "desc";
 
 const TIER_ORDER: Record<string, number> = {
@@ -21,7 +21,7 @@ const TIER_ORDER: Record<string, number> = {
 };
 
 export function RankingTable({ schools, countries }: RankingTableProps) {
-  const [sortKey, setSortKey] = useState<SortKey>("rank");
+  const [sortKey, setSortKey] = useState<SortKey>("meta_rank");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
   const [filterCountry, setFilterCountry] = useState<string>("");
   const [filterTier, setFilterTier] = useState<string>("");
@@ -33,7 +33,7 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
       setSortDir((d) => (d === "asc" ? "desc" : "asc"));
     } else {
       setSortKey(key);
-      setSortDir(key === "name" || key === "country" ? "asc" : "desc");
+      setSortDir(key === "name" || key === "country" ? "asc" : "asc");
     }
   };
 
@@ -57,9 +57,28 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
     data.sort((a, b) => {
       let cmp = 0;
       switch (sortKey) {
+        case "meta_rank":
+          // Sort by meta_score descending; nulls last
+          if (a.meta_score !== null && b.meta_score !== null) {
+            cmp = b.meta_score - a.meta_score;
+          } else if (a.meta_score !== null) {
+            cmp = -1;
+          } else if (b.meta_score !== null) {
+            cmp = 1;
+          }
+          break;
         case "rank":
         case "score":
           cmp = (b.scores?.total ?? -1) - (a.scores?.total ?? -1);
+          break;
+        case "prestige":
+          if (a.prestige_score !== null && b.prestige_score !== null) {
+            cmp = b.prestige_score - a.prestige_score;
+          } else if (a.prestige_score !== null) {
+            cmp = -1;
+          } else if (b.prestige_score !== null) {
+            cmp = 1;
+          }
           break;
         case "name":
           cmp = a.name.localeCompare(b.name);
@@ -136,7 +155,32 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
           Verified only
         </label>
 
-        <span className="text-xs text-gray-400 dark:text-gray-500 ml-auto">
+        {/* Sort toggle */}
+        <div className="flex items-center gap-1 ml-auto">
+          <span className="text-xs text-gray-500 dark:text-gray-400 mr-1">Sort:</span>
+          {(
+            [
+              { key: "meta_rank", label: "Meta Rank" },
+              { key: "rank", label: "Tech Rank" },
+              { key: "prestige", label: "Prestige" },
+            ] as { key: SortKey; label: string }[]
+          ).map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => handleSort(key)}
+              className={clsx(
+                "text-xs px-2 py-1 rounded-md font-medium transition-colors",
+                sortKey === key
+                  ? "bg-brand-600 text-white"
+                  : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
+              )}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        <span className="text-xs text-gray-400 dark:text-gray-500">
           {sorted.length} school{sorted.length !== 1 ? "s" : ""}
         </span>
       </div>
@@ -148,9 +192,9 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
             <tr className="bg-gray-50 dark:bg-gray-800 text-left">
               <th
                 className="px-4 py-3 font-semibold text-gray-600 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-gray-100 whitespace-nowrap"
-                onClick={() => handleSort("rank")}
+                onClick={() => handleSort("meta_rank")}
               >
-                Rank <SortIcon k="rank" />
+                Meta Rank <SortIcon k="meta_rank" />
               </th>
               <th
                 className="px-4 py-3 font-semibold text-gray-600 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-gray-100"
@@ -174,7 +218,13 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
                 className="px-4 py-3 font-semibold text-gray-600 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-gray-100 text-right whitespace-nowrap"
                 onClick={() => handleSort("score")}
               >
-                Score <SortIcon k="score" />
+                Tech Score <SortIcon k="score" />
+              </th>
+              <th
+                className="px-4 py-3 font-semibold text-gray-600 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-gray-100 text-right whitespace-nowrap"
+                onClick={() => handleSort("prestige")}
+              >
+                Prestige <SortIcon k="prestige" />
               </th>
               <th className="px-4 py-3 font-semibold text-gray-600 dark:text-gray-400 text-center whitespace-nowrap">
                 Features
@@ -191,7 +241,7 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
             {sorted.length === 0 && (
               <tr>
                 <td
-                  colSpan={7}
+                  colSpan={8}
                   className="px-4 py-12 text-center text-gray-400 dark:text-gray-500"
                 >
                   No schools match your filters.
@@ -219,8 +269,18 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
 function TableRow({ school, rank }: { school: SchoolSummary; rank: number }) {
   return (
     <tr className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-      <td className="px-4 py-3 font-mono text-gray-400 dark:text-gray-500 text-xs">
-        #{rank}
+      {/* Meta Rank */}
+      <td className="px-4 py-3 text-center">
+        {school.meta_score !== null ? (
+          <div>
+            <span className="font-mono text-xs text-gray-500 dark:text-gray-400">#{rank}</span>
+            <div className="text-xs font-semibold text-brand-600 dark:text-brand-400">
+              {school.meta_score.toFixed(0)}
+            </div>
+          </div>
+        ) : (
+          <span className="text-xs text-gray-300 dark:text-gray-600 italic">—</span>
+        )}
       </td>
       <td className="px-4 py-3">
         <Link
@@ -248,9 +308,16 @@ function TableRow({ school, rank }: { school: SchoolSummary; rank: number }) {
       <td className="px-4 py-3 text-center">
         <ScoreBadge tier={school.ranking_tier} size="sm" />
       </td>
+      {/* Tech Score */}
       <td className="px-4 py-3 text-right font-mono font-semibold text-gray-800 dark:text-gray-200">
         {school.scores?.total !== null && school.scores?.total !== undefined
           ? school.scores.total.toFixed(0)
+          : "—"}
+      </td>
+      {/* Prestige Score */}
+      <td className="px-4 py-3 text-right font-mono font-semibold text-indigo-700 dark:text-indigo-300">
+        {school.prestige_score !== null && school.prestige_score !== undefined
+          ? school.prestige_score.toFixed(0)
           : "—"}
       </td>
       <td className="px-4 py-3 text-center">

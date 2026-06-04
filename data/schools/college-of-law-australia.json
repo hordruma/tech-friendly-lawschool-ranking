@@ -139,6 +139,16 @@
     }
   ],
   "student_orgs": [],
+  "external_rankings": {
+    "qs_law": null,
+    "the_law": null,
+    "arwu_law": null,
+    "usnews_law": null,
+    "usnews_global_law": null,
+    "vault_law": null
+  },
+  "meta_score": null,
+  "meta_rank": null,
   "press_release_gap": [
     {
       "claimed": "In 2022, the College of Law announced a dedicated 'LegalTech Hub' with co-working space, startup incubation, and industry mentoring as a key feature of its new campus.",

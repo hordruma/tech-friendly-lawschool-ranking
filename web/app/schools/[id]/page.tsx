@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllSchoolIds, getSchoolById, getCountryName } from "@/lib/data";
-import { computeScores } from "@/lib/scoring";
+import { computeScores, computeMetaScore } from "@/lib/scoring";
 import { ScoreBadge, ScoreBar } from "@/components/ScoreBadge";
 import { PressReleaseGapAlert } from "@/components/PressReleaseGapAlert";
-import type { Course, Program, Faculty, Partnership, StudentOrg } from "@/lib/types";
+import type { Course, Program, Faculty, Partnership, StudentOrg, ExternalRankings } from "@/lib/types";
+import { EXTERNAL_RANKING_LABELS, EXTERNAL_RANKING_URLS } from "@/lib/types";
 
 interface Props {
   params: { id: string };
@@ -35,6 +36,12 @@ export default function SchoolPage({ params }: Props) {
   const scores = school.scores ?? computed.scores;
   const tier = school.ranking_tier ?? computed.ranking_tier;
   const criteria = computed.criteria;
+
+  // Compute meta score
+  const metaComputed = computeMetaScore(school);
+  const metaScore = school.meta_score ?? metaComputed.meta_score;
+  const prestigeScore = metaComputed.prestige_score;
+  const externalScoresNormalized = metaComputed.external_scores_normalized;
 
   const isVerified = school.last_verified !== null;
 
@@ -160,6 +167,68 @@ export default function SchoolPage({ params }: Props) {
             </a>
             .
           </p>
+        )}
+      </section>
+
+      {/* Meta Score & External Rankings */}
+      <section>
+        <SectionHeader title="Global Prestige & Meta Rank" />
+        <div className="mt-4 p-4 rounded-lg bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800">
+          <p className="text-xs text-indigo-700 dark:text-indigo-300 mb-4">
+            <strong>Meta rank = 50% tech friendliness + 50% global prestige.</strong>{" "}
+            Prestige is a normalized composite of major global law school rankings.
+            Missing rankings are excluded from the average, not zeroed.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div className="p-3 rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 text-center">
+              <div className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Tech Score</div>
+              <div className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">
+                {scores?.total?.toFixed(0) ?? "—"}
+                <span className="text-sm font-normal text-gray-400">/100</span>
+              </div>
+            </div>
+            <div className="p-3 rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 text-center">
+              <div className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Prestige Score</div>
+              <div className="text-2xl font-serif font-bold text-indigo-700 dark:text-indigo-300">
+                {prestigeScore !== null ? prestigeScore.toFixed(1) : "—"}
+                <span className="text-sm font-normal text-gray-400">/100</span>
+              </div>
+            </div>
+            <div className="p-3 rounded-lg bg-indigo-600 dark:bg-indigo-800 text-white text-center">
+              <div className="text-xs text-indigo-200 mb-0.5">Meta Score</div>
+              <div className="text-2xl font-serif font-bold">
+                {metaScore !== null ? metaScore.toFixed(1) : "—"}
+                <span className="text-sm font-normal text-indigo-300">/100</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* External Rankings table */}
+        {school.external_rankings && (
+          <div className="mt-4">
+            <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              External Ranking Positions (2024)
+            </h3>
+            <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-gray-50 dark:bg-gray-800">
+                    <th className="px-4 py-2 text-left text-xs font-semibold text-gray-500 dark:text-gray-400">Ranking</th>
+                    <th className="px-4 py-2 text-center text-xs font-semibold text-gray-500 dark:text-gray-400">Rank</th>
+                    <th className="px-4 py-2 text-center text-xs font-semibold text-gray-500 dark:text-gray-400">Normalized (0–100)</th>
+                    <th className="px-4 py-2 text-left text-xs font-semibold text-gray-500 dark:text-gray-400">Source</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+                  <ExternalRankingRows
+                    rankings={school.external_rankings}
+                    normalizedScores={externalScoresNormalized}
+                  />
+                </tbody>
+              </table>
+            </div>
+          </div>
         )}
       </section>
 
@@ -449,6 +518,53 @@ function PartnershipRow({ partnership }: { partnership: Partnership }) {
         )}
       </div>
     </div>
+  );
+}
+
+function ExternalRankingRows({
+  rankings,
+  normalizedScores,
+}: {
+  rankings: ExternalRankings;
+  normalizedScores: Record<string, number | null>;
+}) {
+  const keys = Object.keys(EXTERNAL_RANKING_LABELS) as (keyof ExternalRankings)[];
+
+  return (
+    <>
+      {keys.map((key) => {
+        const entry = rankings[key];
+        const normalized = normalizedScores[key] ?? null;
+        const label = EXTERNAL_RANKING_LABELS[key];
+        const sourceUrl = entry?.url ?? EXTERNAL_RANKING_URLS[key];
+
+        return (
+          <tr key={key} className={entry === null || entry.rank === null ? "opacity-40" : ""}>
+            <td className="px-4 py-2 text-gray-800 dark:text-gray-200">
+              <a
+                href={sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-600 dark:hover:text-brand-400 hover:underline"
+              >
+                {label} ↗
+              </a>
+            </td>
+            <td className="px-4 py-2 text-center font-mono text-gray-700 dark:text-gray-300">
+              {entry?.rank !== null && entry?.rank !== undefined ? `#${entry.rank}` : "—"}
+            </td>
+            <td className="px-4 py-2 text-center font-mono text-indigo-700 dark:text-indigo-300">
+              {normalized !== null ? normalized.toFixed(1) : "—"}
+            </td>
+            <td className="px-4 py-2">
+              {entry?.year ? (
+                <span className="text-xs text-gray-400 dark:text-gray-500">{entry.year}</span>
+              ) : null}
+            </td>
+          </tr>
+        );
+      })}
+    </>
   );
 }
 

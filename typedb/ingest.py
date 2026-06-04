@@ -128,6 +128,15 @@ def ingest_school(tx, school: dict) -> None:
     for i, gap in enumerate(school.get("press_release_gap") or []):
         _upsert_prg(tx, slug, gap, index=i)
 
+    # ── External Rankings ───────────────────────────────────────────────
+    ext_rankings = school.get("external_rankings") or {}
+    for source_id, entry in ext_rankings.items():
+        if entry is not None:
+            _upsert_external_ranking(tx, slug, source_id, entry)
+
+    # ── Meta scores (prestige-score, meta-score, meta-rank) ─────────────
+    _update_meta_scores(tx, school)
+
 
 def _upsert_school(tx, school: dict) -> None:
     slug = school["id"]
@@ -485,6 +494,69 @@ def _upsert_prg(tx, school_slug: str, gap: dict, index: int) -> None:
         $g isa PressReleaseGap, {attr_str};
         (school: $school, gap: $g) isa school-press-release-gap;
     """)
+
+
+def _upsert_external_ranking(tx, school_slug: str, source_id: str, entry: dict) -> None:
+    """Upsert a single external ranking entry and link it to the school."""
+    rank = entry.get("rank")
+    year = entry.get("year")
+    url = entry.get("url")
+
+    # Deduplicate on school + source_id
+    check = f"""
+    match
+        $school isa LawSchool, has slug {_str(school_slug)};
+        $er isa ExternalRanking, has source-id {_str(source_id)};
+        (school: $school, ranking: $er) isa external-ranking-position;
+    """
+    if list(tx.query.get(check)):
+        return
+
+    attrs = [f'has source-id {_str(source_id)}']
+    if rank is not None:
+        attrs.append(f'has ext-rank {int(rank)}')
+    if year is not None:
+        attrs.append(f'has ext-year {int(year)}')
+    if url:
+        attrs.append(f'has ext-source-url {_str(url)}')
+
+    attr_str = ", ".join(attrs)
+    tx.query.insert(f"""
+    match
+        $school isa LawSchool, has slug {_str(school_slug)};
+    insert
+        $er isa ExternalRanking, {attr_str};
+        (school: $school, ranking: $er) isa external-ranking-position;
+    """)
+
+
+def _update_meta_scores(tx, school: dict) -> None:
+    """Write prestige-score, meta-score, and meta-rank attributes onto the LawSchool entity."""
+    slug = school["id"]
+
+    prestige = school.get("prestige_score")
+    meta = school.get("meta_score")
+    meta_rank = school.get("meta_rank")
+
+    # Only attempt to set values that are present and non-null
+    attrs_to_set = []
+    if prestige is not None:
+        attrs_to_set.append(f'has prestige-score {float(prestige)}')
+    if meta is not None:
+        attrs_to_set.append(f'has meta-score {float(meta)}')
+    if meta_rank is not None:
+        attrs_to_set.append(f'has meta-rank {int(meta_rank)}')
+
+    if not attrs_to_set:
+        return
+
+    for attr_clause in attrs_to_set:
+        tx.query.insert(f"""
+        match
+            $school isa LawSchool, has slug {_str(slug)};
+        insert
+            $school {attr_clause};
+        """)
 
 
 # ──────────────────────────────────────────────

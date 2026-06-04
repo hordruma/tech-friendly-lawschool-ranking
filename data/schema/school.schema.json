@@ -309,6 +309,89 @@
         }
       }
     },
+    "external_rankings": {
+      "type": ["object", "null"],
+      "description": "External ranking positions from major global law school rankings. Null means no external ranking data collected.",
+      "additionalProperties": false,
+      "properties": {
+        "qs_law": {
+          "type": ["object", "null"],
+          "description": "QS World University Rankings by Subject: Law",
+          "additionalProperties": false,
+          "properties": {
+            "rank": { "type": ["integer", "null"] },
+            "year": { "type": "integer" },
+            "url": { "type": ["string", "null"], "format": "uri" }
+          },
+          "required": ["rank", "year", "url"]
+        },
+        "the_law": {
+          "type": ["object", "null"],
+          "description": "Times Higher Education World University Rankings (Law subject)",
+          "additionalProperties": false,
+          "properties": {
+            "rank": { "type": ["integer", "null"] },
+            "year": { "type": "integer" },
+            "url": { "type": ["string", "null"], "format": "uri" }
+          },
+          "required": ["rank", "year", "url"]
+        },
+        "arwu_law": {
+          "type": ["object", "null"],
+          "description": "Shanghai Ranking / ARWU Global Ranking of Academic Subjects: Law",
+          "additionalProperties": false,
+          "properties": {
+            "rank": { "type": ["integer", "null"] },
+            "year": { "type": "integer" },
+            "url": { "type": ["string", "null"], "format": "uri" }
+          },
+          "required": ["rank", "year", "url"]
+        },
+        "usnews_law": {
+          "type": ["object", "null"],
+          "description": "US News & World Report Best Law Schools (domestic US ranking)",
+          "additionalProperties": false,
+          "properties": {
+            "rank": { "type": ["integer", "null"] },
+            "year": { "type": "integer" },
+            "url": { "type": ["string", "null"], "format": "uri" }
+          },
+          "required": ["rank", "year", "url"]
+        },
+        "usnews_global_law": {
+          "type": ["object", "null"],
+          "description": "US News & World Report Best Global Universities for Law",
+          "additionalProperties": false,
+          "properties": {
+            "rank": { "type": ["integer", "null"] },
+            "year": { "type": "integer" },
+            "url": { "type": ["string", "null"], "format": "uri" }
+          },
+          "required": ["rank", "year", "url"]
+        },
+        "vault_law": {
+          "type": ["object", "null"],
+          "description": "Vault Law School Rankings",
+          "additionalProperties": false,
+          "properties": {
+            "rank": { "type": ["integer", "null"] },
+            "year": { "type": "integer" },
+            "url": { "type": ["string", "null"], "format": "uri" }
+          },
+          "required": ["rank", "year", "url"]
+        }
+      }
+    },
+    "meta_score": {
+      "type": ["number", "null"],
+      "description": "Computed meta-score combining tech score and prestige score (0–100). Null means not yet computed.",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "meta_rank": {
+      "type": ["integer", "null"],
+      "description": "Ordinal meta-rank position among all ranked schools. Null means not yet ranked."
+    },
     "scores": {
       "type": ["object", "null"],
       "description": "Computed scores per criteria. Null means not yet scored.",

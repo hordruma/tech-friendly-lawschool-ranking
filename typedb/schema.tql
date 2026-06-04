@@ -75,6 +75,18 @@ reality-text     sub attribute, value string;
 gap-severity     sub attribute, value string;   # minor | moderate | major | egregious
 penalty-points   sub attribute, value double;   # negative value, -5 to -20
 
+# External rankings
+source-id           sub attribute, value string;   # e.g. qs_law | the_law | arwu_law | usnews_law
+ext-rank            sub attribute, value long;      # rank position in the external ranking
+ext-year            sub attribute, value long;      # year of the ranking edition
+ext-source-url      sub attribute, value string;   # URL to the ranking homepage
+normalized-score    sub attribute, value double;   # 0-100 normalized score for this ranking
+
+# Meta scores
+prestige-score      sub attribute, value double;   # 0-100 average normalized external ranking score
+meta-score          sub attribute, value double;   # 0-100 combined tech + prestige meta-score
+meta-rank           sub attribute, value long;     # ordinal meta-rank position
+
 # Scores
 score-curriculum-courses    sub attribute, value double;
 score-curriculum-practical  sub attribute, value double;
@@ -116,7 +128,17 @@ LawSchool sub entity,
     owns score-community-careers,
     owns score-prg-penalty,
     owns score-total,
-    owns ranking-tier;
+    owns ranking-tier,
+    owns prestige-score,
+    owns meta-score,
+    owns meta-rank;
+
+ExternalRanking sub entity,
+    owns source-id,
+    owns ext-rank,
+    owns ext-year,
+    owns ext-source-url,
+    owns normalized-score;
 
 Course sub entity,
     owns course-id @key,
@@ -274,3 +296,12 @@ school-press-release-gap sub relation,
 
 LawSchool plays school-press-release-gap:school;
 PressReleaseGap plays school-press-release-gap:gap;
+
+
+## External ranking position: links a law school to one external ranking entry
+external-ranking-position sub relation,
+    relates school,
+    relates ranking;
+
+LawSchool plays external-ranking-position:school;
+ExternalRanking plays external-ranking-position:ranking;

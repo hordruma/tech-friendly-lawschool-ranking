@@ -146,6 +146,32 @@
     }
   ],
   "press_release_gap": [],
+  "external_rankings": {
+    "qs_law": {
+      "rank": 1,
+      "year": 2024,
+      "url": "https://www.topuniversities.com/university-rankings/university-subject-rankings/law"
+    },
+    "the_law": {
+      "rank": 2,
+      "year": 2024,
+      "url": "https://www.timeshighereducation.com/world-university-rankings/by-subject"
+    },
+    "arwu_law": {
+      "rank": 3,
+      "year": 2024,
+      "url": "https://www.shanghairanking.com/rankings/gras/2024/RS0106"
+    },
+    "usnews_law": null,
+    "usnews_global_law": {
+      "rank": 1,
+      "year": 2024,
+      "url": "https://www.usnews.com/education/best-global-universities/law"
+    },
+    "vault_law": null
+  },
+  "meta_score": null,
+  "meta_rank": null,
   "scores": null,
   "ranking_tier": null,
   "notes": "Oxford Law has deep expertise in internet law and data governance through the OII collaboration, but the primary JD-equivalent (BA in Jurisprudence) has a traditional curriculum that integrates less technology than US peer schools. The BCL and MSt graduate programmes are more flexible. US-trained scorers should note the different curriculum structure — Oxford does not use credit-hour elective systems in the same way. Full verification needed."

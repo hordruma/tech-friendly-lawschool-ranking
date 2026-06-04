@@ -195,6 +195,24 @@
     }
   ],
   "press_release_gap": [],
+  "external_rankings": {
+    "qs_law": {
+      "rank": 10,
+      "year": 2024,
+      "url": "https://www.topuniversities.com/university-rankings/university-subject-rankings/law"
+    },
+    "the_law": {
+      "rank": 15,
+      "year": 2024,
+      "url": "https://www.timeshighereducation.com/world-university-rankings/by-subject"
+    },
+    "arwu_law": null,
+    "usnews_law": null,
+    "usnews_global_law": null,
+    "vault_law": null
+  },
+  "meta_score": null,
+  "meta_rank": null,
   "scores": null,
   "ranking_tier": null,
   "notes": "NUS Law is widely regarded as Southeast Asia's leading law school and has invested substantially in legaltech through TRAIL and curriculum integration. Singapore's position as a global fintech and legaltech hub provides unique partnerships and placement opportunities. NUS is a genuine A or S tier contender pending full verification. TRAIL in particular warrants close examination."

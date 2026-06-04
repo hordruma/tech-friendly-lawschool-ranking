@@ -87,6 +87,9 @@ prestige-score      sub attribute, value double;   # 0-100 average normalized ex
 meta-score          sub attribute, value double;   # 0-100 combined tech + prestige meta-score
 meta-rank           sub attribute, value long;     # ordinal meta-rank position
 
+# Program-specific (practical focus flag)
+practical-focus  sub attribute, value boolean;   # true = hands-on/practice-oriented; false = purely academic
+
 # Scores
 score-curriculum-courses    sub attribute, value double;
 score-curriculum-practical  sub attribute, value double;
@@ -101,6 +104,15 @@ score-community-careers     sub attribute, value double;
 score-prg-penalty           sub attribute, value double;
 score-total                 sub attribute, value double;
 ranking-tier                sub attribute, value string;   # S | A | B | C | D | unranked
+
+# Practical skills score (independent dimension, 0-100)
+# Sub-scores: clinical-programs (0-25), skills-curriculum (0-25),
+#             experiential-placements (0-25), professional-readiness (0-25)
+practical-skills-score              sub attribute, value double;   # 0-100 total
+practical-skills-clinical           sub attribute, value double;   # 0-25
+practical-skills-curriculum         sub attribute, value double;   # 0-25
+practical-skills-placements         sub attribute, value double;   # 0-25
+practical-skills-readiness          sub attribute, value double;   # 0-25
 
 
 ## ─────────────────────────────────────────────
@@ -129,6 +141,13 @@ LawSchool sub entity,
     owns score-prg-penalty,
     owns score-total,
     owns ranking-tier,
+    # Practical skills score (independent dimension; see CRITERIA.md Section 3.6)
+    # Meta-score formula: tech 50% + practical-skills 30% + prestige 20%
+    owns practical-skills-score,
+    owns practical-skills-clinical,
+    owns practical-skills-curriculum,
+    owns practical-skills-placements,
+    owns practical-skills-readiness,
     owns prestige-score,
     owns meta-score,
     owns meta-rank;
@@ -158,6 +177,7 @@ Program sub entity,
     owns program-type,
     owns description,
     owns tech-focus,
+    owns practical-focus,   # true = hands-on/practice-oriented; false = purely academic; null = unclassified
     owns source-url,
     owns year-verified,
     owns program-status,

@@ -155,6 +155,10 @@
             "type": "boolean",
             "description": "Whether technology is a primary focus (vs. incidental)"
           },
+          "practical_focus": {
+            "type": ["boolean", "null"],
+            "description": "Whether this program is hands-on / practice-oriented (true) vs. purely academic (false). Null means unclassified."
+          },
           "source_url": {
             "type": ["string", "null"],
             "format": "uri"
@@ -382,9 +386,46 @@
         }
       }
     },
+    "practical_skills_score": {
+      "type": ["number", "null"],
+      "description": "Computed practical skills score (0–100), independent of the tech-friendliness score. Measures clinical programs, skills curriculum, experiential placements, and professional readiness. Null means not yet researched.",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "practical_skills_breakdown": {
+      "type": ["object", "null"],
+      "description": "Sub-scores for the four practical skills dimensions. Null means not yet computed.",
+      "additionalProperties": false,
+      "properties": {
+        "clinical_programs": {
+          "type": ["number", "null"],
+          "description": "Clinical programs sub-score (0–25).",
+          "minimum": 0,
+          "maximum": 25
+        },
+        "skills_curriculum": {
+          "type": ["number", "null"],
+          "description": "Skills curriculum sub-score (0–25).",
+          "minimum": 0,
+          "maximum": 25
+        },
+        "experiential_placements": {
+          "type": ["number", "null"],
+          "description": "Experiential placements sub-score (0–25).",
+          "minimum": 0,
+          "maximum": 25
+        },
+        "professional_readiness": {
+          "type": ["number", "null"],
+          "description": "Professional readiness sub-score (0–25).",
+          "minimum": 0,
+          "maximum": 25
+        }
+      }
+    },
     "meta_score": {
       "type": ["number", "null"],
-      "description": "Computed meta-score combining tech score and prestige score (0–100). Null means not yet computed.",
+      "description": "Computed meta-score combining tech score (50%), practical skills score (30%), and prestige score (20%) (0–100). Null means not yet computed.",
       "minimum": 0,
       "maximum": 100
     },

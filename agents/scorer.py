@@ -521,10 +521,22 @@ def compute_meta_score(school_data: dict) -> dict[str, Any]:
         computed = compute_scores(school_data)
         tech_score = float(computed["scores"]["total"])
 
+    # Formula v2.0: tech 50%, practical skills 30%, prestige 20%.
+    # practical_skills_score is not yet implemented; use null fallback:
+    #   meta_score = (tech_score × 0.625) + (prestige_score × 0.375)
+    # (proportional rescale of 50:20 when practical skills = null)
+    practical_skills_score = school_data.get("practical_skills_score")
+
     if prestige_score is None:
         meta_score = None
+    elif practical_skills_score is not None:
+        meta_score = round(
+            (tech_score * 0.50) + (float(practical_skills_score) * 0.30) + (prestige_score * 0.20),
+            2
+        )
     else:
-        meta_score = round((tech_score * 0.5) + (prestige_score * 0.5), 2)
+        # Null fallback: rescale tech and prestige to sum to 1.0
+        meta_score = round((tech_score * 0.625) + (prestige_score * 0.375), 2)
 
     return {
         "meta_score": meta_score,

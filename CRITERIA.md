@@ -23,7 +23,9 @@ We rank law schools globally. We do not treat US ABA-accredited schools as a def
 
 Modern legal practice is being reshaped by artificial intelligence, document automation, data analytics, and new legal delivery models. We believe that a law school's genuine engagement with technology is measurable through concrete, verifiable evidence — not press releases.
 
-We measure **four substantive dimensions** plus a **press release gap** accountability mechanism:
+We measure **four substantive dimensions** plus a **press release gap** accountability mechanism for the **Tech-Friendliness Score**. Alongside it, we compute an independent **Practical Skills Score** assessing how well schools prepare students for real practice. These two scores, together with an aggregated **Prestige Score** derived from external rankings, feed the **Meta-Rank**.
+
+### Tech-Friendliness Score (0–100)
 
 | Dimension | Points | Rationale |
 |-----------|--------|-----------|
@@ -32,6 +34,23 @@ We measure **four substantive dimensions** plus a **press release gap** accounta
 | Faculty & Research | 20 | Intellectual leadership drives curriculum and produces knowledge |
 | Community & Career | 10 | Student outcomes are the ultimate measure |
 | Press Release Gap (penalty) | −5 to −20 | Accountability for marketed-but-discontinued programs |
+
+### Practical Skills Score (0–100, independent dimension)
+
+| Sub-dimension | Points | Rationale |
+|---------------|--------|-----------|
+| Clinical programs | 0–25 | Live-client clinics are the clearest signal of practical training |
+| Skills curriculum | 0–25 | Structured simulation and advocacy training |
+| Experiential placements | 0–25 | Externships and field placements extend learning into real practice |
+| Professional readiness | 0–25 | Pro bono requirements, bar support, and employer partnerships |
+
+### Meta-Rank Weights
+
+| Signal | Weight | Rationale |
+|--------|--------|-----------|
+| Tech-Friendliness Score | 50% | Our primary unique contribution |
+| Practical Skills Score | 30% | How well schools prepare students for real practice |
+| Prestige Score | 20% | Contextual background already covered by other rankings |
 
 ---
 
@@ -160,6 +179,57 @@ PRG deductions are cumulative with a floor of −20 total.
 
 ---
 
+## 3.6 Practical Skills Score (0–100, independent dimension)
+
+The **Practical Skills Score** is a fully independent score from the Tech-Friendliness Score. It measures how well a law school prepares students for the realities of legal practice through clinical programs, skills curricula, experiential placements, and professional readiness initiatives.
+
+This score feeds the Meta-Rank at 30% weight (see Section 9).
+
+### 3.6.1 Clinical Programs (0–25 points)
+
+Points are awarded per distinct live-client clinic with a verified current enrollment:
+
+- **Each distinct live-client clinic:** 4 points (maximum 20 points)
+- **Required clinical participation:** +5 bonus points (if at least one clinic is mandatory for all JD students)
+
+A clinic qualifies if it involves actual client representation or direct service, as distinct from simulations. Virtual or limited-scope clinics count if they involve real clients.
+
+### 3.6.2 Skills Curriculum (0–25 points)
+
+- **Required skills/simulation courses:** 3 points each (maximum 15 points)
+  - Qualifying courses: legal writing (advanced), negotiation, client counseling, trial advocacy, drafting, professional responsibility with practical component
+- **Moot court / negotiation / advocacy programs:** 2 points each (maximum 10 points)
+  - Qualifying: interscholastic moot court teams, intra-school competitions with coaching, structured negotiation programs
+
+### 3.6.3 Experiential Placements (0–25 points)
+
+- **Structured externship program:** up to 15 points
+  - 15 pts: comprehensive externship program with multiple placement tracks, faculty supervision, and academic integration
+  - 10 pts: structured externship program with supervision but limited academic integration
+  - 5 pts: informal or limited externship opportunities
+- **Field placement / co-op programs:** up to 10 points
+  - 10 pts: dedicated field placement or co-op program with employer partnerships and academic credit
+  - 5 pts: field placement opportunities without dedicated program infrastructure
+
+### 3.6.4 Professional Readiness (0–25 points)
+
+- **Pro bono requirement:**
+  - Mandatory (enforced hours requirement): 10 points
+  - Encouraged (stated goal, not enforced): 5 points
+  - None: 0 points
+- **Bar passage support / skills bridge:** up to 8 points
+  - Structured bar preparation program or skills bridge course with academic credit: 8 points
+  - Informal bar support resources or workshops: 4 points
+  - None: 0 points
+- **Career integration (employer partnerships for practical skills):** up to 7 points
+  - Documented relationships with legal employers specifically for practical skills development (not just placement): 7 points
+  - General career services without skills-specific employer partnerships: 3 points
+  - None: 0 points
+
+**Total Practical Skills Score: 0–100**
+
+---
+
 ## 4. Ranking Tiers
 
 | Tier | Score Range | Meaning |
@@ -234,6 +304,40 @@ All accepted corrections are merged via pull request and credited to the contrib
 ## 8. Versioning and Methodology Changes
 
 Changes to this methodology document are tracked via git. Major methodology changes that would affect existing scores trigger a re-verification cycle. Schools are notified of methodology changes before scores are updated.
+
+---
+
+## 9. Meta-Rank Formula
+
+The **Meta-Rank** is a composite ranking that combines three independent signals:
+
+1. **Tech-Friendliness Score (50%)** — our primary unique contribution (0–100, see Sections 3.1–3.5)
+2. **Practical Skills Score (30%)** — how well schools prepare students for real legal practice (0–100, see Section 3.6)
+3. **Prestige Score (20%)** — an aggregated, normalized score from major external global law school rankings
+
+### Rationale for 50/30/20 weights
+
+- **Tech-friendliness at 50%:** This is our primary signal and our unique analytical contribution. No other ranking measures this. It must dominate.
+- **Practical skills at 30%:** Closely related to our mission — we care about schools that prepare graduates for modern practice, not just theory. This dimension rewards schools that bridge knowledge and doing.
+- **Prestige at 20%:** Prestige is contextual background that other rankings already handle well. We include it to give users a sense of how tech and practical scores relate to traditional academic standing, but we do not let it dominate.
+
+### Meta-Score Formula
+
+```
+meta_score = (tech_score × 0.50) + (practical_skills_score × 0.30) + (prestige_score × 0.20)
+```
+
+If `practical_skills_score` is null (not yet researched), the formula falls back to:
+
+```
+meta_score = (tech_score × 0.625) + (prestige_score × 0.375)
+```
+
+(Proportionally rescaled so the two non-null components sum to 1.0.)
+
+If `prestige_score` is null (no external ranking data), the meta score is null and the school is excluded from meta-ranking.
+
+See `data/meta-ranking/formula.md` for the full normalization specification.
 
 ---
 

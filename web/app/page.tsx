@@ -38,6 +38,13 @@ export default function HomePage() {
               infrastructure, faculty, and community. And whether its marketing
               matches reality.
             </p>
+            <p className="mt-3 text-base text-gray-500 dark:text-gray-400 leading-relaxed">
+              We also publish a{" "}
+              <strong className="text-gray-700 dark:text-gray-300">meta-rank</strong>{" "}
+              that aggregates our tech-friendliness score with positions from six
+              major global law school rankings (QS, THE, ARWU, US News, and more)
+              — so you can see exactly where prestige and tech integration diverge.
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/rankings"
@@ -62,6 +69,7 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-8">
             <Stat value={totalSchools} label="Schools indexed" />
             <Stat value={verifiedSchools} label="Human-verified" />
+            <Stat value={6} label="External rankings aggregated" />
             <Stat value={prGapSchools} label="Press release gaps found" highlight />
           </div>
         </div>
@@ -218,6 +226,49 @@ export default function HomePage() {
             Read the full methodology →
           </Link>
         </p>
+      </section>
+
+      {/* Meta-ranking callout */}
+      <section className="bg-indigo-50 dark:bg-indigo-950/30 border-y border-indigo-200 dark:border-indigo-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-xl">
+              🌐
+            </div>
+            <div>
+              <h2 className="font-serif text-xl font-semibold text-indigo-900 dark:text-indigo-200 mb-2">
+                The Meta-Rank: Tech + Prestige
+              </h2>
+              <p className="text-indigo-800 dark:text-indigo-300 leading-relaxed max-w-2xl">
+                Our <strong>meta-rank</strong> combines tech-friendliness (50%) with an
+                aggregated prestige score drawn from six major global law school rankings:
+                QS Law, Times Higher Education, ARWU, US News (domestic and global), and Vault.
+                Each external ranking is normalized to a 0–100 scale using log-scaled inverse
+                rank — so the difference between #1 and #5 is weighted more heavily than
+                #50 vs. #55.
+              </p>
+              <p className="mt-2 text-indigo-700 dark:text-indigo-400 text-sm">
+                Missing rankings are excluded from the average, not penalized. A school not
+                covered by US News domestic rankings (e.g., an institution outside the US)
+                is not disadvantaged for that absence.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  href="/rankings"
+                  className="text-sm px-4 py-2 bg-indigo-700 text-white rounded-lg hover:bg-indigo-800 transition-colors font-medium inline-block"
+                >
+                  View Meta-Rankings →
+                </Link>
+                <Link
+                  href="/methodology"
+                  className="text-sm px-4 py-2 border border-indigo-300 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors font-medium inline-block"
+                >
+                  Formula details
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

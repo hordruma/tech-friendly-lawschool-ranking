@@ -1,0 +1,221 @@
+{
+  "id": "nus-law",
+  "name": "National University of Singapore Faculty of Law",
+  "country": "SG",
+  "jurisdiction": null,
+  "url": "https://law.nus.edu.sg",
+  "last_researched": null,
+  "last_verified": null,
+  "accreditation": [
+    {
+      "body": "Singapore Institute of Legal Education",
+      "jurisdiction": "Singapore",
+      "status": "accredited"
+    },
+    {
+      "body": "QAA-equivalent (Singapore government)",
+      "jurisdiction": "Singapore",
+      "status": "not_applicable"
+    }
+  ],
+  "courses": [
+    {
+      "id": "nus-law-technology-innovation",
+      "title": "Law and Technology in the Digital Age",
+      "credits": 4,
+      "type": "elective",
+      "topics": ["legal_technology", "artificial_intelligence", "regulatory_technology"],
+      "source_url": "https://law.nus.edu.sg/academic-programmes/undergraduate-programme/modules/",
+      "year_verified": null,
+      "notes": "Core legaltech elective. Verify current course number, credits, and instructor."
+    },
+    {
+      "id": "nus-ai-law",
+      "title": "Artificial Intelligence and Law",
+      "credits": 4,
+      "type": "elective",
+      "topics": ["artificial_intelligence", "machine_learning", "legal_ethics_tech"],
+      "source_url": "https://law.nus.edu.sg/academic-programmes/",
+      "year_verified": null,
+      "notes": "Offered under the Technology, Intellectual Property & Regulatory Law cluster. Verify."
+    },
+    {
+      "id": "nus-data-privacy-sg",
+      "title": "Data Protection and Privacy Law",
+      "credits": 4,
+      "type": "elective",
+      "topics": ["data_privacy", "regulatory_technology", "cybersecurity"],
+      "source_url": "https://law.nus.edu.sg/academic-programmes/undergraduate-programme/modules/",
+      "year_verified": null,
+      "notes": "Singapore PDPA-focused with broader GDPR context. Verify."
+    },
+    {
+      "id": "nus-fintech-law",
+      "title": "FinTech Law and Regulation",
+      "credits": 4,
+      "type": "elective",
+      "topics": ["regulatory_technology", "blockchain", "legal_technology"],
+      "source_url": "https://law.nus.edu.sg/academic-programmes/",
+      "year_verified": null,
+      "notes": "Singapore is a leading fintech jurisdiction; this is a standout course. Verify current status."
+    },
+    {
+      "id": "nus-cybersecurity-law",
+      "title": "Cybersecurity Law and Policy",
+      "credits": 4,
+      "type": "elective",
+      "topics": ["cybersecurity", "data_privacy", "regulatory_technology"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Verify catalog listing."
+    },
+    {
+      "id": "nus-ip-digital",
+      "title": "Intellectual Property in the Digital Economy",
+      "credits": 4,
+      "type": "elective",
+      "topics": ["intellectual_property_tech", "legal_technology"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Verify catalog."
+    }
+  ],
+  "programs": [
+    {
+      "id": "nus-lti",
+      "name": "NUS Centre for Technology, Robotics, Artificial Intelligence & the Law (TRAIL)",
+      "type": "center",
+      "description": "Research centre focused on legal and regulatory issues surrounding technology, AI, and robotics. Produces policy submissions, research papers, and runs international events.",
+      "tech_focus": true,
+      "source_url": "https://law.nus.edu.sg/trail/",
+      "year_verified": null,
+      "status": "active",
+      "notes": "TRAIL is one of Asia's leading legaltech research centres. Verify current director, active projects, and event calendar."
+    },
+    {
+      "id": "nus-lpdo",
+      "name": "LawTech.Asia / NUS LegalTech Courses",
+      "type": "certificate",
+      "description": "Certificate and micro-credential offerings in legal technology for law students and practitioners.",
+      "tech_focus": true,
+      "source_url": "https://lawtech.asia",
+      "year_verified": null,
+      "status": "unknown",
+      "notes": "Verify affiliation with NUS Law and current programme status. LawTech.Asia was initially associated with NUS faculty."
+    },
+    {
+      "id": "nus-llm-ip-tech",
+      "name": "LLM in Intellectual Property & Technology Law",
+      "type": "certificate",
+      "description": "Specialist LLM stream focusing on IP, technology regulation, and digital economy law.",
+      "tech_focus": true,
+      "source_url": "https://law.nus.edu.sg/academic-programmes/graduate-programme/",
+      "year_verified": null,
+      "status": "active",
+      "notes": "Verify current intake and curriculum."
+    },
+    {
+      "id": "nus-clinic-access",
+      "name": "Pro Bono and Community Legal Services with Tech Integration",
+      "type": "clinic",
+      "description": "NUS Law's pro bono clinic, with increasing technology integration for client services.",
+      "tech_focus": false,
+      "source_url": "https://law.nus.edu.sg/clio/",
+      "year_verified": null,
+      "status": "active",
+      "notes": "Verify whether tech-integrated delivery qualifies under clinic criteria."
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Lim How Khang",
+      "title": "Assistant Professor",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["artificial_intelligence", "data_governance", "regulatory_technology"],
+      "research_areas": ["AI regulation", "data law", "platform governance"],
+      "profile_url": "https://law.nus.edu.sg/faculty/lim-how-khang/"
+    },
+    {
+      "name": "Jerrold Soh",
+      "title": "Associate Professor",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["legal_analytics", "computational_law", "machine_learning"],
+      "research_areas": ["computational law", "legal text analysis", "AI and legal reasoning"],
+      "profile_url": "https://law.nus.edu.sg/faculty/jerrold-soh/"
+    },
+    {
+      "name": "Simon Chesterman",
+      "title": "Dean and Professor",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["artificial_intelligence", "legal_ethics_tech"],
+      "research_areas": ["AI governance", "global governance", "international law and AI"],
+      "profile_url": "https://law.nus.edu.sg/faculty/chesterman-simon/"
+    }
+  ],
+  "partnerships": [
+    {
+      "org": "Infocomm Media Development Authority (IMDA) Singapore",
+      "type": "government",
+      "description": "Research collaboration on AI governance, data regulation, and smart nation legal frameworks.",
+      "year_start": null,
+      "source_url": null,
+      "active": null
+    },
+    {
+      "org": "Singapore Academy of Law",
+      "type": "industry",
+      "description": "Joint programmes on legaltech adoption in the Singapore legal profession.",
+      "year_start": null,
+      "source_url": "https://www.sal.org.sg",
+      "active": null
+    },
+    {
+      "org": "Monetary Authority of Singapore (MAS)",
+      "type": "government",
+      "description": "Fintech regulatory research and policy engagement.",
+      "year_start": null,
+      "source_url": null,
+      "active": null
+    }
+  ],
+  "student_orgs": [
+    {
+      "name": "NUS Law Technology Society",
+      "focus": "LegalTech, innovation in legal services, student competitions",
+      "url": null,
+      "active": null,
+      "year_verified": null
+    },
+    {
+      "name": "NUS Asia-Pacific Centre for Environmental Law (student chapter)",
+      "focus": "Environmental and technology-driven regulation",
+      "url": null,
+      "active": null,
+      "year_verified": null
+    }
+  ],
+  "press_release_gap": [],
+  "external_rankings": {
+    "qs_law": {
+      "rank": 10,
+      "year": 2024,
+      "url": "https://www.topuniversities.com/university-rankings/university-subject-rankings/law"
+    },
+    "the_law": {
+      "rank": 15,
+      "year": 2024,
+      "url": "https://www.timeshighereducation.com/world-university-rankings/by-subject"
+    },
+    "arwu_law": null,
+    "usnews_law": null,
+    "usnews_global_law": null,
+    "vault_law": null
+  },
+  "practical_skills_score": null,
+  "practical_skills_breakdown": null,
+  "meta_score": null,
+  "meta_rank": null,
+  "scores": null,
+  "ranking_tier": null,
+  "notes": "NUS Law is widely regarded as Southeast Asia's leading law school and has invested substantially in legaltech through TRAIL and curriculum integration. Singapore's position as a global fintech and legaltech hub provides unique partnerships and placement opportunities. NUS is a genuine A or S tier contender pending full verification. TRAIL in particular warrants close examination."
+}

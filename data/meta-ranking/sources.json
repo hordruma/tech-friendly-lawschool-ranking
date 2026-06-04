@@ -1,0 +1,78 @@
+{
+  "sources": [
+    {
+      "id": "qs_law",
+      "name": "QS World University Rankings by Subject: Law",
+      "publisher": "Quacquarelli Symonds",
+      "url": "https://www.topuniversities.com/university-rankings/university-subject-rankings/law",
+      "methodology_url": "https://www.topuniversities.com/qs-world-university-rankings/methodology",
+      "update_frequency": "annual",
+      "coverage": "~350 institutions globally",
+      "weight_in_meta": 0.25
+    },
+    {
+      "id": "the_law",
+      "name": "Times Higher Education World University Rankings by Subject: Law",
+      "publisher": "Times Higher Education",
+      "url": "https://www.timeshighereducation.com/world-university-rankings/by-subject",
+      "methodology_url": "https://www.timeshighereducation.com/world-university-rankings/world-university-rankings-2024-methodology",
+      "update_frequency": "annual",
+      "coverage": "~200 institutions globally",
+      "weight_in_meta": 0.25
+    },
+    {
+      "id": "arwu_law",
+      "name": "Shanghai Ranking Global Ranking of Academic Subjects: Law",
+      "publisher": "ShanghaiRanking Consultancy (ARWU)",
+      "url": "https://www.shanghairanking.com/rankings/gras/2024/RS0106",
+      "methodology_url": "https://www.shanghairanking.com/methodology/gras/2024",
+      "update_frequency": "annual",
+      "coverage": "~200 institutions globally",
+      "weight_in_meta": 0.20
+    },
+    {
+      "id": "usnews_law",
+      "name": "US News & World Report Best Law Schools",
+      "publisher": "US News & World Report",
+      "url": "https://www.usnews.com/best-graduate-schools/top-law-schools/law-rankings",
+      "methodology_url": "https://www.usnews.com/education/best-graduate-schools/articles/law-schools-methodology",
+      "update_frequency": "annual",
+      "coverage": "~197 ABA-accredited US law schools",
+      "weight_in_meta": 0.15
+    },
+    {
+      "id": "usnews_global_law",
+      "name": "US News & World Report Best Global Universities for Law",
+      "publisher": "US News & World Report",
+      "url": "https://www.usnews.com/education/best-global-universities/law",
+      "methodology_url": "https://www.usnews.com/education/best-global-universities/articles/methodology",
+      "update_frequency": "annual",
+      "coverage": "~250 institutions globally",
+      "weight_in_meta": 0.10
+    },
+    {
+      "id": "vault_law",
+      "name": "Vault Law School Rankings",
+      "publisher": "Vault.com",
+      "url": "https://www.vault.com/best-companies-to-work-for/law/top-law-schools",
+      "methodology_url": "https://www.vault.com/best-companies-to-work-for/law/top-law-schools/methodology",
+      "update_frequency": "annual",
+      "coverage": "Top US law schools by employer prestige",
+      "weight_in_meta": 0.05
+    }
+  ],
+  "_note": "This file is documentation only. The authoritative weights and formula live in src/lawschool/scoring/meta.py. Update both together if changing the formula.",
+  "meta_rank_formula": {
+    "description": "The meta-rank combines three independent signals: our tech-friendliness score (primary unique contribution), a practical skills score (how well schools prepare students for real practice), and an aggregated prestige score derived from external global law school rankings. This allows users to see how a school performs across all three dimensions — and to observe where they diverge.",
+    "tech_friendliness_weight": 0.50,
+    "practical_skills_weight": 0.30,
+    "prestige_aggregate_weight": 0.20,
+    "prestige_normalization": "inverse_rank_log_scaled",
+    "prestige_max_rank_assumed": 500,
+    "minimum_rankings_for_prestige": 1,
+    "missing_ranking_treatment": "excluded_from_average",
+    "practical_skills_null_fallback": "proportional_rescale_tech_prestige_only",
+    "formula_version": "2.0",
+    "formula_last_updated": "2026-06-04"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "id": "harvard-law",
+  "name": "Harvard Law School",
+  "country": "US",
+  "jurisdiction": "Massachusetts",
+  "url": "https://hls.harvard.edu",
+  "last_researched": null,
+  "last_verified": null,
+  "accreditation": [
+    {
+      "body": "ABA",
+      "jurisdiction": "US",
+      "status": "accredited"
+    },
+    {
+      "body": "AALS",
+      "jurisdiction": "US",
+      "status": "accredited"
+    }
+  ],
+  "courses": [
+    {
+      "id": "hls-ai-law",
+      "title": "Artificial Intelligence and the Law",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["artificial_intelligence", "legal_ethics_tech", "regulatory_technology"],
+      "source_url": "https://hls.harvard.edu/courses/artificial-intelligence-and-the-law/",
+      "year_verified": null,
+      "notes": "Seminar covering AI regulation, liability, and practice implications. Verify current offering."
+    },
+    {
+      "id": "hls-cyberlaw",
+      "title": "Cyberlaw: Privacy, Security, and Freedom",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["cybersecurity", "data_privacy", "legal_technology"],
+      "source_url": "https://cyber.harvard.edu/teaching",
+      "year_verified": null,
+      "notes": "Berkman Klein Center affiliated course. Verify current catalog listing."
+    },
+    {
+      "id": "hls-contract-tech",
+      "title": "Contracts and Technology",
+      "credits": 3,
+      "type": "elective",
+      "topics": ["contract_technology", "legal_technology", "document_automation"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Needs verification — confirm current course title and offering."
+    },
+    {
+      "id": "hls-ediscovery",
+      "title": "Electronic Discovery and Digital Evidence",
+      "credits": 2,
+      "type": "elective",
+      "topics": ["e_discovery", "legal_technology"],
+      "source_url": null,
+      "year_verified": null,
+      "notes": "Confirm current offering and credit hours."
+    },
+    {
+      "id": "hls-legaltech-practicum",
+      "title": "Legal Technology and Innovation Practicum",
+      "credits": 4,
+      "type": "elective",
+      "topics": ["legal_technology", "legal_operations", "document_automation"],
+      "source_url": "https://hls.harvard.edu/academics/clinical-and-pro-bono-programs/",
+      "year_verified": null,
+      "notes": "Practice-oriented course; verify current status and credit structure."
+    }
+  ],
+  "programs": [
+    {
+      "id": "hls-hlsi",
+      "name": "Harvard Law School Innovation Program",
+      "type": "center",
+      "description": "Programs at HLS focusing on legal innovation, access to justice technology, and legal industry disruption.",
+      "tech_focus": true,
+      "source_url": "https://hls.harvard.edu/academics/curriculum/experiential-learning/",
+      "year_verified": null,
+      "status": "unknown",
+      "notes": "Structure has evolved; needs verification of current active programs and dedicated staff."
+    },
+    {
+      "id": "hls-berkman",
+      "name": "Berkman Klein Center for Internet & Society",
+      "type": "center",
+      "description": "Research center exploring development and impact of the internet on society. Affiliated with Harvard Law.",
+      "tech_focus": true,
+      "source_url": "https://cyber.harvard.edu",
+      "year_verified": null,
+      "status": "active",
+      "notes": "Joint Harvard Law / Harvard University center. Courses, fellowships, and research output."
+    },
+    {
+      "id": "hls-jd-mba",
+      "name": "JD/MBA Joint Degree",
+      "type": "joint_degree",
+      "description": "Joint degree with Harvard Business School.",
+      "tech_focus": false,
+      "source_url": "https://hls.harvard.edu/academics/joint-and-combined-degree-programs/jd-mba/",
+      "year_verified": null,
+      "status": "active",
+      "notes": "Verify whether a technology track or entrepreneurship specialization qualifies under criteria."
+    },
+    {
+      "id": "hls-atjlab",
+      "name": "Access to Justice Lab",
+      "type": "center",
+      "description": "Research and evidence-gathering on interventions that improve legal outcomes for people without lawyers, with technology as a key delivery mechanism.",
+      "tech_focus": true,
+      "source_url": "https://atjlab.org",
+      "year_verified": null,
+      "status": "active",
+      "notes": "Prof. Jim Greiner leads. Verify current activity and student involvement."
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Jonathan Zittrain",
+      "title": "George Bemis Professor of International Law",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["internet_law", "artificial_intelligence", "platform_governance"],
+      "research_areas": ["AI governance", "internet regulation", "digital rights"],
+      "profile_url": "https://hls.harvard.edu/faculty/jonathan-zittrain/"
+    },
+    {
+      "name": "Yochai Benkler",
+      "title": "Jack N. and Lillian R. Berkman Professor of Entrepreneurial Legal Studies",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["network_economics", "open_source", "digital_commons"],
+      "research_areas": ["political economy of technology", "networked society", "open knowledge"],
+      "profile_url": "https://hls.harvard.edu/faculty/yochai-benkler/"
+    },
+    {
+      "name": "Jim Greiner",
+      "title": "James Barr Ames Professor of Law",
+      "appointment_type": "tenure_track",
+      "tech_expertise": ["access_to_justice_tech", "legal_analytics", "randomized_trials"],
+      "research_areas": ["access to justice", "legal aid technology", "empirical legal studies"],
+      "profile_url": "https://hls.harvard.edu/faculty/d-james-greiner/"
+    }
+  ],
+  "partnerships": [
+    {
+      "org": "LexisNexis",
+      "type": "legaltech_vendor",
+      "description": "Research access and curriculum integration partnership.",
+      "year_start": null,
+      "source_url": null,
+      "active": null
+    },
+    {
+      "org": "Thomson Reuters",
+      "type": "legaltech_vendor",
+      "description": "Westlaw academic partnership and research collaboration.",
+      "year_start": null,
+      "source_url": null,
+      "active": null
+    }
+  ],
+  "student_orgs": [
+    {
+      "name": "Harvard Law and Technology Society",
+      "focus": "Technology law, legaltech, and innovation",
+      "url": null,
+      "active": null,
+      "year_verified": null
+    },
+    {
+      "name": "Harvard Journal of Law & Technology",
+      "focus": "Academic journal covering law and technology issues",
+      "url": "https://jolt.law.harvard.edu",
+      "active": true,
+      "year_verified": null
+    }
+  ],
+  "press_release_gap": [],
+  "external_rankings": {
+    "qs_law": {
+      "rank": 2,
+      "year": 2024,
+      "url": "https://www.topuniversities.com/university-rankings/university-subject-rankings/law"
+    },
+    "the_law": {
+      "rank": 1,
+      "year": 2024,
+      "url": "https://www.timeshighereducation.com/world-university-rankings/by-subject"
+    },
+    "arwu_law": {
+      "rank": 1,
+      "year": 2024,
+      "url": "https://www.shanghairanking.com/rankings/gras/2024/RS0106"
+    },
+    "usnews_law": {
+      "rank": 3,
+      "year": 2024,
+      "url": "https://www.usnews.com/best-graduate-schools/top-law-schools/law-rankings"
+    },
+    "usnews_global_law": {
+      "rank": 2,
+      "year": 2024,
+      "url": "https://www.usnews.com/education/best-global-universities/law"
+    },
+    "vault_law": null
+  },
+  "practical_skills_score": null,
+  "practical_skills_breakdown": null,
+  "meta_score": null,
+  "meta_rank": null,
+  "scores": null,
+  "ranking_tier": null,
+  "notes": "Placeholder record. All fields marked year_verified: null require agent research and human verification. Harvard's tech law infrastructure is substantial but diffuse — many programs span the broader university rather than HLS proper, which may affect scoring under current criteria."
+}

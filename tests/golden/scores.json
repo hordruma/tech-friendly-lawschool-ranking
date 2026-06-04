@@ -1,0 +1,122 @@
+{
+  "college-of-law-australia": {
+    "tech_total": 17.0,
+    "practical_total": 7.0,
+    "tier": "unranked",
+    "tech_subscores": {
+      "curriculum_courses": 0.0,
+      "curriculum_practical": 0.0,
+      "curriculum_clinics": 0.0,
+      "infrastructure_center": 10.0,
+      "infrastructure_joint_degrees": 0.0,
+      "infrastructure_partnerships": 7.0,
+      "faculty_expertise": 0.0,
+      "faculty_research": 2.0,
+      "community_orgs": 0.0,
+      "community_careers": 3.0,
+      "press_release_gap_penalty": -5.0
+    },
+    "practical_breakdown": {
+      "clinical_programs": 0.0,
+      "skills_curriculum": 0.0,
+      "experiential_placements": 0.0,
+      "professional_readiness": 7.0
+    }
+  },
+  "harvard-law": {
+    "tech_total": 34.0,
+    "practical_total": 7.0,
+    "tier": "unranked",
+    "tech_subscores": {
+      "curriculum_courses": 0.0,
+      "curriculum_practical": 0.0,
+      "curriculum_clinics": 0.0,
+      "infrastructure_center": 10.0,
+      "infrastructure_joint_degrees": 0.0,
+      "infrastructure_partnerships": 7.0,
+      "faculty_expertise": 7.0,
+      "faculty_research": 4.0,
+      "community_orgs": 3.0,
+      "community_careers": 3.0,
+      "press_release_gap_penalty": 0.0
+    },
+    "practical_breakdown": {
+      "clinical_programs": 0.0,
+      "skills_curriculum": 0.0,
+      "experiential_placements": 0.0,
+      "professional_readiness": 7.0
+    }
+  },
+  "nus-law": {
+    "tech_total": 45.0,
+    "practical_total": 11.0,
+    "tier": "unranked",
+    "tech_subscores": {
+      "curriculum_courses": 0.0,
+      "curriculum_practical": 4.0,
+      "curriculum_clinics": 4.0,
+      "infrastructure_center": 10.0,
+      "infrastructure_joint_degrees": 0.0,
+      "infrastructure_partnerships": 10.0,
+      "faculty_expertise": 7.0,
+      "faculty_research": 4.0,
+      "community_orgs": 3.0,
+      "community_careers": 3.0,
+      "press_release_gap_penalty": 0.0
+    },
+    "practical_breakdown": {
+      "clinical_programs": 4.0,
+      "skills_curriculum": 0.0,
+      "experiential_placements": 0.0,
+      "professional_readiness": 7.0
+    }
+  },
+  "oxford-law": {
+    "tech_total": 25.0,
+    "practical_total": 3.0,
+    "tier": "unranked",
+    "tech_subscores": {
+      "curriculum_courses": 0.0,
+      "curriculum_practical": 0.0,
+      "curriculum_clinics": 0.0,
+      "infrastructure_center": 10.0,
+      "infrastructure_joint_degrees": 0.0,
+      "infrastructure_partnerships": 4.0,
+      "faculty_expertise": 4.0,
+      "faculty_research": 4.0,
+      "community_orgs": 3.0,
+      "community_careers": 0.0,
+      "press_release_gap_penalty": 0.0
+    },
+    "practical_breakdown": {
+      "clinical_programs": 0.0,
+      "skills_curriculum": 0.0,
+      "experiential_placements": 0.0,
+      "professional_readiness": 3.0
+    }
+  },
+  "stanford-law": {
+    "tech_total": 33.0,
+    "practical_total": 3.0,
+    "tier": "unranked",
+    "tech_subscores": {
+      "curriculum_courses": 0.0,
+      "curriculum_practical": 0.0,
+      "curriculum_clinics": 0.0,
+      "infrastructure_center": 10.0,
+      "infrastructure_joint_degrees": 5.0,
+      "infrastructure_partnerships": 4.0,
+      "faculty_expertise": 4.0,
+      "faculty_research": 4.0,
+      "community_orgs": 3.0,
+      "community_careers": 3.0,
+      "press_release_gap_penalty": 0.0
+    },
+    "practical_breakdown": {
+      "clinical_programs": 0.0,
+      "skills_curriculum": 0.0,
+      "experiential_placements": 0.0,
+      "professional_readiness": 3.0
+    }
+  }
+}

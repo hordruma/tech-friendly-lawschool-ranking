@@ -1,0 +1,60 @@
+[project]
+name = "lawschool-ranking"
+version = "0.1.0"
+description = "Tech-Friendly Law School Ranking — shared library, MCP server, and CLI agents"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "pydantic>=2.0",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.0.0"]
+agents = [
+    "anthropic>=0.30",
+    "openai>=1.0",
+    "tavily-python",
+    "click>=8.0",
+    "rich>=13.0",
+    "httpx",
+]
+typedb = [
+    "typedb-driver>=2.28.0",
+    "click>=8.0",
+    "rich>=13.0",
+]
+dev = ["pytest", "pytest-cov", "ruff", "mypy"]
+
+[project.scripts]
+lawschool-mcp = "mcp_server.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lawschool", "mcp_server"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
+
+[tool.coverage.run]
+source = ["src/lawschool"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true

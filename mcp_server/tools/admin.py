@@ -1,5 +1,5 @@
 """
-mcp-server/tools/admin.py
+mcp_server/tools/admin.py
 
 Administrative / accountability MCP tools:
   - explain_ranking
@@ -191,9 +191,6 @@ STATS_TOOL_DEFINITION = Tool(
 
 TOOL_DEFINITIONS = [EXPLAIN_TOOL_DEFINITION, FLAG_TOOL_DEFINITION, STATS_TOOL_DEFINITION]
 
-# The name used for routing
-TOOL_DEFINITION = EXPLAIN_TOOL_DEFINITION  # placeholder so the registry works uniformly
-
 
 async def handle_explain(args: dict) -> list[TextContent]:
     return [TextContent(type="text", text=_EXPLAIN_TEXT)]
@@ -322,9 +319,3 @@ async def handle_stats(args: dict) -> list[TextContent]:
     ]
 
     return [TextContent(type="text", text="\n".join(lines))]
-
-
-# Unified dispatcher used by server.py when iterating ALL_TOOLS
-async def handle(args: dict) -> list[TextContent]:
-    # This should not be called directly — server.py dispatches by tool name
-    return [TextContent(type="text", text="Admin tool handler: use explain_ranking, flag_press_release_gaps, or get_research_queue_stats")]

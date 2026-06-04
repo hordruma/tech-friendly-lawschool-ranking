@@ -19,8 +19,8 @@ import click
 from rich.console import Console
 from rich.table import Table
 
-from lawschool.scoring import compute_tech_score, compute_practical_score, score_school
-from lawschool.data import load_school
+from lawschool.schema import LawSchool
+from lawschool.scoring import compute_tech_score, compute_practical_score
 
 console = Console()
 
@@ -45,7 +45,7 @@ def tier_color(tier: str) -> str:
 def main(input_file: str, output: str | None, output_format: str, write_scores: bool):
     """Score a law school JSON file against the ranking criteria."""
     path = Path(input_file)
-    school = json.loads(path.read_text())
+    school = LawSchool.from_json_file(path).model_dump(mode="json")
 
     result = compute_tech_score(school)
     scores = result["scores"]

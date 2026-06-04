@@ -1,5 +1,5 @@
 """
-mcp-server/tools/compare.py
+mcp_server/tools/compare.py
 
 compare_schools MCP tool.
 """

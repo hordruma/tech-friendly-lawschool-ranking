@@ -23,6 +23,7 @@ import os
 from pathlib import Path
 
 from lawschool.schema import LawSchool
+from lawschool.scoring import compute_tech_score, compute_practical_score, compute_meta_score
 
 logger = logging.getLogger(__name__)
 
@@ -59,16 +60,7 @@ def _criteria_path() -> Path:
 # ---------------------------------------------------------------------------
 
 def _ensure_scores(school: LawSchool) -> LawSchool:
-    """
-    Compute and attach any missing score fields, then return the (possibly
-    mutated) model.  Importing here avoids a circular import at module level.
-    """
-    from lawschool.scoring import (
-        compute_tech_score,
-        compute_practical_score,
-        compute_meta_score,
-    )
-
+    """Compute and attach any missing score fields, returning the updated model."""
     data = school.model_dump(mode="json")
 
     # Tech score

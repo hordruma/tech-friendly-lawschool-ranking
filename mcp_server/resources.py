@@ -1,5 +1,5 @@
 """
-mcp-server/resources.py
+mcp_server/resources.py
 
 All three MCP resources for the law school ranking server.
 

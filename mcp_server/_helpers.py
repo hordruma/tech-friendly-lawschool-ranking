@@ -7,12 +7,7 @@ of school data.  Not part of the public MCP API.
 
 from __future__ import annotations
 
-from lawschool.schema import COUNTRY_TO_REGION, VALID_REGIONS, VALID_SORT_KEYS, VALID_TIERS, LawSchool
-
-# Re-export as private names for backwards compatibility within this package
-_VALID_REGIONS = VALID_REGIONS
-_VALID_TIERS = VALID_TIERS
-_VALID_SORT = VALID_SORT_KEYS
+from lawschool.schema import COUNTRY_TO_REGION, LawSchool
 
 
 def infer_region(school: LawSchool) -> str | None:

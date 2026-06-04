@@ -1,5 +1,5 @@
 """
-mcp-server/tools/search.py
+mcp_server/tools/search.py
 
 search_schools MCP tool.
 """
@@ -9,10 +9,8 @@ from __future__ import annotations
 from mcp.types import TextContent, Tool
 
 from lawschool.data import load_all_schools
+from lawschool.schema import VALID_REGIONS as _VALID_REGIONS, VALID_SORT_KEYS as _VALID_SORT, VALID_TIERS as _VALID_TIERS
 from mcp_server._helpers import (
-    _VALID_REGIONS,
-    _VALID_SORT,
-    _VALID_TIERS,
     filter_schools,
     school_summary_text,
     sort_schools,

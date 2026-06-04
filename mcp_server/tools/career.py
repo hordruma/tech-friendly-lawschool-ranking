@@ -1,5 +1,5 @@
 """
-mcp-server/tools/career.py
+mcp_server/tools/career.py
 
 find_schools_for_career MCP tool.
 """
@@ -9,8 +9,8 @@ from __future__ import annotations
 from mcp.types import TextContent, Tool
 
 from lawschool.data import load_all_schools
+from lawschool.schema import VALID_REGIONS as _VALID_REGIONS
 from mcp_server._helpers import (
-    _VALID_REGIONS,
     filter_schools,
     school_summary_text,
     sort_schools,

@@ -61,6 +61,7 @@
       "weight_in_meta": 0.05
     }
   ],
+  "_note": "This file is documentation only. The authoritative weights and formula live in src/lawschool/scoring/meta.py. Update both together if changing the formula.",
   "meta_rank_formula": {
     "description": "The meta-rank combines three independent signals: our tech-friendliness score (primary unique contribution), a practical skills score (how well schools prepare students for real practice), and an aggregated prestige score derived from external global law school rankings. This allows users to see how a school performs across all three dimensions — and to observe where they diverge.",
     "tech_friendliness_weight": 0.50,

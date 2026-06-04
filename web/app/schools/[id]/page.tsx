@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllSchoolIds, getSchoolById, getCountryName } from "@/lib/data";
-import { computeScores, computeMetaScore } from "@/lib/scoring";
+import { computeScores, computeMetaScore, computePracticalSkillsScore } from "@/lib/scoring";
 import { ScoreBadge, ScoreBar } from "@/components/ScoreBadge";
 import { PressReleaseGapAlert } from "@/components/PressReleaseGapAlert";
 import type { Course, Program, Faculty, Partnership, StudentOrg, ExternalRankings } from "@/lib/types";
@@ -42,6 +42,12 @@ export default function SchoolPage({ params }: Props) {
   const metaScore = school.meta_score ?? metaComputed.meta_score;
   const prestigeScore = metaComputed.prestige_score;
   const externalScoresNormalized = metaComputed.external_scores_normalized;
+
+  // Compute practical skills score
+  const practicalComputed = computePracticalSkillsScore(school);
+  const practicalSkillsScore = school.practical_skills_score ?? practicalComputed.practical_skills_score;
+  const practicalCriteria = practicalComputed.criteria;
+  const hasPracticalData = school.practical_skills_score !== null;
 
   const isVerified = school.last_verified !== null;
 
@@ -170,22 +176,78 @@ export default function SchoolPage({ params }: Props) {
         )}
       </section>
 
+      {/* Practical Skills Score */}
+      <section>
+        <SectionHeader title="Practical Skills Score" />
+        <div className="mt-4 p-4 rounded-lg bg-teal-50 dark:bg-teal-950/30 border border-teal-200 dark:border-teal-800">
+          <p className="text-xs text-teal-700 dark:text-teal-300 mb-4">
+            <strong>Practical skills is an independent score (0–100)</strong> measuring how well this school prepares students for real legal practice.{" "}
+            {!hasPracticalData && (
+              <span className="italic">This school has not yet been researched for practical skills — the score below is estimated from available data.</span>
+            )}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {practicalCriteria.map((c) => (
+              <div key={c.key} className="p-4 rounded-lg bg-white dark:bg-gray-900 border border-teal-100 dark:border-teal-900">
+                <ScoreBar
+                  score={c.score}
+                  max={c.max}
+                  label={c.label}
+                  color={c.score === c.max ? "bg-teal-500" : "bg-teal-400"}
+                />
+                {c.notes.length > 0 && (
+                  <ul className="mt-2 space-y-0.5">
+                    {c.notes.slice(0, 3).map((note, i) => (
+                      <li key={i} className="text-xs text-gray-400 dark:text-gray-500">{note}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 flex items-center justify-between">
+            <div>
+              <div className="text-xs text-teal-600 dark:text-teal-400 mb-0.5">Practical Skills Total</div>
+              <div className="text-2xl font-serif font-bold text-teal-800 dark:text-teal-200">
+                {practicalSkillsScore.toFixed(0)}
+                <span className="text-base text-teal-500 font-normal">/100</span>
+              </div>
+            </div>
+            <a
+              href="/methodology#36-practical-skills-score-0100-independent-dimension"
+              className="text-xs text-teal-600 dark:text-teal-400 hover:underline"
+            >
+              See rubric →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Meta Score & External Rankings */}
       <section>
         <SectionHeader title="Global Prestige & Meta Rank" />
         <div className="mt-4 p-4 rounded-lg bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800">
           <p className="text-xs text-indigo-700 dark:text-indigo-300 mb-4">
-            <strong>Meta rank = 50% tech friendliness + 50% global prestige.</strong>{" "}
+            <strong>Meta rank = 50% tech + 30% practical skills + 20% global prestige.</strong>{" "}
             Prestige is a normalized composite of major global law school rankings.
             Missing rankings are excluded from the average, not zeroed.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
             <div className="p-3 rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 text-center">
               <div className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Tech Score</div>
               <div className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100">
                 {scores?.total?.toFixed(0) ?? "—"}
                 <span className="text-sm font-normal text-gray-400">/100</span>
               </div>
+              <div className="text-xs text-gray-400 mt-0.5">50% weight</div>
+            </div>
+            <div className="p-3 rounded-lg bg-white dark:bg-gray-900 border border-teal-100 dark:border-teal-900 text-center">
+              <div className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Practical Skills</div>
+              <div className="text-2xl font-serif font-bold text-teal-700 dark:text-teal-300">
+                {practicalSkillsScore.toFixed(0)}
+                <span className="text-sm font-normal text-gray-400">/100</span>
+              </div>
+              <div className="text-xs text-gray-400 mt-0.5">30% weight</div>
             </div>
             <div className="p-3 rounded-lg bg-white dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 text-center">
               <div className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Prestige Score</div>
@@ -193,6 +255,7 @@ export default function SchoolPage({ params }: Props) {
                 {prestigeScore !== null ? prestigeScore.toFixed(1) : "—"}
                 <span className="text-sm font-normal text-gray-400">/100</span>
               </div>
+              <div className="text-xs text-gray-400 mt-0.5">20% weight</div>
             </div>
             <div className="p-3 rounded-lg bg-indigo-600 dark:bg-indigo-800 text-white text-center">
               <div className="text-xs text-indigo-200 mb-0.5">Meta Score</div>
@@ -200,6 +263,7 @@ export default function SchoolPage({ params }: Props) {
                 {metaScore !== null ? metaScore.toFixed(1) : "—"}
                 <span className="text-sm font-normal text-indigo-300">/100</span>
               </div>
+              <div className="text-xs text-indigo-300 mt-0.5">combined</div>
             </div>
           </div>
         </div>

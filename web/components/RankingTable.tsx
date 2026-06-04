@@ -13,7 +13,7 @@ interface RankingTableProps {
   countries: string[];
 }
 
-type SortKey = "meta_rank" | "rank" | "name" | "country" | "score" | "tier" | "prestige";
+type SortKey = "meta_rank" | "rank" | "name" | "country" | "score" | "tier" | "prestige" | "practical";
 type SortDir = "asc" | "desc";
 
 const TIER_ORDER: Record<string, number> = {
@@ -77,6 +77,15 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
           } else if (a.prestige_score !== null) {
             cmp = -1;
           } else if (b.prestige_score !== null) {
+            cmp = 1;
+          }
+          break;
+        case "practical":
+          if (a.practical_skills_score !== null && b.practical_skills_score !== null) {
+            cmp = b.practical_skills_score - a.practical_skills_score;
+          } else if (a.practical_skills_score !== null) {
+            cmp = -1;
+          } else if (b.practical_skills_score !== null) {
             cmp = 1;
           }
           break;
@@ -162,6 +171,7 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
             [
               { key: "meta_rank", label: "Meta Rank" },
               { key: "rank", label: "Tech Rank" },
+              { key: "practical", label: "Practical" },
               { key: "prestige", label: "Prestige" },
             ] as { key: SortKey; label: string }[]
           ).map(({ key, label }) => (
@@ -222,6 +232,12 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
               </th>
               <th
                 className="px-4 py-3 font-semibold text-gray-600 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-gray-100 text-right whitespace-nowrap"
+                onClick={() => handleSort("practical")}
+              >
+                Practical <SortIcon k="practical" />
+              </th>
+              <th
+                className="px-4 py-3 font-semibold text-gray-600 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-gray-100 text-right whitespace-nowrap"
                 onClick={() => handleSort("prestige")}
               >
                 Prestige <SortIcon k="prestige" />
@@ -241,7 +257,7 @@ export function RankingTable({ schools, countries }: RankingTableProps) {
             {sorted.length === 0 && (
               <tr>
                 <td
-                  colSpan={8}
+                  colSpan={9}
                   className="px-4 py-12 text-center text-gray-400 dark:text-gray-500"
                 >
                   No schools match your filters.
@@ -313,6 +329,12 @@ function TableRow({ school, rank }: { school: SchoolSummary; rank: number }) {
         {school.scores?.total !== null && school.scores?.total !== undefined
           ? school.scores.total.toFixed(0)
           : "—"}
+      </td>
+      {/* Practical Skills Score */}
+      <td className="px-4 py-3 text-right font-mono font-semibold text-teal-700 dark:text-teal-300">
+        {school.practical_skills_score !== null && school.practical_skills_score !== undefined
+          ? school.practical_skills_score.toFixed(0)
+          : <span className="text-gray-300 dark:text-gray-600 font-normal italic text-xs">—</span>}
       </td>
       {/* Prestige Score */}
       <td className="px-4 py-3 text-right font-mono font-semibold text-indigo-700 dark:text-indigo-300">

@@ -91,7 +91,7 @@ export default function MethodologyPage() {
       {/* Intro banner */}
       <div className="mb-8 p-5 rounded-xl bg-brand-50 dark:bg-brand-950/30 border border-brand-200 dark:border-brand-800">
         <h2 className="font-serif font-semibold text-brand-900 dark:text-brand-200 mb-2">
-          Public Methodology — Version 1.0
+          Public Methodology — Version 1.1
         </h2>
         <p className="text-sm text-brand-700 dark:text-brand-300">
           This document describes exactly how scores are calculated. Every scoring decision
@@ -116,6 +116,75 @@ export default function MethodologyPage() {
         </div>
       </div>
 
+      {/* Three Pillars overview */}
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {/* Pillar 1: Tech */}
+        <div className="p-5 rounded-xl bg-white dark:bg-gray-900 border-2 border-brand-300 dark:border-brand-700">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-lg font-serif font-bold text-brand-700 dark:text-brand-300">Tech-Friendliness</span>
+            <span className="ml-auto text-sm font-semibold text-brand-600 dark:text-brand-400">50%</span>
+          </div>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
+            Our primary unique contribution. Measures genuine integration of legal technology
+            into curriculum, infrastructure, faculty, and community.
+          </p>
+          <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex justify-between"><span>Curriculum</span><span className="font-mono">40 pts</span></div>
+            <div className="flex justify-between"><span>Infrastructure</span><span className="font-mono">30 pts</span></div>
+            <div className="flex justify-between"><span>Faculty &amp; Research</span><span className="font-mono">20 pts</span></div>
+            <div className="flex justify-between"><span>Community &amp; Career</span><span className="font-mono">10 pts</span></div>
+            <div className="flex justify-between text-red-500"><span>Press Release Gap</span><span className="font-mono">−5 to −20</span></div>
+          </div>
+          <a href="#31-curriculum-40-points" className="mt-3 block text-xs text-brand-600 dark:text-brand-400 hover:underline">
+            See full rubric →
+          </a>
+        </div>
+
+        {/* Pillar 2: Practical Skills */}
+        <div className="p-5 rounded-xl bg-white dark:bg-gray-900 border-2 border-teal-300 dark:border-teal-700">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-lg font-serif font-bold text-teal-700 dark:text-teal-300">Practical Skills</span>
+            <span className="ml-auto text-sm font-semibold text-teal-600 dark:text-teal-400">30%</span>
+          </div>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
+            How well the school prepares students for real legal practice, beyond technology alone.
+            Rewards clinical training, skills curricula, and professional readiness.
+          </p>
+          <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex justify-between"><span>Clinical Programs</span><span className="font-mono">0–25 pts</span></div>
+            <div className="flex justify-between"><span>Skills Curriculum</span><span className="font-mono">0–25 pts</span></div>
+            <div className="flex justify-between"><span>Experiential Placements</span><span className="font-mono">0–25 pts</span></div>
+            <div className="flex justify-between"><span>Professional Readiness</span><span className="font-mono">0–25 pts</span></div>
+          </div>
+          <a href="#36-practical-skills-score-0100-independent-dimension" className="mt-3 block text-xs text-teal-600 dark:text-teal-400 hover:underline">
+            See full rubric →
+          </a>
+        </div>
+
+        {/* Pillar 3: Prestige */}
+        <div className="p-5 rounded-xl bg-white dark:bg-gray-900 border-2 border-indigo-300 dark:border-indigo-700">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-lg font-serif font-bold text-indigo-700 dark:text-indigo-300">Prestige</span>
+            <span className="ml-auto text-sm font-semibold text-indigo-600 dark:text-indigo-400">20%</span>
+          </div>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
+            Aggregated position across six major external global law school rankings.
+            Contextual background that other rankings already handle — present but not dominant.
+          </p>
+          <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex justify-between"><span>QS Law</span><span className="font-mono">25% wt</span></div>
+            <div className="flex justify-between"><span>THE Law</span><span className="font-mono">25% wt</span></div>
+            <div className="flex justify-between"><span>ARWU Law</span><span className="font-mono">20% wt</span></div>
+            <div className="flex justify-between"><span>US News (domestic)</span><span className="font-mono">15% wt</span></div>
+            <div className="flex justify-between"><span>US News (global)</span><span className="font-mono">10% wt</span></div>
+            <div className="flex justify-between"><span>Vault Law</span><span className="font-mono">5% wt</span></div>
+          </div>
+          <a href="#9-meta-rank-formula" className="mt-3 block text-xs text-indigo-600 dark:text-indigo-400 hover:underline">
+            See meta-rank formula →
+          </a>
+        </div>
+      </div>
+
       {/* Quick navigation */}
       <div className="mb-8 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Sections</h3>
@@ -127,10 +196,12 @@ export default function MethodologyPage() {
             ["Infrastructure (30 pts)", "#32-infrastructure-30-points"],
             ["Faculty & Research (20 pts)", "#33-faculty--research-20-points"],
             ["Community (10 pts)", "#34-community--career-10-points"],
-            ["Press Release Gap ⚠️", "#35-press-release-gap--5-to--20-points"],
+            ["Press Release Gap", "#35-press-release-gap--5-to--20-points"],
+            ["Practical Skills (0–100)", "#36-practical-skills-score-0100-independent-dimension"],
             ["Tiers", "#4-ranking-tiers"],
             ["Data Collection", "#5-data-collection-and-verification"],
             ["How to Submit", "#6-how-to-submit-corrections"],
+            ["Meta-Rank Formula", "#9-meta-rank-formula"],
           ].map(([label, href]) => (
             <a
               key={href}

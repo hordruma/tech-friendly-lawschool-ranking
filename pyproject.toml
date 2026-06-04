@@ -28,10 +28,10 @@ typedb = [
 dev = ["pytest", "ruff", "mypy"]
 
 [project.scripts]
-lawschool-mcp = "lawschool._mcp_entry:main"
+lawschool-mcp = "mcp_server.server:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/lawschool"]
+packages = ["src/lawschool", "mcp_server"]
 
 [tool.hatch.metadata]
 allow-direct-references = true

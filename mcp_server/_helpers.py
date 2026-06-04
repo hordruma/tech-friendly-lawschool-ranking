@@ -1,5 +1,5 @@
 """
-mcp-server/_helpers.py
+mcp_server/_helpers.py
 
 Shared helpers used by tool modules: filtering, sorting, and text-rendering
 of school data.  Not part of the public MCP API.
@@ -7,33 +7,17 @@ of school data.  Not part of the public MCP API.
 
 from __future__ import annotations
 
-from lawschool.schema import COUNTRY_TO_REGION, LawSchool
+from lawschool.schema import COUNTRY_TO_REGION, VALID_REGIONS, VALID_SORT_KEYS, VALID_TIERS, LawSchool
 
-_VALID_REGIONS = frozenset(
-    {
-        "North America",
-        "UK & Ireland",
-        "Europe",
-        "Asia-Pacific",
-        "Latin America",
-        "Middle East & Africa",
-    }
-)
-
-_VALID_TIERS = frozenset({"S", "A", "B", "C", "D"})
-
-_VALID_SORT = frozenset(
-    {"meta_score", "tech_score", "practical_score", "prestige_score"}
-)
+# Re-export as private names for backwards compatibility within this package
+_VALID_REGIONS = VALID_REGIONS
+_VALID_TIERS = VALID_TIERS
+_VALID_SORT = VALID_SORT_KEYS
 
 
 def infer_region(school: LawSchool) -> str | None:
     """Infer region from country code via the canonical mapping."""
     return COUNTRY_TO_REGION.get(school.country or "", None)
-
-
-def _infer_region_dict(school: dict) -> str | None:
-    return COUNTRY_TO_REGION.get(school.get("country", ""), None)
 
 
 def prg_warning(school: LawSchool) -> str:

@@ -9,7 +9,7 @@ from __future__ import annotations
 from mcp.types import TextContent, Tool
 
 from lawschool.data import load_all_schools
-from _helpers import (
+from mcp_server._helpers import (
     _VALID_REGIONS,
     filter_schools,
     school_summary_text,

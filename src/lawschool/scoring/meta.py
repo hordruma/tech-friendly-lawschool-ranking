@@ -10,6 +10,8 @@ from __future__ import annotations
 import math
 from typing import Any
 
+from lawschool.scoring.tech import compute_tech_score
+
 MAX_RANK = 500
 LOG_MAX = math.log(MAX_RANK + 1)
 
@@ -97,8 +99,6 @@ def compute_meta_score(school_data: dict) -> dict[str, Any]:
         external_scores_normalized  dict[str, float | None]
         rankings_used               list[str]
     """
-    from lawschool.scoring.tech import compute_tech_score
-
     prestige_score, external_scores_normalized, rankings_used = compute_prestige_score(school_data)
 
     # Tech score: use stored scores.total if available, else compute now

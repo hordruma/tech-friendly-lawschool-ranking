@@ -1,8 +1,8 @@
 """
-mcp-server/server.py — entry point for the Law School Ranking MCP server.
+mcp_server/server.py — entry point for the Law School Ranking MCP server.
 
-All tool logic lives in mcp-server/tools/.
-All resource logic lives in mcp-server/resources.py.
+All tool logic lives in mcp_server/tools/.
+All resource logic lives in mcp_server/resources.py.
 
 This file only wires up the MCP framework and runs the server.
 """
@@ -10,25 +10,18 @@ This file only wires up the MCP framework and runs the server.
 from __future__ import annotations
 
 import asyncio
-import sys
-from pathlib import Path
 from typing import Any
-
-# Ensure the mcp-server directory is on sys.path so local modules resolve.
-_HERE = Path(__file__).parent
-if str(_HERE) not in sys.path:
-    sys.path.insert(0, str(_HERE))
 
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Resource, TextContent, Tool
 
-import resources as _resources
-from tools import admin as _admin
-from tools import career as _career
-from tools import compare as _compare
-from tools import profile as _profile
-from tools import search as _search
+from mcp_server import resources as _resources
+from mcp_server.tools import admin as _admin
+from mcp_server.tools import career as _career
+from mcp_server.tools import compare as _compare
+from mcp_server.tools import profile as _profile
+from mcp_server.tools import search as _search
 
 # ---------------------------------------------------------------------------
 # Server instance

@@ -9,7 +9,7 @@ from __future__ import annotations
 from mcp.types import TextContent, Tool
 
 from lawschool.data import get_queue_entry, load_school
-from _helpers import infer_region, prg_warning
+from mcp_server._helpers import infer_region, prg_warning
 
 TOOL_DEFINITION = Tool(
     name="get_school_profile",

@@ -79,7 +79,7 @@ COUNTRY_TO_REGION: dict[str, str] = {
 
 class ExternalRankingEntry(BaseModel):
     rank: int | None = None
-    year: int
+    year: int | None = None
     url: str | None = None
 
 
@@ -194,6 +194,26 @@ class PracticalSkillsBreakdown(BaseModel):
 # ---------------------------------------------------------------------------
 # Root model
 # ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Controlled vocabulary sets (used for validation in MCP tools and the web app)
+# ---------------------------------------------------------------------------
+
+VALID_REGIONS: frozenset[str] = frozenset({
+    "North America",
+    "UK & Ireland",
+    "Europe",
+    "Asia-Pacific",
+    "Latin America",
+    "Middle East & Africa",
+})
+
+VALID_TIERS: frozenset[str] = frozenset({"S", "A", "B", "C", "D"})
+
+VALID_SORT_KEYS: frozenset[str] = frozenset(
+    {"meta_score", "tech_score", "practical_score", "prestige_score"}
+)
+
 
 class LawSchool(BaseModel):
     id: str

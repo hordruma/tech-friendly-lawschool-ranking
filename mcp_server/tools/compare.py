@@ -9,7 +9,7 @@ from __future__ import annotations
 from mcp.types import TextContent, Tool
 
 from lawschool.data import load_school
-from _helpers import infer_region, prg_warning
+from mcp_server._helpers import infer_region, prg_warning
 
 TOOL_DEFINITION = Tool(
     name="compare_schools",

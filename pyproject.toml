@@ -25,7 +25,7 @@ typedb = [
     "click>=8.0",
     "rich>=13.0",
 ]
-dev = ["pytest", "ruff", "mypy"]
+dev = ["pytest", "pytest-cov", "ruff", "mypy"]
 
 [project.scripts]
 lawschool-mcp = "mcp_server.server:main"
@@ -46,6 +46,13 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
+
+[tool.coverage.run]
+source = ["src/lawschool"]
 
 [tool.mypy]
 python_version = "3.11"

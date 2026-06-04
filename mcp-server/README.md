@@ -37,18 +37,22 @@ Tech-Friendly Law School Ranking database.
 - Python 3.11+
 - [uv](https://github.com/astral-sh/uv) (recommended) or pip
 
-### Install with uv
+### Install with uv (from repo root)
 
 ```bash
-# From the project root
-uv pip install -e mcp-server/
+# Install the shared library + MCP server dependencies
+uv pip install -e ".[mcp]"
 ```
 
-### Install with pip
+### Install with pip (from repo root)
 
 ```bash
-pip install -e mcp-server/
+pip install -e ".[mcp]"
 ```
+
+The root `pyproject.toml` replaces the old per-directory `pyproject.toml` files.
+The `[mcp]` extra installs `mcp>=1.0.0`; the `[agents]` extra installs the
+research and scoring CLI dependencies.
 
 ### Verify the install
 
@@ -248,19 +252,24 @@ Edit `data/research-list/top-500.json` or open a GitHub issue.
 
 ```
 mcp-server/
-├── server.py        Main MCP server (tools + resources)
-├── data_loader.py   Loads JSON files, computes missing scores, returns stats
-├── scoring.py       Thin adapter re-exporting agents/scorer.py logic
-├── pyproject.toml   Package metadata + entry point
+├── server.py        Entry point (~50 lines): wires up MCP framework, runs server
+├── tools/           One file per tool (search, profile, compare, career, admin)
+├── resources.py     All three MCP resources
+├── _helpers.py      Shared filter/sort/render helpers
 └── README.md        This file
+
+src/lawschool/       Shared library (installed as a package)
+├── schema.py        Pydantic v2 models for all school data
+├── data.py          load_school(), load_all_schools(), etc.
+└── scoring/         All scoring logic (tech, practical, meta)
 ```
 
 The server has no database dependency. It reads JSON files at request time and
 caches nothing (intentional — keeps it stateless and easy to reason about).
 
-The scoring logic lives in `agents/scorer.py`. `scoring.py` in this directory
-is a thin adapter that adds the project root to sys.path and re-exports the
-functions the server needs, so there is a single source of truth for scoring.
+All scoring logic lives in `src/lawschool/scoring/` and is shared between the
+MCP server, the CLI agents, and the TypeDB ingest pipeline. There is a single
+source of truth — no sys.path hacks, no duplication.
 
 ---
 

@@ -19,7 +19,6 @@ Environment variables (fallback):
 
 from __future__ import annotations
 
-import json
 import os
 import sys
 from pathlib import Path
@@ -29,13 +28,15 @@ from dotenv import load_dotenv
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
+from lawschool.data import load_all_schools, load_school
+from lawschool.schema import LawSchool
+
 load_dotenv()
 
 console = Console()
 
 # Resolve project root relative to this file
 PROJECT_ROOT = Path(__file__).parent.parent
-SCHOOLS_DIR = PROJECT_ROOT / "data" / "schools"
 SCHEMA_FILE = PROJECT_ROOT / "typedb" / "schema.tql"
 
 
@@ -46,7 +47,7 @@ SCHEMA_FILE = PROJECT_ROOT / "typedb" / "schema.tql"
 def get_driver(host: str, port: int):
     """Return a TypeDB driver instance."""
     try:
-        from typedb.driver import TypeDB, TypeDBDriver
+        from typedb.driver import TypeDB
         return TypeDB.core_driver(f"{host}:{port}")
     except ImportError as e:
         console.print(f"[red]typedb-driver package not installed: {e}[/red]")
@@ -93,78 +94,70 @@ def _bool(v) -> str:
     return "true" if v else "false"
 
 
-def ingest_school(tx, school: dict) -> None:
+def ingest_school(tx, school: LawSchool) -> None:
     """Upsert a single school and all related entities."""
-    slug = school["id"]
+    slug = school.id
 
-    # ── Upsert LawSchool entity ──────────────────────────────────────────
     _upsert_school(tx, school)
 
-    # ── Accreditations ──────────────────────────────────────────────────
-    for acc in school.get("accreditation") or []:
-        _upsert_accreditation(tx, slug, acc)
+    for acc in school.accreditation or []:
+        _upsert_accreditation(tx, slug, acc.model_dump())
 
-    # ── Courses ─────────────────────────────────────────────────────────
-    for course in school.get("courses") or []:
-        _upsert_course(tx, slug, course)
+    for course in school.courses or []:
+        _upsert_course(tx, slug, course.model_dump())
 
-    # ── Programs ────────────────────────────────────────────────────────
-    for program in school.get("programs") or []:
-        _upsert_program(tx, slug, program)
+    for program in school.programs or []:
+        _upsert_program(tx, slug, program.model_dump())
 
-    # ── Faculty ─────────────────────────────────────────────────────────
-    for i, fac in enumerate(school.get("faculty") or []):
-        _upsert_faculty(tx, slug, fac, index=i)
+    for i, fac in enumerate(school.faculty or []):
+        _upsert_faculty(tx, slug, fac.model_dump(), index=i)
 
-    # ── Partnerships ────────────────────────────────────────────────────
-    for partnership in school.get("partnerships") or []:
-        _upsert_partnership(tx, slug, partnership)
+    for partnership in school.partnerships or []:
+        _upsert_partnership(tx, slug, partnership.model_dump())
 
-    # ── Student orgs ────────────────────────────────────────────────────
-    for i, org in enumerate(school.get("student_orgs") or []):
-        _upsert_student_org(tx, slug, org, index=i)
+    for i, org in enumerate(school.student_orgs or []):
+        _upsert_student_org(tx, slug, org.model_dump(), index=i)
 
-    # ── Press Release Gaps ──────────────────────────────────────────────
-    for i, gap in enumerate(school.get("press_release_gap") or []):
-        _upsert_prg(tx, slug, gap, index=i)
+    for i, gap in enumerate(school.press_release_gap or []):
+        _upsert_prg(tx, slug, gap.model_dump(), index=i)
 
-    # ── External Rankings ───────────────────────────────────────────────
-    ext_rankings = school.get("external_rankings") or {}
-    for source_id, entry in ext_rankings.items():
-        if entry is not None:
-            _upsert_external_ranking(tx, slug, source_id, entry)
+    ext = school.external_rankings
+    if ext:
+        ext_dict = ext.model_dump()
+        for source_id, entry in ext_dict.items():
+            if entry is not None:
+                _upsert_external_ranking(tx, slug, source_id, entry)
 
-    # ── Meta scores (prestige-score, meta-score, meta-rank) ─────────────
     _update_meta_scores(tx, school)
 
 
-def _upsert_school(tx, school: dict) -> None:
-    slug = school["id"]
+def _upsert_school(tx, school: LawSchool) -> None:
+    slug = school.id
     query = f"""
     match
         $school isa LawSchool, has slug {_str(slug)};
     """
     result = list(tx.query.get(query))
     if result:
-        return  # already exists; attributes updated separately
+        return
 
     attrs = [f'has slug {_str(slug)}']
-    if school.get("name"):
-        attrs.append(f'has full-name {_str(school["name"])}')
-    if school.get("country"):
-        attrs.append(f'has country-code {_str(school["country"])}')
-    if school.get("jurisdiction"):
-        attrs.append(f'has jurisdiction {_str(school["jurisdiction"])}')
-    if school.get("url"):
-        attrs.append(f'has website-url {_str(school["url"])}')
-    if school.get("last_researched"):
-        attrs.append(f'has last-researched {_str(school["last_researched"])}')
-    if school.get("last_verified"):
-        attrs.append(f'has last-verified {_str(school["last_verified"])}')
-    if school.get("notes"):
-        attrs.append(f'has notes {_str(school["notes"])}')
+    if school.name:
+        attrs.append(f'has full-name {_str(school.name)}')
+    if school.country:
+        attrs.append(f'has country-code {_str(school.country)}')
+    if school.jurisdiction:
+        attrs.append(f'has jurisdiction {_str(school.jurisdiction)}')
+    if school.url:
+        attrs.append(f'has website-url {_str(school.url)}')
+    if school.last_researched:
+        attrs.append(f'has last-researched {_str(school.last_researched)}')
+    if school.last_verified:
+        attrs.append(f'has last-verified {_str(school.last_verified)}')
+    if school.notes:
+        attrs.append(f'has notes {_str(school.notes)}')
 
-    scores = school.get("scores") or {}
+    scores = school.scores
     score_map = {
         "curriculum_courses": "score-curriculum-courses",
         "curriculum_practical": "score-curriculum-practical",
@@ -179,13 +172,15 @@ def _upsert_school(tx, school: dict) -> None:
         "press_release_gap_penalty": "score-prg-penalty",
         "total": "score-total",
     }
-    for json_key, tql_attr in score_map.items():
-        val = scores.get(json_key)
-        if val is not None:
-            attrs.append(f"has {tql_attr} {float(val)}")
+    if scores:
+        scores_dict = scores.model_dump()
+        for json_key, tql_attr in score_map.items():
+            val = scores_dict.get(json_key)
+            if val is not None:
+                attrs.append(f"has {tql_attr} {float(val)}")
 
-    if school.get("ranking_tier"):
-        attrs.append(f'has ranking-tier {_str(school["ranking_tier"])}')
+    if school.ranking_tier:
+        attrs.append(f'has ranking-tier {_str(school.ranking_tier)}')
 
     attr_str = ", ".join(attrs)
     tx.query.insert(f"insert $school isa LawSchool, {attr_str};")
@@ -196,7 +191,6 @@ def _upsert_accreditation(tx, school_slug: str, acc: dict) -> None:
     jur = acc.get("jurisdiction", "")
     status = acc.get("status", "")
 
-    # Check if relation already exists
     check = f"""
     match
         $school isa LawSchool, has slug {_str(school_slug)};
@@ -206,7 +200,6 @@ def _upsert_accreditation(tx, school_slug: str, acc: dict) -> None:
     if list(tx.query.get(check)):
         return
 
-    # Insert accreditation entity and relation
     tx.query.insert(f"""
     match
         $school isa LawSchool, has slug {_str(school_slug)};
@@ -221,11 +214,7 @@ def _upsert_accreditation(tx, school_slug: str, acc: dict) -> None:
 
 def _upsert_course(tx, school_slug: str, course: dict) -> None:
     cid = f"{school_slug}-{course['id']}"
-    # Deduplicate on composite key
-    check = f"""
-    match
-        $c isa Course, has course-id {_str(cid)};
-    """
+    check = f"match $c isa Course, has course-id {_str(cid)};"
     if list(tx.query.get(check)):
         return
 
@@ -255,20 +244,15 @@ def _upsert_course(tx, school_slug: str, course: dict) -> None:
         (school: $school, course: $course) isa course-offering{yv_str};
     """)
 
-    # Link topics
     for topic_name in course.get("topics") or []:
         _upsert_topic_link(tx, cid, topic_name)
 
 
 def _upsert_topic_link(tx, course_id: str, topic_name: str) -> None:
-    # Ensure topic entity exists
-    check_topic = f"""
-    match $t isa Topic, has topic-name {_str(topic_name)};
-    """
+    check_topic = f"match $t isa Topic, has topic-name {_str(topic_name)};"
     if not list(tx.query.get(check_topic)):
         tx.query.insert(f'insert $t isa Topic, has topic-name {_str(topic_name)};')
 
-    # Link course to topic
     check_rel = f"""
     match
         $c isa Course, has course-id {_str(course_id)};
@@ -322,11 +306,8 @@ def _upsert_program(tx, school_slug: str, program: dict) -> None:
 
 
 def _upsert_faculty(tx, school_slug: str, fac: dict, index: int) -> None:
-    # Faculty doesn't have a natural key; use school_slug + index as a synthetic key
-    fac_key = f"{school_slug}-fac-{index}"
     name = fac.get("name", "")
 
-    # Skip if faculty already linked by checking name + school combo
     check = f"""
     match
         $school isa LawSchool, has slug {_str(school_slug)};
@@ -360,16 +341,13 @@ def _upsert_faculty(tx, school_slug: str, fac: dict, index: int) -> None:
         (faculty-member: $f, school: $school) isa faculty-appointment{rel_attr_str};
     """)
 
-    # Expertise topics
     for expertise in fac.get("tech_expertise") or []:
         _upsert_faculty_expertise(tx, name, school_slug, expertise)
-
     for area in fac.get("research_areas") or []:
         _upsert_faculty_expertise(tx, name, school_slug, area)
 
 
 def _upsert_faculty_expertise(tx, faculty_name: str, school_slug: str, topic_name: str) -> None:
-    # Ensure topic exists
     check_topic = f"match $t isa Topic, has topic-name {_str(topic_name)};"
     if not list(tx.query.get(check_topic)):
         tx.query.insert(f'insert $t isa Topic, has topic-name {_str(topic_name)};')
@@ -460,7 +438,6 @@ def _upsert_student_org(tx, school_slug: str, org: dict, index: int) -> None:
 
 def _upsert_prg(tx, school_slug: str, gap: dict, index: int) -> None:
     claimed = gap.get("claimed", "")
-    # Use claimed text as quasi-key within this school
     check = f"""
     match
         $school isa LawSchool, has slug {_str(school_slug)};
@@ -497,12 +474,10 @@ def _upsert_prg(tx, school_slug: str, gap: dict, index: int) -> None:
 
 
 def _upsert_external_ranking(tx, school_slug: str, source_id: str, entry: dict) -> None:
-    """Upsert a single external ranking entry and link it to the school."""
     rank = entry.get("rank")
     year = entry.get("year")
     url = entry.get("url")
 
-    # Deduplicate on school + source_id
     check = f"""
     match
         $school isa LawSchool, has slug {_str(school_slug)};
@@ -530,15 +505,12 @@ def _upsert_external_ranking(tx, school_slug: str, source_id: str, entry: dict) 
     """)
 
 
-def _update_meta_scores(tx, school: dict) -> None:
-    """Write prestige-score, meta-score, and meta-rank attributes onto the LawSchool entity."""
-    slug = school["id"]
+def _update_meta_scores(tx, school: LawSchool) -> None:
+    slug = school.id
+    prestige = getattr(school, "prestige_score", None)
+    meta = school.meta_score
+    meta_rank = school.meta_rank
 
-    prestige = school.get("prestige_score")
-    meta = school.get("meta_score")
-    meta_rank = school.get("meta_rank")
-
-    # Only attempt to set values that are present and non-null
     attrs_to_set = []
     if prestige is not None:
         attrs_to_set.append(f'has prestige-score {float(prestige)}')
@@ -578,38 +550,36 @@ def main(host: str, port: int, database: str, define_schema_flag: bool, reset: b
     console.rule("[bold]TypeDB Law School Ingest[/bold]")
 
     driver = get_driver(host, port)
-
     ensure_database(driver, database, reset=reset)
 
     if define_schema_flag or reset:
         define_schema(driver, database)
 
-    # Load school files
     if school:
-        files = [SCHOOLS_DIR / f"{school}.json"]
-        if not files[0].exists():
-            console.print(f"[red]File not found: {files[0]}[/red]")
+        loaded = load_school(school)
+        if loaded is None:
+            console.print(f"[red]School not found: {school}[/red]")
             sys.exit(1)
+        schools = [loaded]
     else:
-        files = sorted(SCHOOLS_DIR.glob("*.json"))
+        schools = load_all_schools()
 
-    if not files:
+    if not schools:
         console.print("[yellow]No school JSON files found.[/yellow]")
         return
 
     with driver.session(database, driver.SessionType.DATA) as session:
         with Progress(SpinnerColumn(), TextColumn("{task.description}"), console=console) as progress:
-            task = progress.add_task("Ingesting schools…", total=len(files))
-            for path in files:
-                progress.update(task, description=f"Ingesting {path.stem}…")
+            task = progress.add_task("Ingesting schools…", total=len(schools))
+            for s in schools:
+                progress.update(task, description=f"Ingesting {s.id}…")
                 try:
-                    data = json.loads(path.read_text())
                     with session.transaction(driver.TransactionType.WRITE) as tx:
-                        ingest_school(tx, data)
+                        ingest_school(tx, s)
                         tx.commit()
-                    console.print(f"  [green]✓[/green] {path.stem}")
+                    console.print(f"  [green]✓[/green] {s.id}")
                 except Exception as e:
-                    console.print(f"  [red]✗[/red] {path.stem}: {e}")
+                    console.print(f"  [red]✗[/red] {s.id}: {e}")
                 progress.advance(task)
 
     console.print("\n[bold green]Ingest complete.[/bold green]")

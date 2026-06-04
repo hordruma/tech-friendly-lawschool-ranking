@@ -1,0 +1,386 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tech-friendly-lawschool-ranking.github.io/schema/school.schema.json",
+  "title": "LawSchool",
+  "description": "Schema for a law school entry in the tech-friendliness ranking",
+  "type": "object",
+  "required": ["id", "name", "country", "url"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "URL-safe slug identifier, e.g. harvard-law",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full official name of the law school"
+    },
+    "country": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "jurisdiction": {
+      "type": ["string", "null"],
+      "description": "State, province, or sub-national jurisdiction, if applicable"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website of the law school"
+    },
+    "last_researched": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "ISO 8601 date when an automated agent last gathered data"
+    },
+    "last_verified": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "ISO 8601 date when a human reviewer last verified the data. Null means unverified."
+    },
+    "accreditation": {
+      "type": "array",
+      "description": "List of accreditation bodies and statuses",
+      "items": {
+        "type": "object",
+        "required": ["body", "jurisdiction", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "type": "string",
+            "description": "Accrediting body name, e.g. ABA, LSAC, LETR, QAA"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "description": "Jurisdiction of the accreditation"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["accredited", "provisionally_accredited", "pending", "lapsed", "not_applicable"]
+          }
+        }
+      }
+    },
+    "courses": {
+      "type": "array",
+      "description": "Technology-relevant courses in the current or recent catalog",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "type"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Course code or slug"
+          },
+          "title": {
+            "type": "string"
+          },
+          "credits": {
+            "type": ["number", "null"],
+            "description": "Credit hours or units"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["required", "elective", "certificate"],
+            "description": "Whether the course is required, elective, or part of a certificate"
+          },
+          "topics": {
+            "type": "array",
+            "description": "Controlled-vocabulary topic tags",
+            "items": {
+              "type": "string",
+              "enum": [
+                "artificial_intelligence",
+                "machine_learning",
+                "legal_technology",
+                "document_automation",
+                "e_discovery",
+                "cybersecurity",
+                "data_privacy",
+                "computational_law",
+                "legal_design",
+                "blockchain",
+                "coding_for_lawyers",
+                "legal_analytics",
+                "intellectual_property_tech",
+                "legal_operations",
+                "access_to_justice_tech",
+                "legal_ethics_tech",
+                "contract_technology",
+                "regulatory_technology",
+                "other"
+              ]
+            }
+          },
+          "source_url": {
+            "type": ["string", "null"],
+            "format": "uri",
+            "description": "URL of the course catalog or syllabus"
+          },
+          "year_verified": {
+            "type": ["integer", "null"],
+            "description": "Year the course was verified as active"
+          },
+          "notes": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "programs": {
+      "type": "array",
+      "description": "Programs, clinics, centers, joint degrees, and certificates",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "type"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["clinic", "joint_degree", "certificate", "center", "incubator", "competition", "other"]
+          },
+          "description": {
+            "type": ["string", "null"]
+          },
+          "tech_focus": {
+            "type": "boolean",
+            "description": "Whether technology is a primary focus (vs. incidental)"
+          },
+          "source_url": {
+            "type": ["string", "null"],
+            "format": "uri"
+          },
+          "year_verified": {
+            "type": ["integer", "null"]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "inactive", "unknown"],
+            "default": "unknown"
+          },
+          "notes": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "faculty": {
+      "type": "array",
+      "description": "Faculty with notable technology expertise",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": ["string", "null"]
+          },
+          "appointment_type": {
+            "type": ["string", "null"],
+            "enum": ["tenure_track", "clinical", "visiting", "adjunct", "emeritus", null]
+          },
+          "tech_expertise": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "research_areas": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "profile_url": {
+            "type": ["string", "null"],
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "partnerships": {
+      "type": "array",
+      "description": "Formal industry or institutional partnerships",
+      "items": {
+        "type": "object",
+        "required": ["org"],
+        "additionalProperties": false,
+        "properties": {
+          "org": {
+            "type": "string",
+            "description": "Organization name"
+          },
+          "type": {
+            "type": ["string", "null"],
+            "enum": ["industry", "government", "ngo", "academic", "legaltech_vendor", null]
+          },
+          "description": {
+            "type": ["string", "null"]
+          },
+          "year_start": {
+            "type": ["integer", "null"]
+          },
+          "source_url": {
+            "type": ["string", "null"],
+            "format": "uri"
+          },
+          "active": {
+            "type": ["boolean", "null"]
+          }
+        }
+      }
+    },
+    "student_orgs": {
+      "type": "array",
+      "description": "Student-run technology or legaltech organizations",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "focus": {
+            "type": ["string", "null"]
+          },
+          "url": {
+            "type": ["string", "null"],
+            "format": "uri"
+          },
+          "active": {
+            "type": ["boolean", "null"]
+          },
+          "year_verified": {
+            "type": ["integer", "null"]
+          }
+        }
+      }
+    },
+    "press_release_gap": {
+      "type": "array",
+      "description": "Documented gaps between marketed programs and current reality",
+      "items": {
+        "type": "object",
+        "required": ["claimed", "reality"],
+        "additionalProperties": false,
+        "properties": {
+          "claimed": {
+            "type": "string",
+            "description": "What was publicly claimed (summarize the original claim)"
+          },
+          "reality": {
+            "type": "string",
+            "description": "What is currently true, with evidence"
+          },
+          "evidence_url": {
+            "type": ["string", "null"],
+            "format": "uri",
+            "description": "URL to the original claim (archive.org link preferred)"
+          },
+          "current_url": {
+            "type": ["string", "null"],
+            "format": "uri",
+            "description": "URL showing current reality"
+          },
+          "year_claimed": {
+            "type": ["integer", "null"]
+          },
+          "year_verified": {
+            "type": ["integer", "null"]
+          },
+          "severity": {
+            "type": ["string", "null"],
+            "enum": ["minor", "moderate", "major", "egregious", null]
+          },
+          "penalty_points": {
+            "type": ["number", "null"],
+            "minimum": -20,
+            "maximum": 0
+          }
+        }
+      }
+    },
+    "scores": {
+      "type": ["object", "null"],
+      "description": "Computed scores per criteria. Null means not yet scored.",
+      "additionalProperties": false,
+      "properties": {
+        "curriculum_courses": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 20
+        },
+        "curriculum_practical": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "curriculum_clinics": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "infrastructure_center": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "infrastructure_joint_degrees": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "infrastructure_partnerships": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "faculty_expertise": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "faculty_research": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 10
+        },
+        "community_orgs": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 5
+        },
+        "community_careers": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 5
+        },
+        "press_release_gap_penalty": {
+          "type": ["number", "null"],
+          "minimum": -20,
+          "maximum": 0
+        },
+        "total": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "ranking_tier": {
+      "type": ["string", "null"],
+      "enum": ["S", "A", "B", "C", "D", "unranked", null]
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-form notes, editorial context, or caveats about this school's record"
+    }
+  }
+}

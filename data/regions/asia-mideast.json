@@ -1,0 +1,225 @@
+[
+  {
+    "name": "Singapore Management University (Yong Pung How School of Law)",
+    "country": "Singapore",
+    "city": "Singapore",
+    "region": "Asia-Pacific",
+    "tech_center": "Centre for Digital Law (consolidating the Centre for Computational Law and Centre for AI & Data Governance)",
+    "highlights": [
+      "BSc (Computing & Law) — first of its kind in Singapore, jointly taught with the School of Computing and Information Systems",
+      "Centre for Computational Law's SGD 15M NRF programme built the open-source L4 domain-specific language for machine-executable contracts and statutes",
+      "SMU LIT hackathon — Singapore's largest inter-varsity legal tech hackathon, run in 2025 with Stanford CodeX and backed by the Ministry of Law and the Singapore Academy of Law",
+      "Partnership with the Future of Privacy Forum on digital law and data governance in APAC"
+    ],
+    "scores": { "curriculum": 5, "hands_on": 4, "practical": 4, "research": 5, "ecosystem": 5 },
+    "sources": [
+      "https://cdl.smu.edu.sg/",
+      "https://computing.smu.edu.sg/bsc-computing-law",
+      "https://www.smulit.org/lit-hackathon-2025",
+      "https://ink.library.smu.edu.sg/cclaw/"
+    ]
+  },
+  {
+    "name": "National University of Singapore — Faculty of Law",
+    "country": "Singapore",
+    "city": "Singapore",
+    "region": "Asia-Pacific",
+    "tech_center": "TRAIL — Centre for Technology, Robotics, Artificial Intelligence & the Law",
+    "highlights": [
+      "Law, Algorithms and Artificial Intelligence course teaches practical statistics, machine learning, and NLP to lawyers",
+      "TRAIL's substantial scholarship includes 'Law and Technology in Singapore' and Simon Chesterman's AI governance work ('We, the Robots?')",
+      "Student-led Alt+Law club runs coding classes and hackathons (e.g., the NatashaBot chatbot for migrant workers); Rajah & Tann partnered on a seven-course tech programme for lawyers",
+      "LLM specialisation and graduate certificates in IP & Technology Law"
+    ],
+    "caveats": "Hands-on building is largely student-led; no established clinic where students build or deploy technology.",
+    "scores": { "curriculum": 4, "hands_on": 3, "practical": 3, "research": 5, "ecosystem": 4 },
+    "sources": [
+      "https://law.nus.edu.sg/trail/",
+      "https://law.nus.edu.sg/law-course-detail/ll5532x-law-algorithms-and-artificial-intelligence/",
+      "https://www.comp.nus.edu.sg/news-media/2021-rajah-tann-tech"
+    ]
+  },
+  {
+    "name": "University of Hong Kong — Faculty of Law",
+    "country": "Hong Kong SAR",
+    "city": "Hong Kong",
+    "region": "Asia-Pacific",
+    "tech_center": "LITE Lab@HKU; Law and Technology Centre (joint with Computer Science since 2001, runs HKLII)",
+    "highlights": [
+      "LITE Lab is explicitly experiential: credit-bearing courses (Tech Startup Law, Lawtech & Regtech Sandbox, LITE Internship) where students co-design and build lawtech tools with NGOs for access to justice",
+      "LLMs in Technology & IP Law and in Compliance & Regulation; AI law/ethics coursework",
+      "Law and Technology Centre built the 'HKU AI Lawyer' sentencing predictor; LITE Lab won a CLOC 2022 Legal Innovation award",
+      "Ecosystem ties to Cyberport, HK Science & Technology Park, and an advisory board including Ashurst, KWM, and Ant Group; Douglas Arner anchors globally prominent fintech/regtech scholarship"
+    ],
+    "scores": { "curriculum": 4, "hands_on": 5, "practical": 5, "research": 4, "ecosystem": 5 },
+    "sources": [
+      "https://litelab.law.hku.hk/about/",
+      "https://litelab.law.hku.hk/students/courses/",
+      "https://lawtech.law.hku.hk/about/",
+      "https://llm.law.hku.hk/tipl/"
+    ]
+  },
+  {
+    "name": "Chinese University of Hong Kong — Faculty of Law",
+    "country": "Hong Kong SAR",
+    "city": "Hong Kong",
+    "region": "Asia-Pacific",
+    "tech_center": "Centre for Legal Innovation and Digital Society (CLINDS)",
+    "highlights": [
+      "New dedicated LLM in AI Law launching in the 2026-27 academic year",
+      "Legal Technologies courses at both undergraduate and postgraduate level; offerings on ODR, AI and IP, and smart contracts",
+      "Active research cluster (Jyh-An Lee on IP/AI/platforms) with annual AI governance conferences"
+    ],
+    "caveats": "Weaker on experiential, build-oriented training than HKU's LITE Lab; no clinic or hackathon identified.",
+    "scores": { "curriculum": 4, "hands_on": 1, "practical": 3, "research": 4, "ecosystem": 3 },
+    "sources": [
+      "https://www.law.cuhk.edu.hk/app/cuhk-law-launches-new-llm-in-ai-law-programme/",
+      "https://www.law.cuhk.edu.hk/app/areas-projects/clinds/"
+    ]
+  },
+  {
+    "name": "Tsinghua University School of Law",
+    "country": "China",
+    "city": "Beijing",
+    "region": "Asia-Pacific",
+    "tech_center": "Institute for Studies on Artificial Intelligence and Law; Law and Big Data Research Center",
+    "highlights": [
+      "China's flagship computational-law programme: a dedicated Juris Master in Computational Law (first cohort 2019, independent national admissions track since 2022) combining law with networks, big data, and AI coursework",
+      "Dean Shen Weixing is a leading computational-law scholar; annual International Forum on Computational Law",
+      "Applied research on big data and AI in China's smart-court/judicial informatization agenda"
+    ],
+    "caveats": "Experiential clinic details and student build opportunities are not well documented in public sources.",
+    "scores": { "curriculum": 5, "hands_on": 2, "practical": 3, "research": 5, "ecosystem": 3 },
+    "sources": [
+      "https://www.law.tsinghua.edu.cn/en/info/1060/1191.htm",
+      "http://legalscholarshipblog.com/2019/07/23/computation-law-digital-economy-legal-tech-tsinghua-china/"
+    ]
+  },
+  {
+    "name": "Peking University Law School",
+    "country": "China",
+    "city": "Beijing",
+    "region": "Asia-Pacific",
+    "tech_center": "PKU Legal AI Laboratory (2017, with Gridsum); Digital Rule of Law Research Center",
+    "highlights": [
+      "Early mover: Legal AI Lab founded in 2017 for AI product R&D in legal applications",
+      "Courses in Law and Artificial Intelligence, Topics in Digital Law, and Data Regulation and Compliance",
+      "Active digital-law scholarship and conferences on AI and legal theory"
+    ],
+    "caveats": "The Legal AI Lab's current vitality is uncertain; no legal-tech degree, build clinic, or hackathon identified.",
+    "scores": { "curriculum": 3, "hands_on": 1, "practical": 2, "research": 4, "ecosystem": 2 },
+    "sources": [
+      "http://www.ailaw.pku.edu.cn/html/pku/en/index.html",
+      "https://en.law.pku.edu.cn/academics/announcements/91126.htm"
+    ]
+  },
+  {
+    "name": "Hebrew University of Jerusalem — Faculty of Law",
+    "country": "Israel",
+    "city": "Jerusalem",
+    "region": "Middle East",
+    "tech_center": "Federmann Cyber Security Research Center — Cyber Law Program (joint with the Benin School of Computer Science)",
+    "highlights": [
+      "Deep cyber/tech course cluster: Cyber Law, Israeli and International Cybersecurity Law, Cyber Crimes, Internet Governance, plus cross-listed CS courses",
+      "Year-long Clinic on Digital Rights and Human Rights in Cyberspace within one of Israel's leading clinical programs",
+      "Federmann Center scholarship spans cyber operations law, cybercrime, and AI governance, with government (INCD) ties"
+    ],
+    "caveats": "Strength is cyber and security law rather than hands-on legal-tech tooling; no build labs or hackathons found.",
+    "scores": { "curriculum": 3, "hands_on": 2, "practical": 3, "research": 4, "ecosystem": 3 },
+    "sources": [
+      "https://csrcl.huji.ac.il/",
+      "https://lawclinics.huji.ac.il/"
+    ]
+  },
+  {
+    "name": "Tel Aviv University — Buchmann Faculty of Law",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "region": "Middle East",
+    "tech_center": "Shamgar Center for Digital Law and Innovation (2022); Algorithmic Governance Lab",
+    "highlights": [
+      "Law & Technology specialization in the Parasol Foundation International LLM (14-15 of 32 credits in tech-law courses)",
+      "Israel's first Privacy Clinic (with the Shamgar Center since 2022)",
+      "Top-tier faculty: Niva Elkin-Koren (AI governance, platform regulation), Michael Birnhack (privacy/data protection); dedicated 2025 journal volume on AI",
+      "Algorithmic Governance Lab cooperates with government and industry"
+    ],
+    "scores": { "curriculum": 3, "hands_on": 2, "practical": 3, "research": 5, "ecosystem": 3 },
+    "sources": [
+      "https://shamgarlaw.sites.tau.ac.il/en",
+      "https://en-law.tau.ac.il/Intl-LLM/Specialization_Law_Technology",
+      "https://tilabs.tau.ac.il/Algorithmic_Governance_Lab"
+    ]
+  },
+  {
+    "name": "Reichman University — Harry Radzyner Law School",
+    "country": "Israel",
+    "city": "Herzliya",
+    "region": "Middle East",
+    "tech_center": "Zvi Meitar Institute for Legal Implications of Emerging Technologies",
+    "highlights": [
+      "MA/LLM in Law, Technology and Business Innovation (200+ students, running since ~2020)",
+      "Selective cross-disciplinary Zvi Meitar Emerging Technologies Program spanning Law, Business, CS, and Government schools",
+      "Institute policy work on responsible AI regulation; strong university-wide entrepreneurship culture"
+    ],
+    "caveats": "Weaker on hands-on build-and-deploy legal tech; no dedicated legal-tech clinic verified.",
+    "scores": { "curriculum": 4, "hands_on": 1, "practical": 3, "research": 4, "ecosystem": 3 },
+    "sources": [
+      "https://www.runi.ac.il/en/research-institutes/law/zmi",
+      "https://www.runi.ac.il/en/special-programs/zmi"
+    ]
+  },
+  {
+    "name": "National Law School of India University (NLSIU)",
+    "country": "India",
+    "city": "Bengaluru",
+    "region": "South Asia",
+    "tech_center": "JSW Centre for the Future of Law (2024)",
+    "highlights": [
+      "'Law and New Technologies' built into the core curriculum, with AI and the Future of Law and AI Governance & Ethics electives anchored by the JSW Centre",
+      "Students get access to premium AI tools plus AI skills workshops; full-time JSW-CFL internship programme",
+      "L-Tech (est. 1995) is India's oldest student tech-law society; LLM concentration covers comparative AI regulation including the EU AI Act"
+    ],
+    "caveats": "Capacity is new (2024-); no build-oriented clinic or legal-tech hackathon yet evident.",
+    "scores": { "curriculum": 4, "hands_on": 2, "practical": 3, "research": 3, "ecosystem": 3 },
+    "sources": [
+      "https://www.nls.ac.in/centres/jsw-centre-for-the-future-of-law/",
+      "https://www.nls.ac.in/news-events/student-internship-programme-jsw-centre-for-the-future-of-law/"
+    ]
+  },
+  {
+    "name": "NALSAR University of Law",
+    "country": "India",
+    "city": "Hyderabad",
+    "region": "South Asia",
+    "tech_center": "Centre for Law and AI; Centre for Cyber Laws and Forensic Sciences",
+    "highlights": [
+      "NPTEL/SWAYAM MOOC 'Artificial Intelligence, Law and Justice' has reached 10,000+ learners",
+      "NSDC-certified Diploma in Future of Law: AI, Technology & Legal Practice (with LawSikho, 2025); one-year Advanced Diploma in Cyber Laws",
+      "Active student scholarship via the Tech Law Forum"
+    ],
+    "caveats": "Strength is distance/professional education and MOOCs more than on-campus build-focused legal tech.",
+    "scores": { "curriculum": 3, "hands_on": 1, "practical": 2, "research": 3, "ecosystem": 3 },
+    "sources": [
+      "https://onlinecourses.nptel.ac.in/noc25_lw12/preview",
+      "https://techlawforum.nalsar.ac.in/about-us/"
+    ]
+  },
+  {
+    "name": "O.P. Jindal Global University (Jindal Global Law School)",
+    "country": "India",
+    "city": "Sonipat",
+    "region": "South Asia",
+    "tech_center": "Cyril Shroff Centre for AI, Law & Regulation (India's first dedicated AI-law centre, ₹15 crore endowment); JIRICO",
+    "highlights": [
+      "LLM in Artificial Intelligence and Emerging Technologies — a 12-month blended programme, first of its kind in India — plus an LLM in IP & Technology Law",
+      "Cyril Shroff Centre plans partnerships with NITI Aayog, MeitY, RBI, SEBI, TRAI, and global bodies (OECD, US FTC, UK AISI)",
+      "Annual Jindal Technology Law and Policy International Moot; Qualcomm-funded IP-competition research via JIRICO"
+    ],
+    "caveats": "Practical build-oriented legal-tech training is still limited; centre work is research and policy oriented.",
+    "scores": { "curriculum": 4, "hands_on": 1, "practical": 3, "research": 4, "ecosystem": 4 },
+    "sources": [
+      "https://jgu.edu.in/cyril-shroff-centre-for-ai-law-regulation-established-at-jindal-global-law-school",
+      "https://jgu.edu.in/jgls/admissions/llm-in-artificial-intelligence-and-emerging-technologies"
+    ]
+  }
+]

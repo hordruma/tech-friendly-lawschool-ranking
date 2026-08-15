@@ -1,0 +1,1359 @@
+{
+  "weights": {
+    "curriculum": 0.25,
+    "hands_on": 0.25,
+    "practical": 0.2,
+    "research": 0.2,
+    "ecosystem": 0.1
+  },
+  "pillar_labels": {
+    "curriculum": "Tech & AI Curriculum",
+    "hands_on": "Hands-On Legal Tech",
+    "practical": "Practical Preparation",
+    "research": "Research & Leadership",
+    "ecosystem": "Industry Ecosystem"
+  },
+  "schools": [
+    {
+      "name": "Georgetown University Law Center",
+      "country": "United States",
+      "city": "Washington, DC",
+      "region": "North America",
+      "tech_center": "Institute for Technology Law & Policy; Georgetown Justice Lab; GAILP (AI & the Legal Profession Initiative)",
+      "highlights": [
+        "Reported 80+ technology law courses and ~19 full-time tech-law faculty — the deepest US tech law & policy curriculum",
+        "Iron Tech Lawyer practicum (since ~2012): students build access-to-justice apps for nonprofit and court partners, capped by the global Iron Tech Lawyer Invitational",
+        "Technology Law & Policy LLM, Master of Law and Technology for non-lawyers, and Tech Law Scholars JD program",
+        "Justice Lab (founded by Tanina Rostain) plus DC-based government and tech-policy placements"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 5,
+        "practical": 4,
+        "research": 5,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.law.georgetown.edu/tech-institute/",
+        "https://www.law.georgetown.edu/academics/llm-degree-programs/technology/",
+        "https://www.law.georgetown.edu/tech-institute/programs-and-initiatives/georgetown-justice-lab/iron-tech-lawyer-invitational/"
+      ],
+      "composite": 94.0,
+      "rank": 1
+    },
+    {
+      "name": "Suffolk University Law School",
+      "country": "United States",
+      "city": "Boston, MA",
+      "region": "North America",
+      "tech_center": "Legal Innovation & Technology (LIT) Lab",
+      "highlights": [
+        "LIT Lab runs as a student R&D consultancy shipping production tools: Docassemble court-form automation via the Document Assembly Line, used by real courts and litigants",
+        "Nation's first JD concentration in Legal Innovation & Technology, plus an LLM (2024) and online LIT certificate; GenAI learning track delivered to all 1Ls (Hotshot partnership, 2025)",
+        "LIT Clinic and ODR Innovation Clinic (AI-powered ODR for uncontested divorce); student-built Military Benefits Assistant has served 1,300+ users",
+        "Hosts LIT Con and a student Legal AI Simulation hackathon; consistently ranked the No. 1 US legal technology program (preLaw/National Jurist)"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 5,
+        "practical": 5,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://suffolklitlab.org/",
+        "https://www.suffolk.edu/law/academics-clinics/what-can-i-study/legal-innovation-technology",
+        "https://www.suffolk.edu/law/academics-clinics/master-of-laws-llm/llm-in-legal-innovation-technology",
+        "https://www.businesswire.com/news/home/20250609906515/en/Suffolk-Law-Partners-with-Hotshot-to-Deliver-GenAI-Learning-Track-to-All-1L-Students"
+      ],
+      "composite": 94.0,
+      "rank": 1
+    },
+    {
+      "name": "Singapore Management University (Yong Pung How School of Law)",
+      "country": "Singapore",
+      "city": "Singapore",
+      "region": "Asia-Pacific",
+      "tech_center": "Centre for Digital Law (consolidating the Centre for Computational Law and Centre for AI & Data Governance)",
+      "highlights": [
+        "BSc (Computing & Law) — first of its kind in Singapore, jointly taught with the School of Computing and Information Systems",
+        "Centre for Computational Law's SGD 15M NRF programme built the open-source L4 domain-specific language for machine-executable contracts and statutes",
+        "SMU LIT hackathon — Singapore's largest inter-varsity legal tech hackathon, run in 2025 with Stanford CodeX and backed by the Ministry of Law and the Singapore Academy of Law",
+        "Partnership with the Future of Privacy Forum on digital law and data governance in APAC"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 5,
+        "ecosystem": 5
+      },
+      "sources": [
+        "https://cdl.smu.edu.sg/",
+        "https://computing.smu.edu.sg/bsc-computing-law",
+        "https://www.smulit.org/lit-hackathon-2025",
+        "https://ink.library.smu.edu.sg/cclaw/"
+      ],
+      "composite": 91.0,
+      "rank": 3
+    },
+    {
+      "name": "Stanford Law School",
+      "country": "United States",
+      "city": "Stanford, CA",
+      "region": "North America",
+      "tech_center": "CodeX (Center for Legal Informatics); Legal Design Lab; liftlab (AI lab, 2025)",
+      "highlights": [
+        "CodeX has anchored computational law for 15+ years; liftlab (2025) adds a frontier-AI build lab led by Julian Nyarko and Megan Ma",
+        "Computational Law, AI for Legal Help, and agentic-AI bootcamps; LLM in Law, Science & Technology and joint JD/MS in Computer Science",
+        "liftlab ships tools with the Mills Legal Clinic (AI voice intake for the Immigrants' Rights Clinic); Legal Design Lab co-designs AI pilots with LSC, ABA, and courts",
+        "Hosts the CodeX LLM x Law Hackathon and FutureLaw, a leading global legal tech conference; large CodeX affiliate network of legal tech companies"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 5,
+        "ecosystem": 5
+      },
+      "sources": [
+        "https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/",
+        "https://news.stanford.edu/stories/2025/09/liftlab-ai-artificial-intelligence-legal-services",
+        "https://justiceinnovation.law.stanford.edu/courses/ai-for-legal-help",
+        "https://law.stanford.edu/legal-design-lab/",
+        "https://law.stanford.edu/event/futurelaw-2026/"
+      ],
+      "composite": 91.0,
+      "rank": 3
+    },
+    {
+      "name": "University of Hong Kong — Faculty of Law",
+      "country": "Hong Kong SAR",
+      "city": "Hong Kong",
+      "region": "Asia-Pacific",
+      "tech_center": "LITE Lab@HKU; Law and Technology Centre (joint with Computer Science since 2001, runs HKLII)",
+      "highlights": [
+        "LITE Lab is explicitly experiential: credit-bearing courses (Tech Startup Law, Lawtech & Regtech Sandbox, LITE Internship) where students co-design and build lawtech tools with NGOs for access to justice",
+        "LLMs in Technology & IP Law and in Compliance & Regulation; AI law/ethics coursework",
+        "Law and Technology Centre built the 'HKU AI Lawyer' sentencing predictor; LITE Lab won a CLOC 2022 Legal Innovation award",
+        "Ecosystem ties to Cyberport, HK Science & Technology Park, and an advisory board including Ashurst, KWM, and Ant Group; Douglas Arner anchors globally prominent fintech/regtech scholarship"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 5,
+        "practical": 5,
+        "research": 4,
+        "ecosystem": 5
+      },
+      "sources": [
+        "https://litelab.law.hku.hk/about/",
+        "https://litelab.law.hku.hk/students/courses/",
+        "https://lawtech.law.hku.hk/about/",
+        "https://llm.law.hku.hk/tipl/"
+      ],
+      "composite": 91.0,
+      "rank": 3
+    },
+    {
+      "name": "Queen Mary University of London (CCLS)",
+      "country": "United Kingdom",
+      "city": "London",
+      "region": "Europe",
+      "tech_center": "Technology, Media and Telecommunications Law Institute (CCLS); qLegal",
+      "highlights": [
+        "Dedicated LLM and PGCert in AI and the Law (Comparative and International AI Law, Competition and AI, Dispute Resolution and AI) alongside the long-running TMT LLM (online since 2003)",
+        "qLegal: award-winning clinic where postgraduate students advise real tech startups; externships embed students in startups one day/week for six months",
+        "Future of Law Programme: interdisciplinary law + CS teams prototype chatbots, apps, and legal design solutions (Enterprise Nation hackathon)",
+        "Faculty advise governments on AI regulation; UK's largest LLM programme"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 4,
+        "practical": 5,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/ai-and-the-law-llm/",
+        "https://www.qmul.ac.uk/qlegal/",
+        "https://www.qmul.ac.uk/ccls/research/tmti/"
+      ],
+      "composite": 89.0,
+      "rank": 6
+    },
+    {
+      "name": "Arizona State University (Sandra Day O'Connor College of Law)",
+      "country": "United States",
+      "city": "Phoenix, AZ",
+      "region": "North America",
+      "tech_center": "AI and Legal Tech Studio; Center for Law, Science and Innovation (est. 1984)",
+      "highlights": [
+        "AI and Legal Tech Studio: students build and deploy tools used in law firms, legal aid clinics, and courtrooms",
+        "First-in-the-nation university OpenAI partnership (ChatGPT Enterprise/Edu for law students); AI Scholars program with OpenAI, AWS, Adobe, and Meta; first US law school to allow generative AI in admissions",
+        "MLS emphasis in AI and Law, JD Certificate in Law, Science and Technology, 50+ law/science/tech courses backed by 50+ faculty fellows",
+        "AI training integrated across all degree programs; repeatedly ranked among the most innovative US law schools"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 5
+      },
+      "sources": [
+        "https://law.asu.edu/ai-legal-tech-studio",
+        "https://law.asu.edu/ai",
+        "https://law.asu.edu/centers/law-science-innovation"
+      ],
+      "composite": 87.0,
+      "rank": 7
+    },
+    {
+      "name": "University of Ottawa Faculty of Law",
+      "country": "Canada",
+      "city": "Ottawa, ON",
+      "region": "North America",
+      "tech_center": "Centre for Law, Technology and Society (Canada's largest law-and-tech hub); AI + Society Initiative",
+      "highlights": [
+        "JD Option in Law and Technology (18 units, English and French) with transcript annotation; LLM concentration with Ian R. Kerr Fellowships",
+        "CIPPIC — Canada's only public-interest technology law clinic (Samuelson-Glushko endowed), doing real tech-law casework and policy interventions",
+        "Technoships place first-year students in technology law internships; Kerr Fellows get guaranteed tech-law placements",
+        "Deep faculty bench: Michael Geist, Teresa Scassa, Florian Martin-Bariteau, Marina Pavlovic — widely regarded as Canada's leading law-and-tech faculty"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 5,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://techlaw.uottawa.ca/programs/jd",
+        "https://www.cippic.ca/about",
+        "https://www.uottawa.ca/research-innovation/centre-law-technology-society/about"
+      ],
+      "composite": 87.0,
+      "rank": 7
+    },
+    {
+      "name": "Chicago-Kent College of Law (Illinois Tech)",
+      "country": "United States",
+      "city": "Chicago, IL",
+      "region": "North America",
+      "tech_center": "The Law Lab (Daniel Martin Katz); Center for Access to Justice & Technology",
+      "highlights": [
+        "One of the oldest formal legal-tech credentials: 18-credit JD/LLM Certificate in Legal Innovation and Technology, requiring a legal-tech externship or clinic",
+        "10+ dedicated courses: Legal Analytics, AI + Law, Programming for Lawyers, eDiscovery, Blockchain + Law, Legal Project Management (Lean Six Sigma)",
+        "Justice and Technology Practicum: students build A2J Guided Interviews for the Self-Help Web Center; C-K Law Group is one of the largest in-house clinical firms in the US",
+        "Katz's research ('GPT-4 Passes the Bar Exam') and ventures (LexPredict, 273 Ventures) tie the school directly into the legal tech industry"
+      ],
+      "caveats": "Current activity level of the A2J Author/CAJT program in 2026 is unclear.",
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://kentlaw.iit.edu/law/academics/jd-program/areas-study/jd-legal-innovation-and-technology",
+        "https://kentlaw.iit.edu/law/faculty-scholarship/faculty-directory/daniel-martin-katz",
+        "https://www.kentlaw.iit.edu/institutes-centers/center-for-access-to-justice-and-technology"
+      ],
+      "composite": 85.0,
+      "rank": 9
+    },
+    {
+      "name": "UC Berkeley School of Law",
+      "country": "United States",
+      "city": "Berkeley, CA",
+      "region": "North America",
+      "tech_center": "Berkeley Center for Law & Technology (BCLT); Berkeley Law AI Institute",
+      "highlights": [
+        "World's first LLM Certificate in AI Law and Regulation (expanded 2025), plus JD/LLM Law & Technology certificates through BCLT",
+        "One of the largest US law-and-technology curricula, with a dedicated AI area of study (Law and Governance of AI, AI Transactions and Licensing, Cybersecurity in Context)",
+        "Samuelson Law, Technology & Public Policy Clinic — a pioneering tech-policy clinic running 25+ years (algorithmic bias, deepfakes, privacy)",
+        "Top-ranked IP/tech faculty (Samuelson, Chien, Katyal, Hoofnagle, Wexler); strength skews to regulating tech rather than building it"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 3,
+        "practical": 4,
+        "research": 5,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.law.berkeley.edu/article/berkeley-law-expands-groundbreaking-ai-law-certificate-as-global-demand-for-expertise-grows/",
+        "https://www.law.berkeley.edu/academics/areas-of-study/artificial-intelligence/",
+        "https://executive.law.berkeley.edu/programs/berkeley-law-ai-institute"
+      ],
+      "composite": 84.0,
+      "rank": 10
+    },
+    {
+      "name": "Maastricht University — Faculty of Law",
+      "country": "Netherlands",
+      "city": "Maastricht",
+      "region": "Europe",
+      "tech_center": "Maastricht Law & Tech Lab; European Centre on Privacy and Cybersecurity",
+      "highlights": [
+        "Genuinely build-oriented lab: open-source legal NLP models on Hugging Face, case-law network software, and public GitHub repos ('maastrichtlawtech')",
+        "LLM Law & AI specialisation, Advanced Master in Privacy/Cybersecurity/Data Management, Bachelor Minor in Law and Technology, Legal Analytics course, and a Python Club for law students",
+        "Rethinking Justice 24-hour hackathon with students, staff, alumni, and industry",
+        "Problem-Based Learning pedagogy faculty-wide"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 5,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.maastrichtuniversity.nl/law-tech-lab",
+        "https://www.maastrichtuniversity.nl/education/master/programmes/european-law-school-law-ai",
+        "https://github.com/maastrichtlawtech"
+      ],
+      "composite": 83.0,
+      "rank": 11
+    },
+    {
+      "name": "King's College London (Dickson Poon School of Law)",
+      "country": "United Kingdom",
+      "city": "London",
+      "region": "Europe",
+      "tech_center": "Centre for Technology, Ethics, Law and Society (TELOS)",
+      "highlights": [
+        "World-first AI Literacy Programme (Jan 2026): every law student and staff member gets free access to Harvey, Legora, Luminance, and Lucio AI with structured training",
+        "King's Legal Clinic integrates legal AI (Legora) into live clinical casework — students deploy AI in real access-to-justice work",
+        "LLM pathways in Law & Technology and Digital Law (online option); AI Governance module taught by Luminance's general counsel",
+        "Freshfields sponsors a fully funded tech-focused LLM at King's for its future trainees"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 5
+      },
+      "sources": [
+        "https://www.kcl.ac.uk/news/kings-launches-world-first-ai-literacy-programme-for-law-students-and-staff",
+        "https://www.kcl.ac.uk/study/postgraduate-taught/courses/digital-law",
+        "https://www.kcl.ac.uk/research/centre-for-technology-ethics-law-and-society-telos"
+      ],
+      "composite": 82.0,
+      "rank": 12
+    },
+    {
+      "name": "Cornell Tech / Cornell Law School (NYC)",
+      "country": "United States",
+      "city": "New York, NY",
+      "region": "North America",
+      "tech_center": "CTRL-ALT (Cornell Tech Research Lab in Applied Law and Technology); Digital Life Initiative",
+      "highlights": [
+        "LLM in Law, Technology, and Entrepreneurship — first degree of its kind: a year embedded in cross-disciplinary product teams on the Roosevelt Island campus",
+        "Studio program: law students build real products alongside engineers and designers for partners like Uber and the Robin Hood Foundation",
+        "Startup Awards ($100k investments) capstone; all four 2026 winners were AI companies; legal-tech alumni startups include Kaveat",
+        "Strongest fit for lawyers who want to build or counsel startups rather than deliver legal services"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 5,
+        "practical": 4,
+        "research": 3,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://tech.cornell.edu/programs/masters-programs/master-of-laws-llm/",
+        "https://news.cornell.edu/stories/2026/05/four-student-founded-ai-companies-win-cornell-tech-startup-awards",
+        "https://tech.cornell.edu/people/james-grimmelmann"
+      ],
+      "composite": 81.0,
+      "rank": 13
+    },
+    {
+      "name": "University of Melbourne — Melbourne Law School",
+      "country": "Australia",
+      "city": "Melbourne",
+      "region": "Asia-Pacific",
+      "tech_center": "Centre for Artificial Intelligence and Digital Ethics (CAIDE, with Engineering & IT; renewed to 2030)",
+      "highlights": [
+        "Deep AI/tech-law catalogue: Artificial Intelligence and the Law, Legal AI: Design and Development (students build LLM-based legal apps), AI and Justice, International Law and AI (2026), plus undergraduate AI Ethics and the Law",
+        "Pioneering Law Apps clinic (est. 2015): JD teams built and released live Neota Logic apps for not-for-profits for a decade",
+        "Specialist Certificate and Melbourne Law Masters stream in Digital Law and Technological Innovation",
+        "Law Apps Bake Off pitch nights; hackathon with King & Wood Mallesons; CAIDE delivers AI-literacy training across Australia/NZ"
+      ],
+      "caveats": "The flagship Law Apps clinic is listed as not offered in 2026; hands-on building has shifted to the generative-AI subject LAWS90286.",
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 4,
+        "practical": 3,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.unimelb.edu.au/caide",
+        "https://handbook.unimelb.edu.au/2024/subjects/laws90286",
+        "https://law.unimelb.edu.au/study/masters/specialist-legal-areas/digital-law-and-technological-innovation",
+        "https://law.unimelb.edu.au/news/MLS/legal-ai-mls-celebrates-10-years-of-a-clinic-breaking-new-ground"
+      ],
+      "composite": 81.0,
+      "rank": 13
+    },
+    {
+      "name": "Duke University School of Law",
+      "country": "United States",
+      "city": "Durham, NC",
+      "region": "North America",
+      "tech_center": "Duke Center on Law & Technology (DCLT); Bolch Judicial Institute",
+      "highlights": [
+        "Duke Law Tech Lab — among the first law-school-run legal tech accelerators, incubating justice-tech startups",
+        "Hands-on AI coursework: Practicing Law with AI and Big Data, AI Law and Policy, Frontier AI & Robotics; RAILS initiative on responsible AI in legal services",
+        "LLM in Law and Entrepreneurship plus Start-Up Ventures Clinic — a distinctive entrepreneurship-plus-justice-tech track",
+        "Top-tier experiential program overall (clinics, externships, startup immersion)"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://law.duke.edu/dclt/",
+        "https://dukelawtechlab.com/",
+        "https://law.duke.edu/apply/focus/technology"
+      ],
+      "composite": 80.0,
+      "rank": 15
+    },
+    {
+      "name": "Northwestern Pritzker School of Law",
+      "country": "United States",
+      "city": "Chicago, IL",
+      "region": "North America",
+      "tech_center": "Law and Technology Initiative (joint with McCormick Engineering); Innovation Lab",
+      "highlights": [
+        "Innovation Lab co-taught by Dan Linna (law) and Kris Hammond (CS): mixed law/CS teams build prototypes for firms, legal departments, legal aid orgs, and courts",
+        "AI and Legal Reasoning course (Bloomberg innovation finalist); hosted the first AI for Law Scholars Conference (2025)",
+        "Master of Science in Law (MSL) scales tech-adjacent legal education to non-lawyers; JD concentration in Technology, Innovation, and Entrepreneurship",
+        "The institutional law-engineering bridge (joint appointments with McCormick) is unique among US peers"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.law.northwestern.edu/academics/curricular-offerings/law-technology/",
+        "https://www.law.northwestern.edu/academics/degree-programs/msl/",
+        "https://news.law.northwestern.edu/news/northwestern-innovation-lab-leads-cross-disciplinary-legal-education/"
+      ],
+      "composite": 80.0,
+      "rank": 15
+    },
+    {
+      "name": "Swansea University (Hillary Rodham Clinton School of Law)",
+      "country": "United Kingdom",
+      "city": "Swansea",
+      "region": "Europe",
+      "tech_center": "Legal Innovation Lab Wales (£5.6m facility with an in-house software team and legal AI laboratory)",
+      "highlights": [
+        "LLM in LegalTech and Commercial Law with compulsory modules on AI in legal practice and blockchain/e-transactions regulation",
+        "A funded lab with actual software developers on staff, building tools for legal businesses, access to justice, and security platforms",
+        "Law Clinic connected to the lab, so LegalTech tools are developed and applied in clinic work",
+        "Open collaboration model with law firms, technology companies, and security organisations"
+      ],
+      "caveats": "Post-ERDF funding arrangements not verified.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.swansea.ac.uk/law/legal-innovation-lab-wales/",
+        "https://www.swansea.ac.uk/postgraduate/taught/law/llm-legaltech-commercial-law/"
+      ],
+      "composite": 80.0,
+      "rank": 15
+    },
+    {
+      "name": "University of Technology Sydney (UTS) — Faculty of Law",
+      "country": "Australia",
+      "city": "Sydney",
+      "region": "Asia-Pacific",
+      "tech_center": "Hosts AustLII (Australasian Legal Information Institute), a major legal-informatics institution",
+      "highlights": [
+        "Legal Futures and Technology major in the LLB — an Australian first — with an applied tech project capstone and legal-tech internships (LawPath, AustLII, Westpac, Marrickville Legal Centre)",
+        "Allens Neota UTS Law Tech Challenge for Social Justice, running since 2016: student teams build AI-driven apps for non-profits with Allens mentoring",
+        "Bachelor of IT / Bachelor of Laws dual degree; first Sydney university to offer Practical Legal Training in-house",
+        "Disruptive Technologies and the Law elective covers AI in practice, e-discovery, and emerging-tech regulation"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 4,
+        "practical": 5,
+        "research": 3,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.uts.edu.au/about/faculty-law/news/tech-focused-legal-major-equip-graduates-law-future",
+        "https://www.uts.edu.au/for-students/current-students/managing-your-course/current-students-information-law/brennan-justice-and-leadership-program/initiatives/allens-neota-uts-law-tech-challenge-social-justice",
+        "https://www.uts.edu.au/courses/bachelor-of-information-technology-bachelor-of-laws"
+      ],
+      "composite": 80.0,
+      "rank": 15
+    },
+    {
+      "name": "Vanderbilt Law School",
+      "country": "United States",
+      "city": "Nashville, TN",
+      "region": "North America",
+      "tech_center": "Vanderbilt AI Law Lab (VAILL); Program on Law & Innovation (PoLI)",
+      "highlights": [
+        "VAILL (Nov 2023, co-directed by Cat Moon and Mark Williams) was among the first dedicated law school AI labs; students build and test AI-driven access-to-justice tools",
+        "Human-centered design curriculum: Legal Problem Solving, Law Practice 2050, hands-on AI tool workshops",
+        "Inaugural VAILL hackathon (2025) on AI and the civil justice gap; recurring Music City Legal Hackers events; collaboration with Suffolk's LIT Lab",
+        "Culturally one of the most AI-forward US law schools, with outsized public programming relative to size"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://law.vanderbilt.edu/vanderbilt-ai-law-lab/",
+        "https://law.vanderbilt.edu/academic-programs/law-innovation/",
+        "https://suffolklitlab.org/law-lab/vaill/"
+      ],
+      "composite": 80.0,
+      "rank": 15
+    },
+    {
+      "name": "IE University — IE Law School",
+      "country": "Spain",
+      "city": "Madrid",
+      "region": "Europe",
+      "tech_center": "LawAhead Center; Lawtomation Centre (Jean Monnet Centre of Excellence); IE Legaltech Innovation Farm",
+      "highlights": [
+        "Master in Legaltech (ML, legalbots, blockchain, cybersecurity, big data) plus an AI-Powered Legal Practice program covering the EU AI Act and AI governance",
+        "Legaltech Innovation Farm — Spain's first legaltech open-innovation ecosystem, co-developing solutions with Santander, A&O, Baker McKenzie, Deloitte, Linklaters, IBM, and Microsoft",
+        "Runs the Global LegalTech Venture Days international startup competition with the Law Schools Global League",
+        "AI embedded across curricula 'from Digital Law to AI-Powered Legal Practice'"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 4,
+        "practical": 4,
+        "research": 3,
+        "ecosystem": 5
+      },
+      "sources": [
+        "https://www.ie.edu/law-school/news-events/news/ie-law-school-launch-first-legaltech-open-innovation-ecosystem-spain/",
+        "https://lawschoolsgloballeague.com/projects/legal-tech-venture-day/",
+        "https://www.ie.edu/lifelong-learning/programs/ai-powered-legal-practice/program/"
+      ],
+      "composite": 78.0,
+      "rank": 20
+    },
+    {
+      "name": "Harvard Law School",
+      "country": "United States",
+      "city": "Cambridge, MA",
+      "region": "North America",
+      "tech_center": "Berkman Klein Center for Internet & Society; Library Innovation Lab; Access to Justice Lab",
+      "highlights": [
+        "2025-26 catalog is AI-dense: CS50 (and AI) for Lawyers, AI and the Future of Law, Law and Artificial Intelligence, Agentic AI and the Law, International AI Law and Governance",
+        "Cyberlaw Clinic (Berkman Klein) does live tech-and-access-to-justice work including a Massachusetts Trial Court technology project",
+        "Library Innovation Lab builds open legal-data infrastructure (Perma.cc, Caselaw Access Project lineage); Access to Justice Lab runs RCTs on legal interventions",
+        "World-leading AI governance scholarship (Jonathan Zittrain et al.), though orientation is more policy/research than student tool-building; no legal-tech degree or concentration"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 3,
+        "practical": 4,
+        "research": 5,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://hls.harvard.edu/courses/cs50-and-ai-for-lawyers/",
+        "https://hls.harvard.edu/courses/agentic-artificial-intelligence-and-the-law/",
+        "https://hls.harvard.edu/clinics/in-house-clinics/cyberlaw-clinic/",
+        "https://lil.law.harvard.edu/about/"
+      ],
+      "composite": 77.0,
+      "rank": 21
+    },
+    {
+      "name": "Bucerius Law School",
+      "country": "Germany",
+      "city": "Hamburg",
+      "region": "Europe",
+      "tech_center": "Center for Legal Technology and Data Science (academic director: Daniel Martin Katz)",
+      "highlights": [
+        "Flagship 3-week summer program 'AI, Legal Technology and Operations' with a hackathon capstone — instructors drawn from industry, Stanford CodeX, and the Legal Design Lab",
+        "Legal Technology and Operations specialization in the Master of Law and Business; Technology Certificate within the LLB",
+        "Legal Data Science Research Group and BMBF-funded NLP research (HILANO); publishes legal tech market and legal-ops reports with industry",
+        "Widely regarded as continental Europe's leading legal-tech law school hub"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 3,
+        "practical": 4,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.law-school.de/international/research-faculty/institutes-centers/center-for-legal-technology-and-data-science",
+        "https://www.law-school.de/international/education/bucerius-summer-programs/legal-technology-and-operations"
+      ],
+      "composite": 75.0,
+      "rank": 22
+    },
+    {
+      "name": "National University of Singapore — Faculty of Law",
+      "country": "Singapore",
+      "city": "Singapore",
+      "region": "Asia-Pacific",
+      "tech_center": "TRAIL — Centre for Technology, Robotics, Artificial Intelligence & the Law",
+      "highlights": [
+        "Law, Algorithms and Artificial Intelligence course teaches practical statistics, machine learning, and NLP to lawyers",
+        "TRAIL's substantial scholarship includes 'Law and Technology in Singapore' and Simon Chesterman's AI governance work ('We, the Robots?')",
+        "Student-led Alt+Law club runs coding classes and hackathons (e.g., the NatashaBot chatbot for migrant workers); Rajah & Tann partnered on a seven-course tech programme for lawyers",
+        "LLM specialisation and graduate certificates in IP & Technology Law"
+      ],
+      "caveats": "Hands-on building is largely student-led; no established clinic where students build or deploy technology.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 3,
+        "practical": 3,
+        "research": 5,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://law.nus.edu.sg/trail/",
+        "https://law.nus.edu.sg/law-course-detail/ll5532x-law-algorithms-and-artificial-intelligence/",
+        "https://www.comp.nus.edu.sg/news-media/2021-rajah-tann-tech"
+      ],
+      "composite": 75.0,
+      "rank": 22
+    },
+    {
+      "name": "University of Toronto Faculty of Law",
+      "country": "Canada",
+      "city": "Toronto, ON",
+      "region": "North America",
+      "tech_center": "Future of Law Lab; Centre for Innovation Law and Policy",
+      "highlights": [
+        "Multiple 2025-26 AI courses: Contemporary Issues in AI Regulation, Law and Ethics of AI, AI and the Rule of Law, AI Policy/Ethics/Governance (GPLLM)",
+        "GPLLM concentration in Innovation, Law and Technology for working professionals",
+        "Future of Law Lab runs hackathons (90+ participants), case simulations, and research projects",
+        "Strongest computational-law commercialization pipeline in Canada: Blue J (Benjamin Alarie/Anthony Niblett) spun out of the faculty; ties to the Vector Institute"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 3,
+        "practical": 3,
+        "research": 5,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://futureoflaw.utoronto.ca/",
+        "https://jackmanlaw.utoronto.ca/gpllm/innovation-law-and-technology",
+        "https://jackmanlaw.utoronto.ca/people/benjamin-alarie"
+      ],
+      "composite": 75.0,
+      "rank": 22
+    },
+    {
+      "name": "University of Edinburgh — Edinburgh Law School",
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "region": "Europe",
+      "tech_center": "SCRIPT Centre (Scottish Research Centre for IP and Technology Law)",
+      "highlights": [
+        "One of Europe's deepest and most technical tech-law catalogues: Robotics AI and the Law, Software and the Law, Hardware and the Law, Decentralised Technologies, Cybercrime and Cyber Security",
+        "LLM in Innovation, Technology and the Law (on-campus and online) plus an online LLM in IT Law",
+        "Law and AI Hackathon where student teams build tech solutions; Summer School in Legal Technology with international practitioners",
+        "Burkhard Schafer's computational legal theory group is among the longest-established in Europe"
+      ],
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 3,
+        "practical": 3,
+        "research": 4,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.law.ed.ac.uk/study/masters-degrees/llm-innovation-technology-law",
+        "https://www.law.ed.ac.uk/research/research-centres-and-networks/script-centre"
+      ],
+      "composite": 74.0,
+      "rank": 25
+    },
+    {
+      "name": "Tsinghua University School of Law",
+      "country": "China",
+      "city": "Beijing",
+      "region": "Asia-Pacific",
+      "tech_center": "Institute for Studies on Artificial Intelligence and Law; Law and Big Data Research Center",
+      "highlights": [
+        "China's flagship computational-law programme: a dedicated Juris Master in Computational Law (first cohort 2019, independent national admissions track since 2022) combining law with networks, big data, and AI coursework",
+        "Dean Shen Weixing is a leading computational-law scholar; annual International Forum on Computational Law",
+        "Applied research on big data and AI in China's smart-court/judicial informatization agenda"
+      ],
+      "caveats": "Experiential clinic details and student build opportunities are not well documented in public sources.",
+      "scores": {
+        "curriculum": 5,
+        "hands_on": 2,
+        "practical": 3,
+        "research": 5,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.law.tsinghua.edu.cn/en/info/1060/1191.htm",
+        "http://legalscholarshipblog.com/2019/07/23/computation-law-digital-economy-legal-tech-tsinghua-china/"
+      ],
+      "composite": 73.0,
+      "rank": 26
+    },
+    {
+      "name": "Toronto Metropolitan University (Lincoln Alexander School of Law)",
+      "country": "Canada",
+      "city": "Toronto, ON",
+      "region": "North America",
+      "tech_center": "Legal Innovation Zone — the world's first legal tech incubator",
+      "highlights": [
+        "Integrated Practice Curriculum: graduates satisfy Ontario's experiential licensing requirements through built-in simulated practice and placements",
+        "JUR401 Tech Innovation intensive: students prototype legal tech solutions; Legal Innovation Zone offers incubation and a Legal Innovation Bootcamp",
+        "Also runs Ontario's Law Practice Program (LPP), an eight-month simulated-practice licensing pathway"
+      ],
+      "caveats": "Young school (2020) with a thinner research and scholarship record; no standalone AI-and-law course verified.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 4,
+        "practical": 5,
+        "research": 2,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.torontomu.ca/zone-learning/legal-innovation-zone/",
+        "https://www.torontomu.ca/law/students/experiential-learning-opportunities/",
+        "https://lpp.torontomu.ca/"
+      ],
+      "composite": 71.0,
+      "rank": 27
+    },
+    {
+      "name": "Flinders University — College of Business, Government and Law",
+      "country": "Australia",
+      "city": "Adelaide",
+      "region": "Asia-Pacific",
+      "tech_center": "Flinders Digital Law Lab",
+      "highlights": [
+        "Australia's first compulsory app-building law topic: every LLB student takes Law in a Digital Age, where law + CS teams build real legal apps and chatbots (Docassemble, Neota Logic) for access-to-justice clients — 60+ apps built",
+        "Unusual end-to-end pipeline: apps built in class are deployed and maintained by the Digital Law Lab and used by the Flinders Legal Centre community clinic",
+        "LLB (Honours) Legal Practice Entry satisfies academic admission requirements Australia-wide; semester-long industry placements"
+      ],
+      "caveats": "No legal-tech degree/certificate, standalone AI-law course, or recurring hackathon.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 5,
+        "practical": 4,
+        "research": 2,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.flinders.edu.au/study/articles/law-in-a-digital-age",
+        "https://www.flinders.edu.au/engage/community/clinics/flinders-legal-centre",
+        "https://handbook.flinders.edu.au/topics/2022/LLAW3301"
+      ],
+      "composite": 70.0,
+      "rank": 28
+    },
+    {
+      "name": "Swinburne University of Technology — Swinburne Law School",
+      "country": "Australia",
+      "city": "Melbourne",
+      "region": "Asia-Pacific",
+      "tech_center": "Legal Tech Clinic and Legal Design Clinic (Dr Mitchell Adams)",
+      "highlights": [
+        "Legal Tech Clinic builds solutions for real law firm clients (e.g., 2025 warranty-claim triage prototype for CIE Legal)",
+        "Only Victorian law school with compulsory professional experience: three 20-day accredited placements in every LLB, with a ~200-organisation placement network",
+        "Flagship Legal Technology and Innovation unit covers computational legal thinking, generative AI, and human-centred legal design with hands-on building",
+        "LLB / Computer Science double degree (AI options); concurrent PLT via Leo Cussen accelerates admission"
+      ],
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 4,
+        "practical": 5,
+        "research": 2,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.swinburne.edu.au/course/unit/l/law20040/",
+        "https://www.swinburne.edu.au/news/2025/06/students-develop-tech-solution-for-major-melbourne-law-firm/",
+        "https://www.swinburne.edu.au/courses/find-a-course/law/laws/"
+      ],
+      "composite": 69.0,
+      "rank": 29
+    },
+    {
+      "name": "KU Leuven — Faculty of Law and Criminology",
+      "country": "Belgium",
+      "city": "Leuven / Brussels",
+      "region": "Europe",
+      "tech_center": "CiTiP — Centre for IT & IP Law (80+ researchers; imec research group)",
+      "highlights": [
+        "Continental Europe's research powerhouse for IT/IP law: heavy involvement in EU digital regulation scholarship (GDPR, AI Act, cybersecurity) via dozens of EU projects",
+        "Advanced Master (LLM) of Intellectual Property and ICT Law in Brussels, taught partly by European Commission officials and regulators",
+        "Unmatched engineering integration via imec, LICT, COSIC, and DistriNet; annual Leuven IP and AI Conference"
+      ],
+      "caveats": "Student opportunities to build legal tech are thinner than at QMUL or Edinburgh; no tech-build clinic.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 1,
+        "practical": 3,
+        "research": 5,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://www.law.kuleuven.be/citip/en/about",
+        "https://www.kuleuven.be/programmes/master-intellectual-property-ict-law"
+      ],
+      "composite": 65.0,
+      "rank": 30
+    },
+    {
+      "name": "UNSW Sydney — Faculty of Law & Justice",
+      "country": "Australia",
+      "city": "Sydney",
+      "region": "Asia-Pacific",
+      "tech_center": null,
+      "highlights": [
+        "Designing Technology Solutions for Access to Justice: project-based course where student teams build legal apps for not-for-profits (Gilbert + Tobin / Neota Logic supported)",
+        "2026 handbook AI courses: Artificial Intelligence: Law and Governance; Big Tech, AI and the Law; comparative law-and-tech course with University of Zurich",
+        "Strong faculty bench: Lyria Bennett Moses (AI regulation, AI in courts), Michael Legg (AI and the profession)",
+        "Kingsford Legal Centre provides clinical legal education"
+      ],
+      "caveats": "The Allens Hub — long the flagship legal-tech centre — closed 1 June 2024 with no named successor; older sources describing it as active are out of date.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 3,
+        "practical": 3,
+        "research": 3,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://allenshub.unsw.edu.au/",
+        "https://www.handbook.unsw.edu.au/undergraduate/courses/2026/LAWS3196",
+        "https://www.handbook.unsw.edu.au/postgraduate/courses/2026/JURD7548"
+      ],
+      "composite": 65.0,
+      "rank": 30
+    },
+    {
+      "name": "Michigan State University College of Law",
+      "country": "United States",
+      "city": "East Lansing, MI",
+      "region": "North America",
+      "tech_center": "Center for Law, Technology & Innovation (LegalRnD Lab; Innovation Hub)",
+      "highlights": [
+        "LegalRnD (founded by Dan Linna) was among the earliest legal-service-delivery innovation labs; now led by Dennis Kennedy with an AI Studio (2024)",
+        "Practice-ready curriculum across four focus areas including New Technologies and Law and Law Practice Technology",
+        "Kennedy's industry network (former Mastercard VP/deputy GC; 2024 American Legal Technology Lifetime Achievement) anchors employer ties"
+      ],
+      "caveats": "No formal legal-tech degree or certificate; several partnership claims not independently verified for 2025-26.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 3,
+        "practical": 4,
+        "research": 3,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://law.msu.edu/clinics-centers-institutes/law-centers/law-tech",
+        "https://www.law.msu.edu/news/2023/kennedy_recognized_technology_mentorship.html"
+      ],
+      "composite": 64.0,
+      "rank": 32
+    },
+    {
+      "name": "Osgoode Hall Law School (York University)",
+      "country": "Canada",
+      "city": "Toronto, ON",
+      "region": "North America",
+      "tech_center": "Winkler Institute for Dispute Resolution; OsgoodePD",
+      "highlights": [
+        "Deliberately expanded JD tech curriculum: A.I. and Technology in Legal Practice, Legal Values: Artificial Intelligence, Engineering the Law, plus hands-on professional skills micro-courses",
+        "OsgoodePD leads Canadian professional education in AI/privacy/cybersecurity (Professional LLM in Privacy and Cybersecurity Law; AI and the Law short courses)",
+        "One of Canada's largest experiential programs (Parkdale Community Legal Services, clinical intensives); co-organized the HackJustice hackathon"
+      ],
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 2,
+        "practical": 4,
+        "research": 3,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.osgoode.yorku.ca/news/osgoode-expands-law-and-technology-courses-to-ready-students-for-legal-practice-transformation/",
+        "https://osgoodepd.ca/academic-programs/professional-llms/privacy-cybersecurity-law/",
+        "https://www.hackjustice.ca/"
+      ],
+      "composite": 64.0,
+      "rank": 32
+    },
+    {
+      "name": "Tel Aviv University — Buchmann Faculty of Law",
+      "country": "Israel",
+      "city": "Tel Aviv",
+      "region": "Middle East",
+      "tech_center": "Shamgar Center for Digital Law and Innovation (2022); Algorithmic Governance Lab",
+      "highlights": [
+        "Law & Technology specialization in the Parasol Foundation International LLM (14-15 of 32 credits in tech-law courses)",
+        "Israel's first Privacy Clinic (with the Shamgar Center since 2022)",
+        "Top-tier faculty: Niva Elkin-Koren (AI governance, platform regulation), Michael Birnhack (privacy/data protection); dedicated 2025 journal volume on AI",
+        "Algorithmic Governance Lab cooperates with government and industry"
+      ],
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 2,
+        "practical": 3,
+        "research": 5,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://shamgarlaw.sites.tau.ac.il/en",
+        "https://en-law.tau.ac.il/Intl-LLM/Specialization_Law_Technology",
+        "https://tilabs.tau.ac.il/Algorithmic_Governance_Lab"
+      ],
+      "composite": 63.0,
+      "rank": 34
+    },
+    {
+      "name": "Tilburg University — Tilburg Law School",
+      "country": "Netherlands",
+      "city": "Tilburg",
+      "region": "Europe",
+      "tech_center": "Tilburg Institute for Law, Technology, and Society (TILT)",
+      "highlights": [
+        "TILT is one of Europe's top law-and-technology research institutes; edits the journal Technology and Regulation and hosts TILTing Perspectives",
+        "LLM Law and Technology (English, two intakes/year, on-campus or fully online) spanning AI governance, privacy, cybercrime, fintech, and platform regulation",
+        "Lawyers from international firms are systematically involved in LLM teaching"
+      ],
+      "caveats": "Regulation-focused rather than build-focused — no student software-building clinic identified.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 1,
+        "practical": 3,
+        "research": 5,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.tilburguniversity.edu/about/schools/law/departments/tilt",
+        "https://www.tilburguniversity.edu/education/masters-programs/law-and-technology"
+      ],
+      "composite": 63.0,
+      "rank": 34
+    },
+    {
+      "name": "O.P. Jindal Global University (Jindal Global Law School)",
+      "country": "India",
+      "city": "Sonipat",
+      "region": "South Asia",
+      "tech_center": "Cyril Shroff Centre for AI, Law & Regulation (India's first dedicated AI-law centre, ₹15 crore endowment); JIRICO",
+      "highlights": [
+        "LLM in Artificial Intelligence and Emerging Technologies — a 12-month blended programme, first of its kind in India — plus an LLM in IP & Technology Law",
+        "Cyril Shroff Centre plans partnerships with NITI Aayog, MeitY, RBI, SEBI, TRAI, and global bodies (OECD, US FTC, UK AISI)",
+        "Annual Jindal Technology Law and Policy International Moot; Qualcomm-funded IP-competition research via JIRICO"
+      ],
+      "caveats": "Practical build-oriented legal-tech training is still limited; centre work is research and policy oriented.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 1,
+        "practical": 3,
+        "research": 4,
+        "ecosystem": 4
+      },
+      "sources": [
+        "https://jgu.edu.in/cyril-shroff-centre-for-ai-law-regulation-established-at-jindal-global-law-school",
+        "https://jgu.edu.in/jgls/admissions/llm-in-artificial-intelligence-and-emerging-technologies"
+      ],
+      "composite": 61.0,
+      "rank": 36
+    },
+    {
+      "name": "National Law School of India University (NLSIU)",
+      "country": "India",
+      "city": "Bengaluru",
+      "region": "South Asia",
+      "tech_center": "JSW Centre for the Future of Law (2024)",
+      "highlights": [
+        "'Law and New Technologies' built into the core curriculum, with AI and the Future of Law and AI Governance & Ethics electives anchored by the JSW Centre",
+        "Students get access to premium AI tools plus AI skills workshops; full-time JSW-CFL internship programme",
+        "L-Tech (est. 1995) is India's oldest student tech-law society; LLM concentration covers comparative AI regulation including the EU AI Act"
+      ],
+      "caveats": "Capacity is new (2024-); no build-oriented clinic or legal-tech hackathon yet evident.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 2,
+        "practical": 3,
+        "research": 3,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.nls.ac.in/centres/jsw-centre-for-the-future-of-law/",
+        "https://www.nls.ac.in/news-events/student-internship-programme-jsw-centre-for-the-future-of-law/"
+      ],
+      "composite": 60.0,
+      "rank": 37
+    },
+    {
+      "name": "University of Copenhagen — Faculty of Law",
+      "country": "Denmark",
+      "city": "Copenhagen",
+      "region": "Europe",
+      "tech_center": "Copenhagen Legal/Tech Lab; Centre for Information and Innovation Law (CIIR)",
+      "highlights": [
+        "Hands-on courses: Legal Tech Laboratory (working with deployed European legal-tech tools), DigiLawyer, How to Start a Start-up (with real Copenhagen startups)",
+        "Campus Legal/Tech Hackathons ('Decentralising Finance' 2022, 'AI for a Sustainable Future' 2023) with industry mentors",
+        "Lab maps the Danish legal-tech ecosystem (Legal Tech Map & Report 2024); CIIR researches generative AI and IP"
+      ],
+      "caveats": "The lab's funded project appears wound down (community activities continue); no specialized legal-tech degree.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 3,
+        "practical": 3,
+        "research": 3,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://jura.ku.dk/legaltechlab/",
+        "https://jura.ku.dk/legaltechlab/courses-at-the-faculty/",
+        "https://jura.ku.dk/ciir/english/about/"
+      ],
+      "composite": 60.0,
+      "rank": 37
+    },
+    {
+      "name": "University of Oxford, Faculty of Law",
+      "country": "United Kingdom",
+      "city": "Oxford",
+      "region": "Europe",
+      "tech_center": "Deep Tech Dispute Resolution Lab; university Institute for Ethics in AI (joint Law/AI-regulation post)",
+      "highlights": [
+        "Law and Computer Science option (BCL/MJur) co-taught with the CS department: mixed law/CS teams design and implement a digital legal service as a group project",
+        "Grew out of the Oxford Lawtech Education Programme piloted with Slaughter and May",
+        "Deep Tech Dispute Resolution Lab prototypes ODR/smart-contract tech with legal designers and engineers",
+        "Extensive AI-and-law research around the Institute for Ethics in AI"
+      ],
+      "caveats": "Undergraduate degree remains predominantly doctrinal; the Deep Tech lab's current activity level is uncertain after its founding director moved institutions.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 3,
+        "practical": 2,
+        "research": 4,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.cs.ox.ac.uk/tom.melham/LawAndCS/",
+        "https://www.law.ox.ac.uk/deep-tech-dispute-resolution-lab/deep-tech-dispute-resolution-lab",
+        "https://www.oxford-aiethics.ox.ac.uk/about-the-institute"
+      ],
+      "composite": 60.0,
+      "rank": 37
+    },
+    {
+      "name": "Chinese University of Hong Kong — Faculty of Law",
+      "country": "Hong Kong SAR",
+      "city": "Hong Kong",
+      "region": "Asia-Pacific",
+      "tech_center": "Centre for Legal Innovation and Digital Society (CLINDS)",
+      "highlights": [
+        "New dedicated LLM in AI Law launching in the 2026-27 academic year",
+        "Legal Technologies courses at both undergraduate and postgraduate level; offerings on ODR, AI and IP, and smart contracts",
+        "Active research cluster (Jyh-An Lee on IP/AI/platforms) with annual AI governance conferences"
+      ],
+      "caveats": "Weaker on experiential, build-oriented training than HKU's LITE Lab; no clinic or hackathon identified.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 1,
+        "practical": 3,
+        "research": 4,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.law.cuhk.edu.hk/app/cuhk-law-launches-new-llm-in-ai-law-programme/",
+        "https://www.law.cuhk.edu.hk/app/areas-projects/clinds/"
+      ],
+      "composite": 59.0,
+      "rank": 40
+    },
+    {
+      "name": "Hebrew University of Jerusalem — Faculty of Law",
+      "country": "Israel",
+      "city": "Jerusalem",
+      "region": "Middle East",
+      "tech_center": "Federmann Cyber Security Research Center — Cyber Law Program (joint with the Benin School of Computer Science)",
+      "highlights": [
+        "Deep cyber/tech course cluster: Cyber Law, Israeli and International Cybersecurity Law, Cyber Crimes, Internet Governance, plus cross-listed CS courses",
+        "Year-long Clinic on Digital Rights and Human Rights in Cyberspace within one of Israel's leading clinical programs",
+        "Federmann Center scholarship spans cyber operations law, cybercrime, and AI governance, with government (INCD) ties"
+      ],
+      "caveats": "Strength is cyber and security law rather than hands-on legal-tech tooling; no build labs or hackathons found.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 2,
+        "practical": 3,
+        "research": 4,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://csrcl.huji.ac.il/",
+        "https://lawclinics.huji.ac.il/"
+      ],
+      "composite": 59.0,
+      "rank": 40
+    },
+    {
+      "name": "Reichman University — Harry Radzyner Law School",
+      "country": "Israel",
+      "city": "Herzliya",
+      "region": "Middle East",
+      "tech_center": "Zvi Meitar Institute for Legal Implications of Emerging Technologies",
+      "highlights": [
+        "MA/LLM in Law, Technology and Business Innovation (200+ students, running since ~2020)",
+        "Selective cross-disciplinary Zvi Meitar Emerging Technologies Program spanning Law, Business, CS, and Government schools",
+        "Institute policy work on responsible AI regulation; strong university-wide entrepreneurship culture"
+      ],
+      "caveats": "Weaker on hands-on build-and-deploy legal tech; no dedicated legal-tech clinic verified.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 1,
+        "practical": 3,
+        "research": 4,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.runi.ac.il/en/research-institutes/law/zmi",
+        "https://www.runi.ac.il/en/special-programs/zmi"
+      ],
+      "composite": 59.0,
+      "rank": 40
+    },
+    {
+      "name": "University of St. Gallen (HSG) — Law School",
+      "country": "Switzerland",
+      "city": "St. Gallen",
+      "region": "Europe",
+      "tech_center": "Law & Tech Lab @ HSG (six-professor research cluster)",
+      "highlights": [
+        "Optional Law and Technology specialization within the MLaw, Master in Law and Economics, and Master in International Law",
+        "Active faculty output on AI liability, algorithmic decision-making, robotics, and platform regulation (Wildhaber, Simmler, Buiten, Tamò-Larrieux)",
+        "First 'Hack the Law' legal hackathon scheduled November 2026; Swiss LegalTech Association student chapter bridges to industry",
+        "HSG's integrative law-plus-management model"
+      ],
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 2,
+        "practical": 3,
+        "research": 4,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.unisg.ch/de/universitaet/schools/law/forschung/techlaw/",
+        "https://www.unisg.ch/en/studying/programmes/master/law-and-economics-mle/"
+      ],
+      "composite": 59.0,
+      "rank": 40
+    },
+    {
+      "name": "University College London (UCL), Faculty of Laws",
+      "country": "United Kingdom",
+      "city": "London",
+      "region": "Europe",
+      "tech_center": "Institute of Brand and Innovation Law; Information Technology Law Collective",
+      "highlights": [
+        "New LLM Law and Technology specialism (2026-27): AI and algorithmic decision-making, data governance, platform regulation, fintech, digital-markets competition",
+        "AI and Law summer school and 'AI for Lawyers' executive course for practitioners",
+        "Research community that shapes courts, regulators, and governments on digital technology law"
+      ],
+      "caveats": "Taught academic pathway — no clinic where students build or deploy legal tech.",
+      "scores": {
+        "curriculum": 4,
+        "hands_on": 1,
+        "practical": 2,
+        "research": 4,
+        "ecosystem": 2
+      },
+      "sources": [
+        "https://www.ucl.ac.uk/laws/study/master-laws-llm-courses/llm-law-and-technology",
+        "https://www.ucl.ac.uk/laws/short-courses/summer-school/ai-and-law"
+      ],
+      "composite": 53.0,
+      "rank": 44
+    },
+    {
+      "name": "University of Cambridge, Faculty of Law",
+      "country": "United Kingdom",
+      "city": "Cambridge",
+      "region": "Europe",
+      "tech_center": null,
+      "highlights": [
+        "LLM paper 'Law, Technology and Society' explicitly covers AI and machine learning, alongside strong IP/information-law papers via CIPIL",
+        "Cambridge hosts Hack_the_Law / LLM x Law Hackathon (King's Entrepreneurship Lab): 2025 edition drew students from 43 universities, with winners fast-tracked into the SPARK incubator"
+      ],
+      "caveats": "The hackathon is hosted by King's College's Entrepreneurship Lab, not the Law Faculty; no faculty tech center, clinic, or legal-tech degree.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 2,
+        "practical": 2,
+        "research": 4,
+        "ecosystem": 2
+      },
+      "sources": [
+        "https://llm.law.cam.ac.uk/papers-offer-2025-26/paper-46-law-technology-and-society",
+        "https://hackthelaw-cambridge.com/about/"
+      ],
+      "composite": 53.0,
+      "rank": 44
+    },
+    {
+      "name": "University of Geneva — Faculty of Law",
+      "country": "Switzerland",
+      "city": "Geneva",
+      "region": "Europe",
+      "tech_center": "Digital Law Center (2020)",
+      "highlights": [
+        "Certificat en droit du numérique (from 2025) with a mandatory Digital and AI Law course and workshop, capped at 25 students",
+        "Annual Digital Law Summer School (AI, cybersecurity, big data, platform law) with an embedded clinic experience",
+        "Collaborations with Berkman Klein, ITU, WIPO, and Geneva's international-organization ecosystem"
+      ],
+      "caveats": "Strength is regulatory scholarship and the IO ecosystem rather than students building technology.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 2,
+        "practical": 2,
+        "research": 3,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://www.unige.ch/droit/en/digital",
+        "https://www.unige.ch/genevasummerschools/programme/courses/digital-law",
+        "https://www.unige.ch/cerdn/presentation"
+      ],
+      "composite": 51.0,
+      "rank": 46
+    },
+    {
+      "name": "University of Auckland — Auckland Law School",
+      "country": "New Zealand",
+      "city": "Auckland",
+      "region": "Asia-Pacific",
+      "tech_center": "Centre for Advancing Law and Technology Responsibly (ALTeR, with Business & Economics)",
+      "highlights": [
+        "ALTeR — a new active centre with a dedicated Chair in Law and Technology (Prof Alexandra Andhov) researching AI governance, Big Tech accountability, and govtech",
+        "Named AI electives: Law and Artificial Intelligence; Technology Law and Policy",
+        "ALTeR legal tech hackathon (2025): interdisciplinary teams prototyped an AI legal assistant for access to justice"
+      ],
+      "caveats": "No legal-tech degree and no permanent build-and-deploy clinic; NZ professional training happens after the LLB through external providers.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 2,
+        "practical": 2,
+        "research": 3,
+        "ecosystem": 2
+      },
+      "sources": [
+        "https://www.alter.auckland.ac.nz/",
+        "https://www.auckland.ac.nz/en/news/2025/08/20/legal-tech-hackathon-challenges-students-to-rethink-access-to-justice.html"
+      ],
+      "composite": 49.0,
+      "rank": 47
+    },
+    {
+      "name": "Peking University Law School",
+      "country": "China",
+      "city": "Beijing",
+      "region": "Asia-Pacific",
+      "tech_center": "PKU Legal AI Laboratory (2017, with Gridsum); Digital Rule of Law Research Center",
+      "highlights": [
+        "Early mover: Legal AI Lab founded in 2017 for AI product R&D in legal applications",
+        "Courses in Law and Artificial Intelligence, Topics in Digital Law, and Data Regulation and Compliance",
+        "Active digital-law scholarship and conferences on AI and legal theory"
+      ],
+      "caveats": "The Legal AI Lab's current vitality is uncertain; no legal-tech degree, build clinic, or hackathon identified.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 1,
+        "practical": 2,
+        "research": 4,
+        "ecosystem": 2
+      },
+      "sources": [
+        "http://www.ailaw.pku.edu.cn/html/pku/en/index.html",
+        "https://en.law.pku.edu.cn/academics/announcements/91126.htm"
+      ],
+      "composite": 48.0,
+      "rank": 48
+    },
+    {
+      "name": "University of Helsinki — Faculty of Law",
+      "country": "Finland",
+      "city": "Helsinki",
+      "region": "Europe",
+      "tech_center": "Legal Tech Lab (director Riikka Koulu, professor of Social and Legal Implications of AI)",
+      "highlights": [
+        "Nordic pioneer: organized Finland's first legal hackathon (2017) and hosts the Legal Tech Con conference",
+        "Strong critical/academic scholarship on algorithmic decision-making and AI in judicial processes"
+      ],
+      "caveats": "Much documented student-facing activity dates from 2017-2018; current intensity of programming is uncertain. No specialized legal-tech degree.",
+      "scores": {
+        "curriculum": 2,
+        "hands_on": 2,
+        "practical": 2,
+        "research": 4,
+        "ecosystem": 2
+      },
+      "sources": [
+        "https://www.helsinki.fi/en/networks/legal-tech-lab",
+        "https://www.helsinki.fi/en/conferences/legal-tech-con/about"
+      ],
+      "composite": 48.0,
+      "rank": 48
+    },
+    {
+      "name": "NALSAR University of Law",
+      "country": "India",
+      "city": "Hyderabad",
+      "region": "South Asia",
+      "tech_center": "Centre for Law and AI; Centre for Cyber Laws and Forensic Sciences",
+      "highlights": [
+        "NPTEL/SWAYAM MOOC 'Artificial Intelligence, Law and Justice' has reached 10,000+ learners",
+        "NSDC-certified Diploma in Future of Law: AI, Technology & Legal Practice (with LawSikho, 2025); one-year Advanced Diploma in Cyber Laws",
+        "Active student scholarship via the Tech Law Forum"
+      ],
+      "caveats": "Strength is distance/professional education and MOOCs more than on-campus build-focused legal tech.",
+      "scores": {
+        "curriculum": 3,
+        "hands_on": 1,
+        "practical": 2,
+        "research": 3,
+        "ecosystem": 3
+      },
+      "sources": [
+        "https://onlinecourses.nptel.ac.in/noc25_lw12/preview",
+        "https://techlawforum.nalsar.ac.in/about-us/"
+      ],
+      "composite": 46.0,
+      "rank": 50
+    }
+  ]
+}

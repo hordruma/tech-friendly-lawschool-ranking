@@ -1,0 +1,118 @@
+[
+  {
+    "name": "University of Melbourne — Melbourne Law School",
+    "country": "Australia",
+    "city": "Melbourne",
+    "region": "Asia-Pacific",
+    "tech_center": "Centre for Artificial Intelligence and Digital Ethics (CAIDE, with Engineering & IT; renewed to 2030)",
+    "highlights": [
+      "Deep AI/tech-law catalogue: Artificial Intelligence and the Law, Legal AI: Design and Development (students build LLM-based legal apps), AI and Justice, International Law and AI (2026), plus undergraduate AI Ethics and the Law",
+      "Pioneering Law Apps clinic (est. 2015): JD teams built and released live Neota Logic apps for not-for-profits for a decade",
+      "Specialist Certificate and Melbourne Law Masters stream in Digital Law and Technological Innovation",
+      "Law Apps Bake Off pitch nights; hackathon with King & Wood Mallesons; CAIDE delivers AI-literacy training across Australia/NZ"
+    ],
+    "caveats": "The flagship Law Apps clinic is listed as not offered in 2026; hands-on building has shifted to the generative-AI subject LAWS90286.",
+    "scores": { "curriculum": 5, "hands_on": 4, "practical": 3, "research": 4, "ecosystem": 4 },
+    "sources": [
+      "https://www.unimelb.edu.au/caide",
+      "https://handbook.unimelb.edu.au/2024/subjects/laws90286",
+      "https://law.unimelb.edu.au/study/masters/specialist-legal-areas/digital-law-and-technological-innovation",
+      "https://law.unimelb.edu.au/news/MLS/legal-ai-mls-celebrates-10-years-of-a-clinic-breaking-new-ground"
+    ]
+  },
+  {
+    "name": "UNSW Sydney — Faculty of Law & Justice",
+    "country": "Australia",
+    "city": "Sydney",
+    "region": "Asia-Pacific",
+    "tech_center": null,
+    "highlights": [
+      "Designing Technology Solutions for Access to Justice: project-based course where student teams build legal apps for not-for-profits (Gilbert + Tobin / Neota Logic supported)",
+      "2026 handbook AI courses: Artificial Intelligence: Law and Governance; Big Tech, AI and the Law; comparative law-and-tech course with University of Zurich",
+      "Strong faculty bench: Lyria Bennett Moses (AI regulation, AI in courts), Michael Legg (AI and the profession)",
+      "Kingsford Legal Centre provides clinical legal education"
+    ],
+    "caveats": "The Allens Hub — long the flagship legal-tech centre — closed 1 June 2024 with no named successor; older sources describing it as active are out of date.",
+    "scores": { "curriculum": 4, "hands_on": 3, "practical": 3, "research": 3, "ecosystem": 3 },
+    "sources": [
+      "https://allenshub.unsw.edu.au/",
+      "https://www.handbook.unsw.edu.au/undergraduate/courses/2026/LAWS3196",
+      "https://www.handbook.unsw.edu.au/postgraduate/courses/2026/JURD7548"
+    ]
+  },
+  {
+    "name": "University of Technology Sydney (UTS) — Faculty of Law",
+    "country": "Australia",
+    "city": "Sydney",
+    "region": "Asia-Pacific",
+    "tech_center": "Hosts AustLII (Australasian Legal Information Institute), a major legal-informatics institution",
+    "highlights": [
+      "Legal Futures and Technology major in the LLB — an Australian first — with an applied tech project capstone and legal-tech internships (LawPath, AustLII, Westpac, Marrickville Legal Centre)",
+      "Allens Neota UTS Law Tech Challenge for Social Justice, running since 2016: student teams build AI-driven apps for non-profits with Allens mentoring",
+      "Bachelor of IT / Bachelor of Laws dual degree; first Sydney university to offer Practical Legal Training in-house",
+      "Disruptive Technologies and the Law elective covers AI in practice, e-discovery, and emerging-tech regulation"
+    ],
+    "scores": { "curriculum": 4, "hands_on": 4, "practical": 5, "research": 3, "ecosystem": 4 },
+    "sources": [
+      "https://www.uts.edu.au/about/faculty-law/news/tech-focused-legal-major-equip-graduates-law-future",
+      "https://www.uts.edu.au/for-students/current-students/managing-your-course/current-students-information-law/brennan-justice-and-leadership-program/initiatives/allens-neota-uts-law-tech-challenge-social-justice",
+      "https://www.uts.edu.au/courses/bachelor-of-information-technology-bachelor-of-laws"
+    ]
+  },
+  {
+    "name": "Swinburne University of Technology — Swinburne Law School",
+    "country": "Australia",
+    "city": "Melbourne",
+    "region": "Asia-Pacific",
+    "tech_center": "Legal Tech Clinic and Legal Design Clinic (Dr Mitchell Adams)",
+    "highlights": [
+      "Legal Tech Clinic builds solutions for real law firm clients (e.g., 2025 warranty-claim triage prototype for CIE Legal)",
+      "Only Victorian law school with compulsory professional experience: three 20-day accredited placements in every LLB, with a ~200-organisation placement network",
+      "Flagship Legal Technology and Innovation unit covers computational legal thinking, generative AI, and human-centred legal design with hands-on building",
+      "LLB / Computer Science double degree (AI options); concurrent PLT via Leo Cussen accelerates admission"
+    ],
+    "scores": { "curriculum": 3, "hands_on": 4, "practical": 5, "research": 2, "ecosystem": 3 },
+    "sources": [
+      "https://www.swinburne.edu.au/course/unit/l/law20040/",
+      "https://www.swinburne.edu.au/news/2025/06/students-develop-tech-solution-for-major-melbourne-law-firm/",
+      "https://www.swinburne.edu.au/courses/find-a-course/law/laws/"
+    ]
+  },
+  {
+    "name": "Flinders University — College of Business, Government and Law",
+    "country": "Australia",
+    "city": "Adelaide",
+    "region": "Asia-Pacific",
+    "tech_center": "Flinders Digital Law Lab",
+    "highlights": [
+      "Australia's first compulsory app-building law topic: every LLB student takes Law in a Digital Age, where law + CS teams build real legal apps and chatbots (Docassemble, Neota Logic) for access-to-justice clients — 60+ apps built",
+      "Unusual end-to-end pipeline: apps built in class are deployed and maintained by the Digital Law Lab and used by the Flinders Legal Centre community clinic",
+      "LLB (Honours) Legal Practice Entry satisfies academic admission requirements Australia-wide; semester-long industry placements"
+    ],
+    "caveats": "No legal-tech degree/certificate, standalone AI-law course, or recurring hackathon.",
+    "scores": { "curriculum": 3, "hands_on": 5, "practical": 4, "research": 2, "ecosystem": 3 },
+    "sources": [
+      "https://www.flinders.edu.au/study/articles/law-in-a-digital-age",
+      "https://www.flinders.edu.au/engage/community/clinics/flinders-legal-centre",
+      "https://handbook.flinders.edu.au/topics/2022/LLAW3301"
+    ]
+  },
+  {
+    "name": "University of Auckland — Auckland Law School",
+    "country": "New Zealand",
+    "city": "Auckland",
+    "region": "Asia-Pacific",
+    "tech_center": "Centre for Advancing Law and Technology Responsibly (ALTeR, with Business & Economics)",
+    "highlights": [
+      "ALTeR — a new active centre with a dedicated Chair in Law and Technology (Prof Alexandra Andhov) researching AI governance, Big Tech accountability, and govtech",
+      "Named AI electives: Law and Artificial Intelligence; Technology Law and Policy",
+      "ALTeR legal tech hackathon (2025): interdisciplinary teams prototyped an AI legal assistant for access to justice"
+    ],
+    "caveats": "No legal-tech degree and no permanent build-and-deploy clinic; NZ professional training happens after the LLB through external providers.",
+    "scores": { "curriculum": 3, "hands_on": 2, "practical": 2, "research": 3, "ecosystem": 2 },
+    "sources": [
+      "https://www.alter.auckland.ac.nz/",
+      "https://www.auckland.ac.nz/en/news/2025/08/20/legal-tech-hackathon-challenges-students-to-rethink-access-to-justice.html"
+    ]
+  }
+]

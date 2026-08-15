@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Un-ignore this project's site template (mkdocs rule above ignores /site)
+!/site/
+/site/artifact.html
